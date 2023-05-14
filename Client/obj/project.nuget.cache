@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "hLTpz+M5C78++7o5hxen2IO2vcO3qxAcH1acA7W0msIP62vPWEjS+ZzTTqZCpNFwlm43Qoh9EQXnB9BD0BiaZw==",
+  "dgSpecHash": "+ROicp+hWiNaVUow9JSI/Kovt4mfQJ+A5OZVzp0mhcrO5Ce+7z3tjBmzUgSMmK4hwLJfPMmZmr1NutoS50/Taw==",
   "success": true,
   "projectFilePath": "D:\\Documents\\SIITO\\Client\\Client.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Asus\\.nuget\\packages\\realtaiizor\\3.7.9.2\\realtaiizor.3.7.9.2.nupkg.sha512"
+  ],
   "logs": []
 }
