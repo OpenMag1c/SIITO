@@ -1,5 +1,8 @@
-﻿using Domain.Entities;
+﻿using Client.Cards;
+using DAL;
+using Domain.Entities;
 using Domain.Enums;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +17,18 @@ namespace Client
 {
     public partial class InstrumentForm : Form
     {
+        List<Instrument> instruments;
+        private readonly AppDbContext context = new AppDbContext(Program.ContextOptions);
         public InstrumentTypeEnum instrumentType { get; set; }
 
         public InstrumentForm(InstrumentTypeEnum instrumentType = InstrumentTypeEnum.All)
         {
             InitializeComponent();
+            GetInstruments(instrumentType);
             SetPath(instrumentType);
         }
 
-        public string getInstrumentTypeName(InstrumentTypeEnum instrumentType)
+        public static string getInstrumentTypeName(InstrumentTypeEnum instrumentType)
         {
             switch (instrumentType)
             {
@@ -50,6 +56,28 @@ namespace Client
         private void InstrumentForm_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
+            PopulateInstruments();
+        }
+
+        private void PopulateInstruments()
+        {
+            instruments.ForEach(instr =>
+            {
+                instrumentsContainer.Controls.Add(new InstrumentCard(instr));
+            });
+        }
+
+        private void GetInstruments(InstrumentTypeEnum instrumentType)
+        {
+            var data = context.Instruments.Include(x => x.InstrumentType).Include(x => x.Gost);
+            if (instrumentType == InstrumentTypeEnum.All)
+            {
+                this.instruments = data.ToList();
+            }
+            else
+            {
+                this.instruments = data.Where(x => x.InstrumentType.Id == (int)instrumentType).ToList();
+            }
         }
 
         public void SetPath(InstrumentTypeEnum instrumentType)

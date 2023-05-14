@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             labelType = new Label();
+            instrumentsContainer = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // label1
@@ -53,11 +54,21 @@
             labelType.Text = "/ тип";
             labelType.Visible = false;
             // 
+            // instrumentsContainer
+            // 
+            instrumentsContainer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            instrumentsContainer.AutoScroll = true;
+            instrumentsContainer.Location = new Point(12, 52);
+            instrumentsContainer.Name = "instrumentsContainer";
+            instrumentsContainer.Size = new Size(776, 386);
+            instrumentsContainer.TabIndex = 3;
+            // 
             // InstrumentForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(instrumentsContainer);
             Controls.Add(labelType);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
@@ -72,5 +83,6 @@
 
         private Label label1;
         private Label labelType;
+        private FlowLayoutPanel instrumentsContainer;
     }
 }
