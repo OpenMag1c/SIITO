@@ -12,7 +12,7 @@ namespace Client
         public MainForm()
         {
             InitializeComponent();
-            catalogForm = new CatalogForm();
+            catalogForm = new CatalogForm(this);
             catalogForm.FormClosed += CatalogForm_FormClosed;
             catalogForm.MdiParent = this;
             catalogForm.Dock = DockStyle.Fill;
@@ -107,6 +107,28 @@ namespace Client
             }
         }
 
+        public void OpenOsnastkaForm(OsnastkaTypeEnum osnastkaType)
+        {
+            if (osnastkaForm == null)
+            {
+                osnastkaForm = new OsnastkaForm(osnastkaType);
+                osnastkaForm.FormClosed += OsnastkaForm_FormClosed;
+                osnastkaForm.MdiParent = this;
+                osnastkaForm.Dock = DockStyle.Fill;
+                osnastkaForm.Show();
+            }
+            else
+            {
+                osnastkaForm.SetPath(osnastkaType);
+                osnastkaForm.Activate();
+            }
+        }
+
+        private void OsnastkaForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            catalogForm = null;
+        }
+
         private void buttonOsnastka_Click(object sender, EventArgs e)
         {
             osnastkaTransition.Start();
@@ -124,7 +146,7 @@ namespace Client
         {
             if (catalogForm == null)
             {
-                catalogForm = new CatalogForm();
+                catalogForm = new CatalogForm(this);
                 catalogForm.FormClosed += CatalogForm_FormClosed;
                 catalogForm.MdiParent = this;
                 catalogForm.Dock = DockStyle.Fill;
@@ -156,7 +178,7 @@ namespace Client
             }
         }
 
-        private void OpenEditForm(object sender, EventArgs e)
+        private void OpenEditForm()
         {
             if (editForm == null)
             {
@@ -189,6 +211,7 @@ namespace Client
             }
             else
             {
+                instrumentForm.SetPath(instrumentType);
                 instrumentForm.Activate();
             }
         }
@@ -223,6 +246,61 @@ namespace Client
                     addExpanded = false;
                 }
             }
+        }
+
+        private void buttonProtyajki_Click(object sender, EventArgs e)
+        {
+            OpenInstrumentForm(InstrumentTypeEnum.Protyazhki);
+        }
+
+        private void buttonFreza_Click(object sender, EventArgs e)
+        {
+            OpenInstrumentForm(InstrumentTypeEnum.Frezi);
+        }
+
+        private void buttonRoliki_Click(object sender, EventArgs e)
+        {
+            OpenInstrumentForm(InstrumentTypeEnum.RolikiRezb);
+        }
+
+        private void buttonZenkeri_Click(object sender, EventArgs e)
+        {
+            OpenInstrumentForm(InstrumentTypeEnum.Zenkeri);
+        }
+
+        private void buttonMetchiki_Click(object sender, EventArgs e)
+        {
+            OpenInstrumentForm(InstrumentTypeEnum.Metchiki);
+        }
+
+        private void buttonRazvertki_Click(object sender, EventArgs e)
+        {
+            OpenInstrumentForm(InstrumentTypeEnum.Razvertki);
+        }
+
+        private void buttonMechanical_Click(object sender, EventArgs e)
+        {
+            OpenInstrumentForm(InstrumentTypeEnum.InstrumentMechKreplenie);
+        }
+
+        private void buttonStampi_Click(object sender, EventArgs e)
+        {
+            OpenOsnastkaForm(OsnastkaTypeEnum.Shtampi);
+        }
+
+        private void buttonPressFormi_Click(object sender, EventArgs e)
+        {
+            OpenOsnastkaForm(OsnastkaTypeEnum.PressFormi);
+        }
+
+        private void buttonModel_Click(object sender, EventArgs e)
+        {
+            OpenOsnastkaForm(OsnastkaTypeEnum.ModelOsnastka);
+        }
+
+        private void buttonPrisposobleniya_Click(object sender, EventArgs e)
+        {
+            OpenOsnastkaForm(OsnastkaTypeEnum.Prisposoblenie);
         }
     }
 }
