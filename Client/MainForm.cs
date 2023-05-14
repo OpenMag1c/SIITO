@@ -1,8 +1,13 @@
 namespace Client
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        CatalogForm catalogForm;
+        InstrumentForm instrumentForm;
+        OsnastkaForm osnastkaForm;
+        EditForm editForm;
+
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -34,6 +39,10 @@ namespace Client
         private void buttonInstrument_Click(object sender, EventArgs e)
         {
             instrumentTransition.Start();
+            if (osnasktaExpand)
+            {
+                osnastkaTransition.Start();
+            }
         }
 
         bool sidebarExpand = true;
@@ -79,7 +88,7 @@ namespace Client
             else
             {
                 osnastkaContainer.Height -= 10;
-                if (instrumentContainer.Height <= 43)
+                if (osnastkaContainer.Height <= 43)
                 {
                     osnastkaTransition.Stop();
                     osnasktaExpand = false;
@@ -90,6 +99,52 @@ namespace Client
         private void buttonOsnastka_Click(object sender, EventArgs e)
         {
             osnastkaTransition.Start();
+            if (instrumentExpand)
+            {
+                instrumentTransition.Start();
+            }
+        }
+
+        private void buttonCatalog_Click(object sender, EventArgs e)
+        {
+            if (catalogForm == null)
+            {
+                catalogForm = new CatalogForm();
+                catalogForm.FormClosed += CatalogForm_FormClosed;
+                catalogForm.MdiParent = this;
+                catalogForm.Dock = DockStyle.Fill;
+                catalogForm.Show();
+            }
+            else
+            {
+                catalogForm.Activate();
+            }
+        }
+
+        private void CatalogForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            catalogForm = null;
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            if (editForm == null)
+            {
+                editForm = new EditForm();
+                editForm.FormClosed += EditForm_FormClosed;
+                editForm.MdiParent = this;
+                editForm.Dock = DockStyle.Fill;
+                editForm.Show();
+            }
+            else
+            {
+                editForm.Activate();
+            }
+        }
+
+        private void EditForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            editForm = null;
         }
     }
 }
