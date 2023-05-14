@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[Gost]
+(
+	[GostId] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
+    [Name] NVARCHAR(256) NOT NULL, 
+    [Link] NVARCHAR(MAX) NOT NULL,
+    [CreatedAt] DATETIME2 NULL, 
+    [UpdatedAt] DATETIME2 NULL, 
+
+    CONSTRAINT UQ_Gost_Name UNIQUE([Name])
+)
