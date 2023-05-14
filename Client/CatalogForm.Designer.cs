@@ -33,11 +33,11 @@
             label5 = new Label();
             label1 = new Label();
             label4 = new Label();
-            button1 = new Button();
+            buttonOsnastka = new Button();
             panel2 = new Panel();
             label3 = new Label();
             label2 = new Label();
-            button2 = new Button();
+            buttonInstrument = new Button();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -59,7 +59,7 @@
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(buttonOsnastka);
             panel1.Location = new Point(30, 30);
             panel1.Margin = new Padding(30);
             panel1.Name = "panel1";
@@ -99,23 +99,24 @@
             label4.TabIndex = 3;
             label4.Text = "Оснастка";
             // 
-            // button1
+            // buttonOsnastka
             // 
-            button1.BackgroundImage = Properties.Resources.osnastka;
-            button1.BackgroundImageLayout = ImageLayout.Zoom;
-            button1.CausesValidation = false;
-            button1.Location = new Point(-14, -6);
-            button1.Name = "button1";
-            button1.Size = new Size(309, 160);
-            button1.TabIndex = 2;
-            button1.UseVisualStyleBackColor = true;
+            buttonOsnastka.BackgroundImage = Properties.Resources.osnastka;
+            buttonOsnastka.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonOsnastka.CausesValidation = false;
+            buttonOsnastka.Location = new Point(-14, -6);
+            buttonOsnastka.Name = "buttonOsnastka";
+            buttonOsnastka.Size = new Size(309, 160);
+            buttonOsnastka.TabIndex = 2;
+            buttonOsnastka.UseVisualStyleBackColor = true;
+            buttonOsnastka.Click += buttonOsnastka_Click;
             // 
             // panel2
             // 
             panel2.BackColor = Color.WhiteSmoke;
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(button2);
+            panel2.Controls.Add(buttonInstrument);
             panel2.Location = new Point(375, 30);
             panel2.Margin = new Padding(30);
             panel2.Name = "panel2";
@@ -144,16 +145,17 @@
             label2.TabIndex = 3;
             label2.Text = "Оснастка";
             // 
-            // button2
+            // buttonInstrument
             // 
-            button2.BackgroundImage = Properties.Resources.instrument;
-            button2.BackgroundImageLayout = ImageLayout.Zoom;
-            button2.CausesValidation = false;
-            button2.Location = new Point(-14, -6);
-            button2.Name = "button2";
-            button2.Size = new Size(309, 160);
-            button2.TabIndex = 2;
-            button2.UseVisualStyleBackColor = true;
+            buttonInstrument.BackgroundImage = Properties.Resources.instrument;
+            buttonInstrument.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonInstrument.CausesValidation = false;
+            buttonInstrument.Location = new Point(-14, -6);
+            buttonInstrument.Name = "buttonInstrument";
+            buttonInstrument.Size = new Size(309, 160);
+            buttonInstrument.TabIndex = 2;
+            buttonInstrument.UseVisualStyleBackColor = true;
+            buttonInstrument.Click += buttonInstrument_Click;
             // 
             // CatalogForm
             // 
@@ -180,11 +182,11 @@
         private Panel panel2;
         private Label label3;
         private Label label2;
-        private Button button2;
+        private Button buttonInstrument;
         private Panel panel1;
         private Label label5;
         private Label label1;
         private Label label4;
-        private Button button1;
+        private Button buttonOsnastka;
     }
 }

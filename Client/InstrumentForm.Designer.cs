@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             labelType = new Label();
+            instrumentsContainer = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // label1
@@ -38,26 +39,36 @@
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(144, 30);
+            label1.Size = new Size(129, 30);
             label1.TabIndex = 1;
-            label1.Text = "Инструменты";
+            label1.Text = "Инструмент";
             // 
             // labelType
             // 
             labelType.AutoSize = true;
             labelType.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            labelType.Location = new Point(148, 9);
+            labelType.Location = new Point(135, 9);
             labelType.Name = "labelType";
             labelType.Size = new Size(60, 30);
             labelType.TabIndex = 2;
             labelType.Text = "/ тип";
             labelType.Visible = false;
             // 
+            // instrumentsContainer
+            // 
+            instrumentsContainer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            instrumentsContainer.AutoScroll = true;
+            instrumentsContainer.Location = new Point(12, 52);
+            instrumentsContainer.Name = "instrumentsContainer";
+            instrumentsContainer.Size = new Size(776, 386);
+            instrumentsContainer.TabIndex = 3;
+            // 
             // InstrumentForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(instrumentsContainer);
             Controls.Add(labelType);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
@@ -72,5 +83,6 @@
 
         private Label label1;
         private Label labelType;
+        private FlowLayoutPanel instrumentsContainer;
     }
 }

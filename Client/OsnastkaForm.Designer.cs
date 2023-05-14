@@ -28,23 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            labelType = new Label();
             label1 = new Label();
             SuspendLayout();
+            // 
+            // labelType
+            // 
+            labelType.AutoSize = true;
+            labelType.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelType.Location = new Point(108, 9);
+            labelType.Name = "labelType";
+            labelType.Size = new Size(60, 30);
+            labelType.TabIndex = 4;
+            labelType.Text = "/ тип";
+            labelType.Visible = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(367, 218);
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(102, 15);
-            label1.TabIndex = 1;
-            label1.Text = "OSNASTKA FORM";
+            label1.Size = new Size(102, 30);
+            label1.TabIndex = 3;
+            label1.Text = "Оснастка";
             // 
             // OsnastkaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelType);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "OsnastkaForm";
@@ -56,6 +70,7 @@
 
         #endregion
 
+        private Label labelType;
         private Label label1;
     }
 }
