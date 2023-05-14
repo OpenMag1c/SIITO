@@ -28,19 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            flowLayoutPanel2 = new FlowLayoutPanel();
+            pictureBox2 = new PictureBox();
+            buttonMenu = new PictureBox();
+            sidebar = new FlowLayoutPanel();
+            instrumentContainer = new FlowLayoutPanel();
             panel6 = new Panel();
-            button5 = new Button();
+            buttonInstrument = new Button();
             panel3 = new Panel();
             button2 = new Button();
-            panel2 = new Panel();
-            button1 = new Button();
             panel4 = new Panel();
             button3 = new Button();
             panel5 = new Panel();
@@ -55,13 +54,29 @@
             button9 = new Button();
             panel11 = new Panel();
             button10 = new Button();
+            osnastkaContainer = new FlowLayoutPanel();
+            panel12 = new Panel();
+            buttonOsnastka = new Button();
+            panel13 = new Panel();
+            button11 = new Button();
+            panel14 = new Panel();
+            button12 = new Button();
+            panel15 = new Panel();
+            button13 = new Button();
+            panel16 = new Panel();
+            button14 = new Button();
+            panel2 = new Panel();
+            button1 = new Button();
+            instrumentTransition = new System.Windows.Forms.Timer(components);
+            sidebarTransition = new System.Windows.Forms.Timer(components);
+            osnastkaTransition = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonMenu).BeginInit();
+            sidebar.SuspendLayout();
+            instrumentContainer.SuspendLayout();
             panel6.SuspendLayout();
             panel3.SuspendLayout();
-            panel2.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel7.SuspendLayout();
@@ -69,6 +84,13 @@
             panel9.SuspendLayout();
             panel10.SuspendLayout();
             panel11.SuspendLayout();
+            osnastkaContainer.SuspendLayout();
+            panel12.SuspendLayout();
+            panel13.SuspendLayout();
+            panel14.SuspendLayout();
+            panel15.SuspendLayout();
+            panel16.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -76,33 +98,12 @@
             panel1.BackColor = Color.FromArgb(229, 9, 40);
             panel1.Controls.Add(nightControlBox1);
             panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(buttonMenu);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(951, 37);
+            panel1.Size = new Size(951, 34);
             panel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(30, 30);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(48, 2);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(70, 35);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
             // 
             // nightControlBox1
             // 
@@ -127,53 +128,78 @@
             nightControlBox1.Size = new Size(139, 31);
             nightControlBox1.TabIndex = 1;
             // 
-            // flowLayoutPanel1
+            // pictureBox2
             // 
-            flowLayoutPanel1.BackColor = Color.FromArgb(229, 9, 40);
-            flowLayoutPanel1.Dock = DockStyle.Left;
-            flowLayoutPanel1.Location = new Point(0, 37);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(200, 533);
-            flowLayoutPanel1.TabIndex = 1;
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(46, -1);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(70, 35);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
             // 
-            // flowLayoutPanel2
+            // buttonMenu
             // 
-            flowLayoutPanel2.BackColor = Color.FromArgb(229, 9, 40);
-            flowLayoutPanel2.Controls.Add(panel6);
-            flowLayoutPanel2.Controls.Add(panel3);
-            flowLayoutPanel2.Controls.Add(panel4);
-            flowLayoutPanel2.Controls.Add(panel5);
-            flowLayoutPanel2.Controls.Add(panel7);
-            flowLayoutPanel2.Controls.Add(panel8);
-            flowLayoutPanel2.Controls.Add(panel9);
-            flowLayoutPanel2.Controls.Add(panel10);
-            flowLayoutPanel2.Controls.Add(panel11);
-            flowLayoutPanel2.Location = new Point(349, 73);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(198, 393);
-            flowLayoutPanel2.TabIndex = 7;
+            buttonMenu.Image = (Image)resources.GetObject("buttonMenu.Image");
+            buttonMenu.Location = new Point(12, 1);
+            buttonMenu.Name = "buttonMenu";
+            buttonMenu.Size = new Size(30, 30);
+            buttonMenu.SizeMode = PictureBoxSizeMode.Zoom;
+            buttonMenu.TabIndex = 1;
+            buttonMenu.TabStop = false;
+            buttonMenu.Click += buttonMenu_Click;
+            // 
+            // sidebar
+            // 
+            sidebar.BackColor = Color.FromArgb(229, 9, 40);
+            sidebar.Controls.Add(instrumentContainer);
+            sidebar.Controls.Add(osnastkaContainer);
+            sidebar.Dock = DockStyle.Left;
+            sidebar.Location = new Point(0, 34);
+            sidebar.Name = "sidebar";
+            sidebar.Size = new Size(200, 536);
+            sidebar.TabIndex = 1;
+            // 
+            // instrumentContainer
+            // 
+            instrumentContainer.BackColor = Color.FromArgb(229, 9, 40);
+            instrumentContainer.Controls.Add(panel6);
+            instrumentContainer.Controls.Add(panel3);
+            instrumentContainer.Controls.Add(panel4);
+            instrumentContainer.Controls.Add(panel5);
+            instrumentContainer.Controls.Add(panel7);
+            instrumentContainer.Controls.Add(panel8);
+            instrumentContainer.Controls.Add(panel9);
+            instrumentContainer.Controls.Add(panel10);
+            instrumentContainer.Controls.Add(panel11);
+            instrumentContainer.Location = new Point(3, 3);
+            instrumentContainer.Name = "instrumentContainer";
+            instrumentContainer.Size = new Size(198, 43);
+            instrumentContainer.TabIndex = 7;
             // 
             // panel6
             // 
-            panel6.Controls.Add(button5);
+            panel6.Controls.Add(buttonInstrument);
             panel6.Location = new Point(0, 0);
             panel6.Margin = new Padding(0);
             panel6.Name = "panel6";
             panel6.Size = new Size(190, 43);
             panel6.TabIndex = 5;
             // 
-            // button5
+            // buttonInstrument
             // 
-            button5.BackColor = Color.FromArgb(229, 9, 40);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(-36, -27);
-            button5.Name = "button5";
-            button5.Padding = new Padding(50, 0, 0, 0);
-            button5.Size = new Size(248, 95);
-            button5.TabIndex = 2;
-            button5.Text = "Инструмент";
-            button5.TextAlign = ContentAlignment.MiddleLeft;
-            button5.UseVisualStyleBackColor = false;
+            buttonInstrument.BackColor = Color.FromArgb(229, 9, 40);
+            buttonInstrument.ForeColor = Color.White;
+            buttonInstrument.Location = new Point(-36, -27);
+            buttonInstrument.Name = "buttonInstrument";
+            buttonInstrument.Padding = new Padding(50, 0, 0, 0);
+            buttonInstrument.Size = new Size(248, 95);
+            buttonInstrument.TabIndex = 2;
+            buttonInstrument.Text = "Инструмент";
+            buttonInstrument.TextAlign = ContentAlignment.MiddleLeft;
+            buttonInstrument.UseVisualStyleBackColor = false;
+            buttonInstrument.Click += buttonInstrument_Click;
             // 
             // panel3
             // 
@@ -199,28 +225,6 @@
             button2.TextAlign = ContentAlignment.MiddleLeft;
             button2.TextImageRelation = TextImageRelation.ImageBeforeText;
             button2.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(button1);
-            panel2.Location = new Point(729, 268);
-            panel2.Margin = new Padding(0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(190, 43);
-            panel2.TabIndex = 8;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(229, 9, 40);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(-36, -27);
-            button1.Name = "button1";
-            button1.Padding = new Padding(50, 0, 0, 0);
-            button1.Size = new Size(248, 95);
-            button1.TabIndex = 2;
-            button1.Text = "Инструмент";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -397,25 +401,196 @@
             button10.TextImageRelation = TextImageRelation.ImageBeforeText;
             button10.UseVisualStyleBackColor = false;
             // 
+            // osnastkaContainer
+            // 
+            osnastkaContainer.BackColor = Color.FromArgb(229, 9, 40);
+            osnastkaContainer.Controls.Add(panel12);
+            osnastkaContainer.Controls.Add(panel13);
+            osnastkaContainer.Controls.Add(panel14);
+            osnastkaContainer.Controls.Add(panel15);
+            osnastkaContainer.Controls.Add(panel16);
+            osnastkaContainer.Location = new Point(3, 52);
+            osnastkaContainer.Name = "osnastkaContainer";
+            osnastkaContainer.Size = new Size(198, 43);
+            osnastkaContainer.TabIndex = 9;
+            // 
+            // panel12
+            // 
+            panel12.Controls.Add(buttonOsnastka);
+            panel12.Location = new Point(0, 0);
+            panel12.Margin = new Padding(0);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(190, 43);
+            panel12.TabIndex = 5;
+            // 
+            // buttonOsnastka
+            // 
+            buttonOsnastka.BackColor = Color.FromArgb(229, 9, 40);
+            buttonOsnastka.ForeColor = Color.White;
+            buttonOsnastka.Location = new Point(-36, -27);
+            buttonOsnastka.Name = "buttonOsnastka";
+            buttonOsnastka.Padding = new Padding(50, 0, 0, 0);
+            buttonOsnastka.Size = new Size(248, 95);
+            buttonOsnastka.TabIndex = 2;
+            buttonOsnastka.Text = "Оснастка";
+            buttonOsnastka.TextAlign = ContentAlignment.MiddleLeft;
+            buttonOsnastka.UseVisualStyleBackColor = false;
+            buttonOsnastka.Click += buttonOsnastka_Click;
+            // 
+            // panel13
+            // 
+            panel13.Controls.Add(button11);
+            panel13.Location = new Point(0, 43);
+            panel13.Margin = new Padding(0);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(190, 43);
+            panel13.TabIndex = 6;
+            // 
+            // button11
+            // 
+            button11.BackColor = Color.FromArgb(229, 9, 40);
+            button11.ForeColor = Color.White;
+            button11.Image = (Image)resources.GetObject("button11.Image");
+            button11.ImageAlign = ContentAlignment.MiddleLeft;
+            button11.Location = new Point(-32, -26);
+            button11.Name = "button11";
+            button11.Padding = new Padding(50, 0, 0, 0);
+            button11.Size = new Size(248, 95);
+            button11.TabIndex = 2;
+            button11.Text = "Штампы";
+            button11.TextAlign = ContentAlignment.MiddleLeft;
+            button11.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button11.UseVisualStyleBackColor = false;
+            // 
+            // panel14
+            // 
+            panel14.Controls.Add(button12);
+            panel14.Location = new Point(0, 86);
+            panel14.Margin = new Padding(0);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(190, 43);
+            panel14.TabIndex = 7;
+            // 
+            // button12
+            // 
+            button12.BackColor = Color.FromArgb(229, 9, 40);
+            button12.ForeColor = Color.White;
+            button12.Image = (Image)resources.GetObject("button12.Image");
+            button12.ImageAlign = ContentAlignment.MiddleLeft;
+            button12.Location = new Point(-32, -26);
+            button12.Name = "button12";
+            button12.Padding = new Padding(50, 0, 0, 0);
+            button12.Size = new Size(248, 95);
+            button12.TabIndex = 2;
+            button12.Text = "Пресс-формы";
+            button12.TextAlign = ContentAlignment.MiddleLeft;
+            button12.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button12.UseVisualStyleBackColor = false;
+            // 
+            // panel15
+            // 
+            panel15.Controls.Add(button13);
+            panel15.Location = new Point(0, 129);
+            panel15.Margin = new Padding(0);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(190, 43);
+            panel15.TabIndex = 8;
+            // 
+            // button13
+            // 
+            button13.BackColor = Color.FromArgb(229, 9, 40);
+            button13.ForeColor = Color.White;
+            button13.Image = (Image)resources.GetObject("button13.Image");
+            button13.ImageAlign = ContentAlignment.MiddleLeft;
+            button13.Location = new Point(-32, -26);
+            button13.Name = "button13";
+            button13.Padding = new Padding(50, 0, 0, 0);
+            button13.Size = new Size(248, 95);
+            button13.TabIndex = 2;
+            button13.Text = "Модельная оснастка";
+            button13.TextAlign = ContentAlignment.MiddleLeft;
+            button13.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button13.UseVisualStyleBackColor = false;
+            // 
+            // panel16
+            // 
+            panel16.Controls.Add(button14);
+            panel16.Location = new Point(0, 172);
+            panel16.Margin = new Padding(0);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(190, 43);
+            panel16.TabIndex = 9;
+            // 
+            // button14
+            // 
+            button14.BackColor = Color.FromArgb(229, 9, 40);
+            button14.ForeColor = Color.White;
+            button14.Image = (Image)resources.GetObject("button14.Image");
+            button14.ImageAlign = ContentAlignment.MiddleLeft;
+            button14.Location = new Point(-32, -26);
+            button14.Name = "button14";
+            button14.Padding = new Padding(50, 0, 0, 0);
+            button14.Size = new Size(248, 95);
+            button14.TabIndex = 2;
+            button14.Text = "Приспособления";
+            button14.TextAlign = ContentAlignment.MiddleLeft;
+            button14.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button14.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(button1);
+            panel2.Location = new Point(729, 268);
+            panel2.Margin = new Padding(0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(190, 43);
+            panel2.TabIndex = 8;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(229, 9, 40);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(-36, -27);
+            button1.Name = "button1";
+            button1.Padding = new Padding(50, 0, 0, 0);
+            button1.Size = new Size(248, 95);
+            button1.TabIndex = 2;
+            button1.Text = "Оснастка";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // instrumentTransition
+            // 
+            instrumentTransition.Interval = 3;
+            instrumentTransition.Tick += instrumentTransition_Tick;
+            // 
+            // sidebarTransition
+            // 
+            sidebarTransition.Interval = 10;
+            sidebarTransition.Tick += sidebarTransition_Tick;
+            // 
+            // osnastkaTransition
+            // 
+            osnastkaTransition.Interval = 3;
+            osnastkaTransition.Tick += osnastkaTransition_Tick;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(951, 570);
             Controls.Add(panel2);
-            Controls.Add(flowLayoutPanel2);
-            Controls.Add(flowLayoutPanel1);
+            Controls.Add(sidebar);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             Text = "Form1";
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            flowLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)buttonMenu).EndInit();
+            sidebar.ResumeLayout(false);
+            instrumentContainer.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel3.ResumeLayout(false);
-            panel2.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel7.ResumeLayout(false);
@@ -423,19 +598,26 @@
             panel9.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel11.ResumeLayout(false);
+            osnastkaContainer.ResumeLayout(false);
+            panel12.ResumeLayout(false);
+            panel13.ResumeLayout(false);
+            panel14.ResumeLayout(false);
+            panel15.ResumeLayout(false);
+            panel16.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private PictureBox pictureBox1;
+        private PictureBox buttonMenu;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private PictureBox pictureBox2;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private FlowLayoutPanel flowLayoutPanel2;
+        private FlowLayoutPanel sidebar;
+        private FlowLayoutPanel instrumentContainer;
         private Panel panel6;
-        private Button button5;
+        private Button buttonInstrument;
         private Panel panel3;
         private Button button2;
         private Panel panel4;
@@ -454,5 +636,19 @@
         private Button button10;
         private Panel panel2;
         private Button button1;
+        private System.Windows.Forms.Timer instrumentTransition;
+        private System.Windows.Forms.Timer sidebarTransition;
+        private FlowLayoutPanel osnastkaContainer;
+        private Panel panel12;
+        private Button buttonOsnastka;
+        private Panel panel13;
+        private Button button11;
+        private Panel panel14;
+        private Button button12;
+        private Panel panel15;
+        private Button button13;
+        private Panel panel16;
+        private Button button14;
+        private System.Windows.Forms.Timer osnastkaTransition;
     }
 }
