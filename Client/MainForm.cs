@@ -50,6 +50,10 @@ namespace Client
             {
                 osnastkaTransition.Start();
             }
+            if (addExpanded)
+            {
+                addTransition.Start();
+            }
         }
 
         bool sidebarExpand = true;
@@ -110,6 +114,10 @@ namespace Client
             {
                 instrumentTransition.Start();
             }
+            if (addExpanded)
+            {
+                addTransition.Start();
+            }
         }
 
         private void buttonCatalog_Click(object sender, EventArgs e)
@@ -133,7 +141,22 @@ namespace Client
             catalogForm = null;
         }
 
+        bool addExpanded = false;
+
         private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            addTransition.Start();
+            if (instrumentExpand)
+            {
+                instrumentTransition.Start();
+            }
+            if (osnasktaExpand)
+            {
+                osnastkaTransition.Start();
+            }
+        }
+
+        private void OpenEditForm(object sender, EventArgs e)
         {
             if (editForm == null)
             {
@@ -178,6 +201,28 @@ namespace Client
         private void buttonRezec_Click(object sender, EventArgs e)
         {
             OpenInstrumentForm(InstrumentTypeEnum.Rezci);
+        }
+
+        private void addTransition_Tick(object sender, EventArgs e)
+        {
+            if (addExpanded == false)
+            {
+                addContainer.Height += 10;
+                if (addContainer.Height >= 135)
+                {
+                    addTransition.Stop();
+                    addExpanded = true;
+                }
+            }
+            else
+            {
+                addContainer.Height -= 10;
+                if (addContainer.Height <= 43)
+                {
+                    addTransition.Stop();
+                    addExpanded = false;
+                }
+            }
         }
     }
 }

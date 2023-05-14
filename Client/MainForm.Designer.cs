@@ -67,11 +67,17 @@
             button13 = new Button();
             panel16 = new Panel();
             button14 = new Button();
-            panel17 = new Panel();
+            addContainer = new FlowLayoutPanel();
+            panel18 = new Panel();
             buttonAdd = new Button();
+            panel19 = new Panel();
+            button2 = new Button();
+            panel20 = new Panel();
+            button3 = new Button();
             instrumentTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
             osnastkaTransition = new System.Windows.Forms.Timer(components);
+            addTransition = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)buttonMenu).BeginInit();
@@ -93,7 +99,10 @@
             panel14.SuspendLayout();
             panel15.SuspendLayout();
             panel16.SuspendLayout();
-            panel17.SuspendLayout();
+            addContainer.SuspendLayout();
+            panel18.SuspendLayout();
+            panel19.SuspendLayout();
+            panel20.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -159,7 +168,7 @@
             sidebar.Controls.Add(panel2);
             sidebar.Controls.Add(instrumentContainer);
             sidebar.Controls.Add(osnastkaContainer);
-            sidebar.Controls.Add(panel17);
+            sidebar.Controls.Add(addContainer);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 34);
             sidebar.Name = "sidebar";
@@ -203,7 +212,7 @@
             instrumentContainer.Controls.Add(panel11);
             instrumentContainer.Location = new Point(3, 46);
             instrumentContainer.Name = "instrumentContainer";
-            instrumentContainer.Size = new Size(198, 414);
+            instrumentContainer.Size = new Size(198, 43);
             instrumentContainer.TabIndex = 7;
             // 
             // panel6
@@ -438,7 +447,7 @@
             osnastkaContainer.Controls.Add(panel14);
             osnastkaContainer.Controls.Add(panel15);
             osnastkaContainer.Controls.Add(panel16);
-            osnastkaContainer.Location = new Point(3, 466);
+            osnastkaContainer.Location = new Point(3, 95);
             osnastkaContainer.Name = "osnastkaContainer";
             osnastkaContainer.Size = new Size(198, 43);
             osnastkaContainer.TabIndex = 9;
@@ -566,14 +575,25 @@
             button14.TextImageRelation = TextImageRelation.ImageBeforeText;
             button14.UseVisualStyleBackColor = false;
             // 
-            // panel17
+            // addContainer
             // 
-            panel17.Controls.Add(buttonAdd);
-            panel17.Location = new Point(0, 512);
-            panel17.Margin = new Padding(0);
-            panel17.Name = "panel17";
-            panel17.Size = new Size(200, 43);
-            panel17.TabIndex = 9;
+            addContainer.BackColor = Color.FromArgb(229, 9, 40);
+            addContainer.Controls.Add(panel18);
+            addContainer.Controls.Add(panel19);
+            addContainer.Controls.Add(panel20);
+            addContainer.Location = new Point(3, 144);
+            addContainer.Name = "addContainer";
+            addContainer.Size = new Size(198, 43);
+            addContainer.TabIndex = 10;
+            // 
+            // panel18
+            // 
+            panel18.Controls.Add(buttonAdd);
+            panel18.Location = new Point(0, 0);
+            panel18.Margin = new Padding(0);
+            panel18.Name = "panel18";
+            panel18.Size = new Size(190, 43);
+            panel18.TabIndex = 5;
             // 
             // buttonAdd
             // 
@@ -589,6 +609,56 @@
             buttonAdd.UseVisualStyleBackColor = false;
             buttonAdd.Click += buttonAdd_Click;
             // 
+            // panel19
+            // 
+            panel19.Controls.Add(button2);
+            panel19.Location = new Point(0, 43);
+            panel19.Margin = new Padding(0);
+            panel19.Name = "panel19";
+            panel19.Size = new Size(190, 43);
+            panel19.TabIndex = 6;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(229, 9, 40);
+            button2.ForeColor = Color.White;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(-32, -26);
+            button2.Name = "button2";
+            button2.Padding = new Padding(50, 0, 0, 0);
+            button2.Size = new Size(248, 95);
+            button2.TabIndex = 2;
+            button2.Text = "Оснастка";
+            button2.TextAlign = ContentAlignment.MiddleLeft;
+            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // panel20
+            // 
+            panel20.Controls.Add(button3);
+            panel20.Location = new Point(0, 86);
+            panel20.Margin = new Padding(0);
+            panel20.Name = "panel20";
+            panel20.Size = new Size(190, 43);
+            panel20.TabIndex = 7;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(229, 9, 40);
+            button3.ForeColor = Color.White;
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
+            button3.Location = new Point(-32, -26);
+            button3.Name = "button3";
+            button3.Padding = new Padding(50, 0, 0, 0);
+            button3.Size = new Size(248, 95);
+            button3.TabIndex = 2;
+            button3.Text = "Инструмент";
+            button3.TextAlign = ContentAlignment.MiddleLeft;
+            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button3.UseVisualStyleBackColor = false;
+            // 
             // instrumentTransition
             // 
             instrumentTransition.Interval = 3;
@@ -603,6 +673,11 @@
             // 
             osnastkaTransition.Interval = 3;
             osnastkaTransition.Tick += osnastkaTransition_Tick;
+            // 
+            // addTransition
+            // 
+            addTransition.Interval = 3;
+            addTransition.Tick += addTransition_Tick;
             // 
             // MainForm
             // 
@@ -635,7 +710,10 @@
             panel14.ResumeLayout(false);
             panel15.ResumeLayout(false);
             panel16.ResumeLayout(false);
-            panel17.ResumeLayout(false);
+            addContainer.ResumeLayout(false);
+            panel18.ResumeLayout(false);
+            panel19.ResumeLayout(false);
+            panel20.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -680,8 +758,14 @@
         private Panel panel16;
         private Button button14;
         private System.Windows.Forms.Timer osnastkaTransition;
-        private Panel panel17;
-        private Button buttonAdd;
         private PictureBox pictureBox1;
+        private FlowLayoutPanel addContainer;
+        private Panel panel18;
+        private Button buttonAdd;
+        private Panel panel19;
+        private Button button2;
+        private Panel panel20;
+        private Button button3;
+        private System.Windows.Forms.Timer addTransition;
     }
 }

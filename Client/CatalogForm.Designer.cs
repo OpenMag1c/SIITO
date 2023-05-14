@@ -30,12 +30,14 @@
         {
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
-            button1 = new Button();
+            label5 = new Label();
             label1 = new Label();
+            label4 = new Label();
+            button1 = new Button();
             panel2 = new Panel();
+            label3 = new Label();
             label2 = new Label();
             button2 = new Button();
-            label3 = new Label();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -54,34 +56,59 @@
             // panel1
             // 
             panel1.BackColor = Color.WhiteSmoke;
+            panel1.Controls.Add(label5);
             panel1.Controls.Add(label1);
+            panel1.Controls.Add(label4);
             panel1.Controls.Add(button1);
             panel1.Location = new Point(30, 30);
             panel1.Margin = new Padding(30);
             panel1.Name = "panel1";
             panel1.Size = new Size(285, 180);
-            panel1.TabIndex = 1;
+            panel1.TabIndex = 3;
             // 
-            // button1
+            // label5
             // 
-            button1.BackgroundImage = Properties.Resources.osnastka;
-            button1.BackgroundImageLayout = ImageLayout.Zoom;
-            button1.Location = new Point(-14, -8);
-            button1.Name = "button1";
-            button1.Size = new Size(309, 160);
-            button1.TabIndex = 2;
-            button1.UseVisualStyleBackColor = true;
+            label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(3, 153);
+            label5.Name = "label5";
+            label5.Size = new Size(92, 25);
+            label5.TabIndex = 5;
+            label5.Text = "Оснастка";
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(3, 153);
+            label1.Location = new Point(2, 233);
             label1.Name = "label1";
-            label1.Size = new Size(92, 25);
-            label1.TabIndex = 3;
-            label1.Text = "Оснастка";
+            label1.Size = new Size(116, 25);
+            label1.TabIndex = 4;
+            label1.Text = "Инструмент";
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(3, 313);
+            label4.Name = "label4";
+            label4.Size = new Size(92, 25);
+            label4.TabIndex = 3;
+            label4.Text = "Оснастка";
+            // 
+            // button1
+            // 
+            button1.BackgroundImage = Properties.Resources.osnastka;
+            button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.CausesValidation = false;
+            button1.Location = new Point(-14, -6);
+            button1.Name = "button1";
+            button1.Size = new Size(309, 160);
+            button1.TabIndex = 2;
+            button1.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -94,6 +121,17 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(285, 180);
             panel2.TabIndex = 2;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(2, 153);
+            label3.Name = "label3";
+            label3.Size = new Size(116, 25);
+            label3.TabIndex = 4;
+            label3.Text = "Инструмент";
             // 
             // label2
             // 
@@ -110,22 +148,12 @@
             // 
             button2.BackgroundImage = Properties.Resources.instrument;
             button2.BackgroundImageLayout = ImageLayout.Zoom;
-            button2.Location = new Point(-14, -8);
+            button2.CausesValidation = false;
+            button2.Location = new Point(-14, -6);
             button2.Name = "button2";
             button2.Size = new Size(309, 160);
             button2.TabIndex = 2;
             button2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(2, 153);
-            label3.Name = "label3";
-            label3.Size = new Size(116, 25);
-            label3.TabIndex = 4;
-            label3.Text = "Инструмент";
             // 
             // CatalogForm
             // 
@@ -149,12 +177,14 @@
         #endregion
 
         private FlowLayoutPanel flowLayoutPanel1;
-        private Panel panel1;
-        private Label label1;
-        private Button button1;
         private Panel panel2;
         private Label label3;
         private Label label2;
         private Button button2;
+        private Panel panel1;
+        private Label label5;
+        private Label label1;
+        private Label label4;
+        private Button button1;
     }
 }
