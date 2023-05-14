@@ -71,9 +71,9 @@
             panel18 = new Panel();
             buttonAdd = new Button();
             panel19 = new Panel();
-            button2 = new Button();
+            addOsnastka = new Button();
             panel20 = new Panel();
-            button3 = new Button();
+            addInstrument = new Button();
             instrumentTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
             osnastkaTransition = new System.Windows.Forms.Timer(components);
@@ -611,53 +611,55 @@
             // 
             // panel19
             // 
-            panel19.Controls.Add(button2);
+            panel19.Controls.Add(addOsnastka);
             panel19.Location = new Point(0, 43);
             panel19.Margin = new Padding(0);
             panel19.Name = "panel19";
             panel19.Size = new Size(190, 43);
             panel19.TabIndex = 6;
             // 
-            // button2
+            // addOsnastka
             // 
-            button2.BackColor = Color.FromArgb(229, 9, 40);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(-32, -26);
-            button2.Name = "button2";
-            button2.Padding = new Padding(50, 0, 0, 0);
-            button2.Size = new Size(248, 95);
-            button2.TabIndex = 2;
-            button2.Text = "Оснастка";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = false;
+            addOsnastka.BackColor = Color.FromArgb(229, 9, 40);
+            addOsnastka.ForeColor = Color.White;
+            addOsnastka.Image = (Image)resources.GetObject("addOsnastka.Image");
+            addOsnastka.ImageAlign = ContentAlignment.MiddleLeft;
+            addOsnastka.Location = new Point(-32, -26);
+            addOsnastka.Name = "addOsnastka";
+            addOsnastka.Padding = new Padding(50, 0, 0, 0);
+            addOsnastka.Size = new Size(248, 95);
+            addOsnastka.TabIndex = 2;
+            addOsnastka.Text = "Оснастка";
+            addOsnastka.TextAlign = ContentAlignment.MiddleLeft;
+            addOsnastka.TextImageRelation = TextImageRelation.ImageBeforeText;
+            addOsnastka.UseVisualStyleBackColor = false;
+            addOsnastka.Click += addOsnastka_Click;
             // 
             // panel20
             // 
-            panel20.Controls.Add(button3);
+            panel20.Controls.Add(addInstrument);
             panel20.Location = new Point(0, 86);
             panel20.Margin = new Padding(0);
             panel20.Name = "panel20";
             panel20.Size = new Size(190, 43);
             panel20.TabIndex = 7;
             // 
-            // button3
+            // addInstrument
             // 
-            button3.BackColor = Color.FromArgb(229, 9, 40);
-            button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(-32, -26);
-            button3.Name = "button3";
-            button3.Padding = new Padding(50, 0, 0, 0);
-            button3.Size = new Size(248, 95);
-            button3.TabIndex = 2;
-            button3.Text = "Инструмент";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor = false;
+            addInstrument.BackColor = Color.FromArgb(229, 9, 40);
+            addInstrument.ForeColor = Color.White;
+            addInstrument.Image = (Image)resources.GetObject("addInstrument.Image");
+            addInstrument.ImageAlign = ContentAlignment.MiddleLeft;
+            addInstrument.Location = new Point(-32, -26);
+            addInstrument.Name = "addInstrument";
+            addInstrument.Padding = new Padding(50, 0, 0, 0);
+            addInstrument.Size = new Size(248, 95);
+            addInstrument.TabIndex = 2;
+            addInstrument.Text = "Инструмент";
+            addInstrument.TextAlign = ContentAlignment.MiddleLeft;
+            addInstrument.TextImageRelation = TextImageRelation.ImageBeforeText;
+            addInstrument.UseVisualStyleBackColor = false;
+            addInstrument.Click += addInstrument_Click;
             // 
             // instrumentTransition
             // 
@@ -763,9 +765,9 @@
         private Panel panel18;
         private Button buttonAdd;
         private Panel panel19;
-        private Button button2;
+        private Button addOsnastka;
         private Panel panel20;
-        private Button button3;
+        private Button addInstrument;
         private System.Windows.Forms.Timer addTransition;
     }
 }

@@ -35,6 +35,6 @@ public class OsnastkaConfig : IEntityTypeConfiguration<Osnastka>
 
         entity.HasOne(x => x.OsnastkaType)
             .WithMany(x => x.Osnastkas)
-            .HasForeignKey("OsnastkaTypeId");
+            .HasForeignKey(x => x.OsnastkaTypeId);
     }
 }

@@ -47,11 +47,11 @@ public class InstrumentConfig : IEntityTypeConfiguration<Instrument>
 
         entity.HasOne(x => x.InstrumentType)
             .WithMany(x => x.Instruments)
-            .HasForeignKey("InstrumentTypeId");
+            .HasForeignKey(x => x.InstrumentTypeId);
 
         entity.HasOne(x => x.Gost)
             .WithMany(x => x.Instruments)
-            .HasForeignKey("GostId")
+            .HasForeignKey(x => x.GostId)
             .IsRequired(false);
     }
 }

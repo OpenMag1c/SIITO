@@ -7,7 +7,7 @@ namespace Client
         CatalogForm catalogForm;
         InstrumentForm instrumentForm;
         OsnastkaForm osnastkaForm;
-        EditForm editForm;
+        EditInstrumentForm editInstrumentForm;
 
         public MainForm()
         {
@@ -156,27 +156,6 @@ namespace Client
             }
         }
 
-        private void OpenEditForm(object sender, EventArgs e)
-        {
-            if (editForm == null)
-            {
-                editForm = new EditForm();
-                editForm.FormClosed += EditForm_FormClosed;
-                editForm.MdiParent = this;
-                editForm.Dock = DockStyle.Fill;
-                editForm.Show();
-            }
-            else
-            {
-                editForm.Activate();
-            }
-        }
-
-        private void EditForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            editForm = null;
-        }
-
         public void OpenInstrumentForm(InstrumentTypeEnum instrumentType)
         {
             if (instrumentForm == null)
@@ -223,6 +202,33 @@ namespace Client
                     addExpanded = false;
                 }
             }
+        }
+
+        private void addOsnastka_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addInstrument_Click(object sender, EventArgs e)
+        {
+            if (editInstrumentForm == null)
+            {
+                editInstrumentForm = new EditInstrumentForm(Enums.ActionType.Create);
+                editInstrumentForm.FormClosed += EditInstrumentForm_FormClosed;
+                editInstrumentForm.MdiParent = this;
+                editInstrumentForm.Dock = DockStyle.Fill;
+                editInstrumentForm.Show();
+            }
+            else
+            {
+                editInstrumentForm.Activate();
+            }
+        }
+
+        private void EditInstrumentForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            editInstrumentForm = null;
+            OpenInstrumentForm(InstrumentTypeEnum.All);
         }
     }
 }
