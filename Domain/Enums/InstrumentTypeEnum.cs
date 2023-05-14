@@ -8,5 +8,6 @@ public enum InstrumentTypeEnum : int
     Zenkeri,
     Metchiki,
     Razvertki,
-    InstrumentMechKreplenie
+    InstrumentMechKreplenie,
+    All = -1,
 }

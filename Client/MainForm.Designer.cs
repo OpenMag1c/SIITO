@@ -41,21 +41,21 @@
             panel6 = new Panel();
             buttonInstrument = new Button();
             panel3 = new Panel();
-            button2 = new Button();
+            buttonRezec = new Button();
             panel4 = new Panel();
-            button3 = new Button();
+            buttonProtyajki = new Button();
             panel5 = new Panel();
-            button4 = new Button();
+            buttonFreza = new Button();
             panel7 = new Panel();
-            button6 = new Button();
+            buttonRoliki = new Button();
             panel8 = new Panel();
-            button7 = new Button();
+            buttonZenkeri = new Button();
             panel9 = new Panel();
-            button8 = new Button();
+            buttonMetchiki = new Button();
             panel10 = new Panel();
-            button9 = new Button();
+            buttonRazvertki = new Button();
             panel11 = new Panel();
-            button10 = new Button();
+            buttonMechanical = new Button();
             osnastkaContainer = new FlowLayoutPanel();
             panel12 = new Panel();
             buttonOsnastka = new Button();
@@ -203,7 +203,7 @@
             instrumentContainer.Controls.Add(panel11);
             instrumentContainer.Location = new Point(3, 46);
             instrumentContainer.Name = "instrumentContainer";
-            instrumentContainer.Size = new Size(198, 43);
+            instrumentContainer.Size = new Size(198, 414);
             instrumentContainer.TabIndex = 7;
             // 
             // panel6
@@ -231,203 +231,204 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(button2);
+            panel3.Controls.Add(buttonRezec);
             panel3.Location = new Point(0, 43);
             panel3.Margin = new Padding(0);
             panel3.Name = "panel3";
             panel3.Size = new Size(190, 43);
             panel3.TabIndex = 6;
             // 
-            // button2
+            // buttonRezec
             // 
-            button2.BackColor = Color.FromArgb(229, 9, 40);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(-32, -26);
-            button2.Name = "button2";
-            button2.Padding = new Padding(50, 0, 0, 0);
-            button2.Size = new Size(248, 95);
-            button2.TabIndex = 2;
-            button2.Text = "Резцы";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = false;
+            buttonRezec.BackColor = Color.FromArgb(229, 9, 40);
+            buttonRezec.ForeColor = Color.White;
+            buttonRezec.Image = (Image)resources.GetObject("buttonRezec.Image");
+            buttonRezec.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonRezec.Location = new Point(-32, -26);
+            buttonRezec.Name = "buttonRezec";
+            buttonRezec.Padding = new Padding(50, 0, 0, 0);
+            buttonRezec.Size = new Size(248, 95);
+            buttonRezec.TabIndex = 2;
+            buttonRezec.Text = "Резцы";
+            buttonRezec.TextAlign = ContentAlignment.MiddleLeft;
+            buttonRezec.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonRezec.UseVisualStyleBackColor = false;
+            buttonRezec.Click += buttonRezec_Click;
             // 
             // panel4
             // 
-            panel4.Controls.Add(button3);
+            panel4.Controls.Add(buttonProtyajki);
             panel4.Location = new Point(0, 86);
             panel4.Margin = new Padding(0);
             panel4.Name = "panel4";
             panel4.Size = new Size(190, 43);
             panel4.TabIndex = 7;
             // 
-            // button3
+            // buttonProtyajki
             // 
-            button3.BackColor = Color.FromArgb(229, 9, 40);
-            button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(-32, -26);
-            button3.Name = "button3";
-            button3.Padding = new Padding(50, 0, 0, 0);
-            button3.Size = new Size(248, 95);
-            button3.TabIndex = 2;
-            button3.Text = "Протяжки";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor = false;
+            buttonProtyajki.BackColor = Color.FromArgb(229, 9, 40);
+            buttonProtyajki.ForeColor = Color.White;
+            buttonProtyajki.Image = (Image)resources.GetObject("buttonProtyajki.Image");
+            buttonProtyajki.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonProtyajki.Location = new Point(-32, -26);
+            buttonProtyajki.Name = "buttonProtyajki";
+            buttonProtyajki.Padding = new Padding(50, 0, 0, 0);
+            buttonProtyajki.Size = new Size(248, 95);
+            buttonProtyajki.TabIndex = 2;
+            buttonProtyajki.Text = "Протяжки";
+            buttonProtyajki.TextAlign = ContentAlignment.MiddleLeft;
+            buttonProtyajki.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonProtyajki.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
-            panel5.Controls.Add(button4);
+            panel5.Controls.Add(buttonFreza);
             panel5.Location = new Point(0, 129);
             panel5.Margin = new Padding(0);
             panel5.Name = "panel5";
             panel5.Size = new Size(190, 43);
             panel5.TabIndex = 8;
             // 
-            // button4
+            // buttonFreza
             // 
-            button4.BackColor = Color.FromArgb(229, 9, 40);
-            button4.ForeColor = Color.White;
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(-32, -26);
-            button4.Name = "button4";
-            button4.Padding = new Padding(50, 0, 0, 0);
-            button4.Size = new Size(248, 95);
-            button4.TabIndex = 2;
-            button4.Text = "Фрезы";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button4.UseVisualStyleBackColor = false;
+            buttonFreza.BackColor = Color.FromArgb(229, 9, 40);
+            buttonFreza.ForeColor = Color.White;
+            buttonFreza.Image = (Image)resources.GetObject("buttonFreza.Image");
+            buttonFreza.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonFreza.Location = new Point(-32, -26);
+            buttonFreza.Name = "buttonFreza";
+            buttonFreza.Padding = new Padding(50, 0, 0, 0);
+            buttonFreza.Size = new Size(248, 95);
+            buttonFreza.TabIndex = 2;
+            buttonFreza.Text = "Фрезы";
+            buttonFreza.TextAlign = ContentAlignment.MiddleLeft;
+            buttonFreza.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonFreza.UseVisualStyleBackColor = false;
             // 
             // panel7
             // 
-            panel7.Controls.Add(button6);
+            panel7.Controls.Add(buttonRoliki);
             panel7.Location = new Point(0, 172);
             panel7.Margin = new Padding(0);
             panel7.Name = "panel7";
             panel7.Size = new Size(190, 43);
             panel7.TabIndex = 9;
             // 
-            // button6
+            // buttonRoliki
             // 
-            button6.BackColor = Color.FromArgb(229, 9, 40);
-            button6.ForeColor = Color.White;
-            button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(-32, -26);
-            button6.Name = "button6";
-            button6.Padding = new Padding(50, 0, 0, 0);
-            button6.Size = new Size(248, 95);
-            button6.TabIndex = 2;
-            button6.Text = "Ролики резьбонакатные";
-            button6.TextAlign = ContentAlignment.MiddleLeft;
-            button6.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button6.UseVisualStyleBackColor = false;
+            buttonRoliki.BackColor = Color.FromArgb(229, 9, 40);
+            buttonRoliki.ForeColor = Color.White;
+            buttonRoliki.Image = (Image)resources.GetObject("buttonRoliki.Image");
+            buttonRoliki.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonRoliki.Location = new Point(-32, -26);
+            buttonRoliki.Name = "buttonRoliki";
+            buttonRoliki.Padding = new Padding(50, 0, 0, 0);
+            buttonRoliki.Size = new Size(248, 95);
+            buttonRoliki.TabIndex = 2;
+            buttonRoliki.Text = "Ролики резьбонакатные";
+            buttonRoliki.TextAlign = ContentAlignment.MiddleLeft;
+            buttonRoliki.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonRoliki.UseVisualStyleBackColor = false;
             // 
             // panel8
             // 
-            panel8.Controls.Add(button7);
+            panel8.Controls.Add(buttonZenkeri);
             panel8.Location = new Point(0, 215);
             panel8.Margin = new Padding(0);
             panel8.Name = "panel8";
             panel8.Size = new Size(190, 43);
             panel8.TabIndex = 10;
             // 
-            // button7
+            // buttonZenkeri
             // 
-            button7.BackColor = Color.FromArgb(229, 9, 40);
-            button7.ForeColor = Color.White;
-            button7.Image = (Image)resources.GetObject("button7.Image");
-            button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(-32, -26);
-            button7.Name = "button7";
-            button7.Padding = new Padding(50, 0, 0, 0);
-            button7.Size = new Size(248, 95);
-            button7.TabIndex = 2;
-            button7.Text = "Зенкеры";
-            button7.TextAlign = ContentAlignment.MiddleLeft;
-            button7.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button7.UseVisualStyleBackColor = false;
+            buttonZenkeri.BackColor = Color.FromArgb(229, 9, 40);
+            buttonZenkeri.ForeColor = Color.White;
+            buttonZenkeri.Image = (Image)resources.GetObject("buttonZenkeri.Image");
+            buttonZenkeri.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonZenkeri.Location = new Point(-32, -26);
+            buttonZenkeri.Name = "buttonZenkeri";
+            buttonZenkeri.Padding = new Padding(50, 0, 0, 0);
+            buttonZenkeri.Size = new Size(248, 95);
+            buttonZenkeri.TabIndex = 2;
+            buttonZenkeri.Text = "Зенкеры";
+            buttonZenkeri.TextAlign = ContentAlignment.MiddleLeft;
+            buttonZenkeri.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonZenkeri.UseVisualStyleBackColor = false;
             // 
             // panel9
             // 
-            panel9.Controls.Add(button8);
+            panel9.Controls.Add(buttonMetchiki);
             panel9.Location = new Point(0, 258);
             panel9.Margin = new Padding(0);
             panel9.Name = "panel9";
             panel9.Size = new Size(190, 43);
             panel9.TabIndex = 11;
             // 
-            // button8
+            // buttonMetchiki
             // 
-            button8.BackColor = Color.FromArgb(229, 9, 40);
-            button8.ForeColor = Color.White;
-            button8.Image = (Image)resources.GetObject("button8.Image");
-            button8.ImageAlign = ContentAlignment.MiddleLeft;
-            button8.Location = new Point(-32, -26);
-            button8.Name = "button8";
-            button8.Padding = new Padding(50, 0, 0, 0);
-            button8.Size = new Size(248, 95);
-            button8.TabIndex = 2;
-            button8.Text = "Метчики";
-            button8.TextAlign = ContentAlignment.MiddleLeft;
-            button8.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button8.UseVisualStyleBackColor = false;
+            buttonMetchiki.BackColor = Color.FromArgb(229, 9, 40);
+            buttonMetchiki.ForeColor = Color.White;
+            buttonMetchiki.Image = (Image)resources.GetObject("buttonMetchiki.Image");
+            buttonMetchiki.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonMetchiki.Location = new Point(-32, -26);
+            buttonMetchiki.Name = "buttonMetchiki";
+            buttonMetchiki.Padding = new Padding(50, 0, 0, 0);
+            buttonMetchiki.Size = new Size(248, 95);
+            buttonMetchiki.TabIndex = 2;
+            buttonMetchiki.Text = "Метчики";
+            buttonMetchiki.TextAlign = ContentAlignment.MiddleLeft;
+            buttonMetchiki.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonMetchiki.UseVisualStyleBackColor = false;
             // 
             // panel10
             // 
-            panel10.Controls.Add(button9);
+            panel10.Controls.Add(buttonRazvertki);
             panel10.Location = new Point(0, 301);
             panel10.Margin = new Padding(0);
             panel10.Name = "panel10";
             panel10.Size = new Size(190, 43);
             panel10.TabIndex = 12;
             // 
-            // button9
+            // buttonRazvertki
             // 
-            button9.BackColor = Color.FromArgb(229, 9, 40);
-            button9.ForeColor = Color.White;
-            button9.Image = (Image)resources.GetObject("button9.Image");
-            button9.ImageAlign = ContentAlignment.MiddleLeft;
-            button9.Location = new Point(-32, -26);
-            button9.Name = "button9";
-            button9.Padding = new Padding(50, 0, 0, 0);
-            button9.Size = new Size(248, 95);
-            button9.TabIndex = 2;
-            button9.Text = "Развертки";
-            button9.TextAlign = ContentAlignment.MiddleLeft;
-            button9.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button9.UseVisualStyleBackColor = false;
+            buttonRazvertki.BackColor = Color.FromArgb(229, 9, 40);
+            buttonRazvertki.ForeColor = Color.White;
+            buttonRazvertki.Image = (Image)resources.GetObject("buttonRazvertki.Image");
+            buttonRazvertki.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonRazvertki.Location = new Point(-32, -26);
+            buttonRazvertki.Name = "buttonRazvertki";
+            buttonRazvertki.Padding = new Padding(50, 0, 0, 0);
+            buttonRazvertki.Size = new Size(248, 95);
+            buttonRazvertki.TabIndex = 2;
+            buttonRazvertki.Text = "Развертки";
+            buttonRazvertki.TextAlign = ContentAlignment.MiddleLeft;
+            buttonRazvertki.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonRazvertki.UseVisualStyleBackColor = false;
             // 
             // panel11
             // 
-            panel11.Controls.Add(button10);
+            panel11.Controls.Add(buttonMechanical);
             panel11.Location = new Point(0, 344);
             panel11.Margin = new Padding(0);
             panel11.Name = "panel11";
             panel11.Size = new Size(190, 43);
             panel11.TabIndex = 13;
             // 
-            // button10
+            // buttonMechanical
             // 
-            button10.BackColor = Color.FromArgb(229, 9, 40);
-            button10.ForeColor = Color.White;
-            button10.Image = (Image)resources.GetObject("button10.Image");
-            button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.Location = new Point(-32, -26);
-            button10.Name = "button10";
-            button10.Padding = new Padding(50, 0, 0, 0);
-            button10.Size = new Size(248, 95);
-            button10.TabIndex = 2;
-            button10.Text = "Инструмент с\r\nмеханическим\r\nкреплением\r\n";
-            button10.TextAlign = ContentAlignment.MiddleLeft;
-            button10.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button10.UseVisualStyleBackColor = false;
+            buttonMechanical.BackColor = Color.FromArgb(229, 9, 40);
+            buttonMechanical.ForeColor = Color.White;
+            buttonMechanical.Image = (Image)resources.GetObject("buttonMechanical.Image");
+            buttonMechanical.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonMechanical.Location = new Point(-32, -26);
+            buttonMechanical.Name = "buttonMechanical";
+            buttonMechanical.Padding = new Padding(50, 0, 0, 0);
+            buttonMechanical.Size = new Size(248, 95);
+            buttonMechanical.TabIndex = 2;
+            buttonMechanical.Text = "Инструмент с\r\nмеханическим\r\nкреплением\r\n";
+            buttonMechanical.TextAlign = ContentAlignment.MiddleLeft;
+            buttonMechanical.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonMechanical.UseVisualStyleBackColor = false;
             // 
             // osnastkaContainer
             // 
@@ -437,7 +438,7 @@
             osnastkaContainer.Controls.Add(panel14);
             osnastkaContainer.Controls.Add(panel15);
             osnastkaContainer.Controls.Add(panel16);
-            osnastkaContainer.Location = new Point(3, 95);
+            osnastkaContainer.Location = new Point(3, 466);
             osnastkaContainer.Name = "osnastkaContainer";
             osnastkaContainer.Size = new Size(198, 43);
             osnastkaContainer.TabIndex = 9;
@@ -568,7 +569,7 @@
             // panel17
             // 
             panel17.Controls.Add(buttonAdd);
-            panel17.Location = new Point(0, 141);
+            panel17.Location = new Point(0, 512);
             panel17.Margin = new Padding(0);
             panel17.Name = "panel17";
             panel17.Size = new Size(200, 43);
@@ -648,21 +649,21 @@
         private Panel panel6;
         private Button buttonInstrument;
         private Panel panel3;
-        private Button button2;
+        private Button buttonRezec;
         private Panel panel4;
-        private Button button3;
+        private Button buttonProtyajki;
         private Panel panel5;
-        private Button button4;
+        private Button buttonFreza;
         private Panel panel7;
-        private Button button6;
+        private Button buttonRoliki;
         private Panel panel8;
-        private Button button7;
+        private Button buttonZenkeri;
         private Panel panel9;
-        private Button button8;
+        private Button buttonMetchiki;
         private Panel panel10;
-        private Button button9;
+        private Button buttonRazvertki;
         private Panel panel11;
-        private Button button10;
+        private Button buttonMechanical;
         private Panel panel2;
         private Button buttonСatalog;
         private System.Windows.Forms.Timer instrumentTransition;

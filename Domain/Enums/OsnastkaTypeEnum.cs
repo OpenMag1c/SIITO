@@ -4,5 +4,6 @@ public enum OsnastkaTypeEnum : int
     Shtampi = 1,
     PressFormi,
     ModelOsnastka,
-    Prisposoblenie
+    Prisposoblenie,
+    All = -1
 }

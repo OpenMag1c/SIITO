@@ -29,22 +29,36 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            labelType = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(320, 187);
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(114, 15);
+            label1.Size = new Size(144, 30);
             label1.TabIndex = 1;
-            label1.Text = "INSTRUMENT FORM";
+            label1.Text = "Инструменты";
+            // 
+            // labelType
+            // 
+            labelType.AutoSize = true;
+            labelType.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelType.Location = new Point(148, 9);
+            labelType.Name = "labelType";
+            labelType.Size = new Size(60, 30);
+            labelType.TabIndex = 2;
+            labelType.Text = "/ тип";
+            labelType.Visible = false;
             // 
             // InstrumentForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelType);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "InstrumentForm";
@@ -57,5 +71,6 @@
         #endregion
 
         private Label label1;
+        private Label labelType;
     }
 }

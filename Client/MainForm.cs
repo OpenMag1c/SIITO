@@ -1,3 +1,5 @@
+using Domain.Enums;
+
 namespace Client
 {
     public partial class MainForm : Form
@@ -10,6 +12,11 @@ namespace Client
         public MainForm()
         {
             InitializeComponent();
+            catalogForm = new CatalogForm();
+            catalogForm.FormClosed += CatalogForm_FormClosed;
+            catalogForm.MdiParent = this;
+            catalogForm.Dock = DockStyle.Fill;
+            catalogForm.Show();
         }
 
         bool instrumentExpand = false;
@@ -145,6 +152,32 @@ namespace Client
         private void EditForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             editForm = null;
+        }
+
+        public void OpenInstrumentForm(InstrumentTypeEnum instrumentType)
+        {
+            if (instrumentForm == null)
+            {
+                instrumentForm = new InstrumentForm(instrumentType);
+                instrumentForm.FormClosed += InstrumentForm_FormClosed;
+                instrumentForm.MdiParent = this;
+                instrumentForm.Dock = DockStyle.Fill;
+                instrumentForm.Show();
+            }
+            else
+            {
+                instrumentForm.Activate();
+            }
+        }
+
+        private void InstrumentForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instrumentForm = null;
+        }
+
+        private void buttonRezec_Click(object sender, EventArgs e)
+        {
+            OpenInstrumentForm(InstrumentTypeEnum.Rezci);
         }
     }
 }
