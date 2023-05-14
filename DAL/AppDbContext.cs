@@ -1,4 +1,5 @@
 ﻿using DAL.Configurations;
+using DAL.Interceptors;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,7 +14,16 @@ public class AppDbContext : DbContext
     public DbSet<OsnastkaType> OsnastkaTypes { get; set; }
 
     public AppDbContext(DbContextOptions options) : base(options)
-    { }
+    {
+
+    }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.AddInterceptors(new AuditInterceptor());
+
+        base.OnConfiguring(optionsBuilder);
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
