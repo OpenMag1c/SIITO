@@ -27,7 +27,7 @@ public class InstrumentConfig : IEntityTypeConfiguration<Instrument>
 
         entity.Property(e => e.Picture)
             .HasColumnName("Picture")
-            .IsRequired();
+            .IsRequired(false);
 
         entity.Property(e => e.Measure)
             .HasColumnName("Measure")
@@ -51,6 +51,7 @@ public class InstrumentConfig : IEntityTypeConfiguration<Instrument>
 
         entity.HasOne(x => x.Gost)
             .WithMany(x => x.Instruments)
-            .HasForeignKey("GostId");
+            .HasForeignKey("GostId")
+            .IsRequired(false);
     }
 }

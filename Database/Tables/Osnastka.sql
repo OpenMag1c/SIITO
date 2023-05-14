@@ -3,7 +3,7 @@
 	[OsnastkaId] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
     [Name] NVARCHAR(256) NOT NULL, 
     [Description] NVARCHAR(MAX) NOT NULL, 
-    [Picture] VARBINARY(MAX) NOT NULL, 
+    [Picture] VARBINARY(MAX) NULL, 
     [OsnastkaTypeId] INT NOT NULL,
     [CreatedAt] DATETIME2 NULL, 
     [UpdatedAt] DATETIME2 NULL, 
