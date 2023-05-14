@@ -3,91 +3,85 @@ using DAL;
 using Domain.Entities;
 using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Client
+namespace Client;
+
+public partial class InstrumentForm : Form
 {
-    public partial class InstrumentForm : Form
+    private readonly AppDbContext context = new AppDbContext(Program.ContextOptions);
+
+    private List<Instrument> Instruments;
+    private readonly InstrumentTypeEnum InstrumentType;
+
+    public InstrumentForm(InstrumentTypeEnum instrumentType = InstrumentTypeEnum.All)
     {
-        List<Instrument> instruments;
-        private readonly AppDbContext context = new AppDbContext(Program.ContextOptions);
-        public InstrumentTypeEnum instrumentType { get; set; }
+        InstrumentType = instrumentType;
+        InitializeComponent();
+    }
 
-        public InstrumentForm(InstrumentTypeEnum instrumentType = InstrumentTypeEnum.All)
+    public static string GetInstrumentTypeName(InstrumentTypeEnum instrumentType)
+    {
+        switch (instrumentType)
         {
-            InitializeComponent();
-            GetInstruments(instrumentType);
-            SetPath(instrumentType);
+            case InstrumentTypeEnum.Rezci:
+                return "Резцы";
+            case InstrumentTypeEnum.Protyazhki:
+                return "Протяжки";
+            case InstrumentTypeEnum.Frezi:
+                return "Фрезы";
+            case InstrumentTypeEnum.RolikiRezb:
+                return "Ролики резьбонакатные";
+            case InstrumentTypeEnum.Zenkeri:
+                return "Зенкеры";
+            case InstrumentTypeEnum.Metchiki:
+                return "Метчики";
+            case InstrumentTypeEnum.Razvertki:
+                return "Развертки";
+            case InstrumentTypeEnum.InstrumentMechKreplenie:
+                return "Инструмент с механическим креплением";
+            default:
+                return "";
         }
+    }
 
-        public static string getInstrumentTypeName(InstrumentTypeEnum instrumentType)
+    private void InstrumentForm_Load(object sender, EventArgs e)
+    {
+        this.ControlBox = false;
+
+        SetPath(InstrumentType);
+
+        GetInstruments(InstrumentType);
+        PopulateInstruments();
+    }
+
+    private void PopulateInstruments()
+    {
+        Instruments.ForEach(instrument =>
         {
-            switch (instrumentType)
-            {
-                case InstrumentTypeEnum.Rezci:
-                    return "Резцы";
-                case InstrumentTypeEnum.Protyazhki:
-                    return "Протяжки";
-                case InstrumentTypeEnum.Frezi:
-                    return "Фрезы";
-                case InstrumentTypeEnum.RolikiRezb:
-                    return "Ролики резьбонакатные";
-                case InstrumentTypeEnum.Zenkeri:
-                    return "Зенкеры";
-                case InstrumentTypeEnum.Metchiki:
-                    return "Метчики";
-                case InstrumentTypeEnum.Razvertki:
-                    return "Развертки";
-                case InstrumentTypeEnum.InstrumentMechKreplenie:
-                    return "Инструмент с механическим креплением";
-                default:
-                    return "";
-            }
+            instrumentsContainer.Controls.Add(new InstrumentCard(instrument));
+        });
+    }
+
+    private void GetInstruments(InstrumentTypeEnum instrumentType)
+    {
+        var data = context.Instruments.AsNoTracking().Include(x => x.InstrumentType).Include(x => x.Gost);
+        if (instrumentType == InstrumentTypeEnum.All)
+        {
+            Instruments = data.ToList();
         }
-
-        private void InstrumentForm_Load(object sender, EventArgs e)
+        else
         {
-            this.ControlBox = false;
-            PopulateInstruments();
+            Instruments = data.Where(x => x.InstrumentTypeId == (int)instrumentType).ToList();
         }
+    }
 
-        private void PopulateInstruments()
+    public void SetPath(InstrumentTypeEnum instrumentType)
+    {
+        if (instrumentType != InstrumentTypeEnum.All)
         {
-            instruments.ForEach(instr =>
-            {
-                instrumentsContainer.Controls.Add(new InstrumentCard(instr));
-            });
-        }
-
-        private void GetInstruments(InstrumentTypeEnum instrumentType)
-        {
-            var data = context.Instruments.Include(x => x.InstrumentType).Include(x => x.Gost);
-            if (instrumentType == InstrumentTypeEnum.All)
-            {
-                this.instruments = data.ToList();
-            }
-            else
-            {
-                this.instruments = data.Where(x => x.InstrumentType.Id == (int)instrumentType).ToList();
-            }
-        }
-
-        public void SetPath(InstrumentTypeEnum instrumentType)
-        {
-            this.instrumentType = instrumentType;
-            if (instrumentType != InstrumentTypeEnum.All)
-            {
-                labelType.Visible = true;
-                labelType.Text = "/ " + getInstrumentTypeName(instrumentType);
-            }
+            labelType.Visible = true;
+            labelType.Text = "/ " + GetInstrumentTypeName(instrumentType);
         }
     }
 }

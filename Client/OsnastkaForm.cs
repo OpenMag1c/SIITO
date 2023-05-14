@@ -1,55 +1,74 @@
-﻿using Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using DAL;
+using Domain.Entities;
+using Domain.Enums;
+using Microsoft.EntityFrameworkCore;
 
-namespace Client
+namespace Client;
+
+public partial class OsnastkaForm : Form
 {
-    public partial class OsnastkaForm : Form
+    private readonly AppDbContext context = new AppDbContext(Program.ContextOptions);
+
+    private List<Osnastka> Osnastkas;
+    private readonly OsnastkaTypeEnum OsnastkaType;
+
+    public OsnastkaForm(OsnastkaTypeEnum osnastkaType)
     {
-        public OsnastkaTypeEnum osnastkaType { get; set; }
-        public OsnastkaForm(OsnastkaTypeEnum osnastkaType)
-        {
-            InitializeComponent();
-            SetPath(osnastkaType);
-        }
+        OsnastkaType = osnastkaType;
+        InitializeComponent();
+    }
 
-        private void OsnastkaForm_Load(object sender, EventArgs e)
-        {
-            this.ControlBox = false;
-        }
+    private void OsnastkaForm_Load(object sender, EventArgs e)
+    {
+        this.ControlBox = false;
 
-        public string getOsnastkaTypeName(OsnastkaTypeEnum osnastkaType)
-        {
-            switch (osnastkaType)
-            {
-                case OsnastkaTypeEnum.Shtampi:
-                    return "Штампы";
-                case OsnastkaTypeEnum.PressFormi:
-                    return "Пресс-формы";
-                case OsnastkaTypeEnum.ModelOsnastka:
-                    return "Модельная оснастка";
-                case OsnastkaTypeEnum.Prisposoblenie:
-                    return "Приспособления";
-                default:
-                    return "";
-            }
-        }
+        SetPath(OsnastkaType);
 
-        public void SetPath(OsnastkaTypeEnum osnastkaType)
+        GetOsnastkas(OsnastkaType);
+        PopulateOsnastkas();
+    }
+
+    public string getOsnastkaTypeName(OsnastkaTypeEnum osnastkaType)
+    {
+        switch (osnastkaType)
         {
-            this.osnastkaType = osnastkaType;
-            if (osnastkaType != OsnastkaTypeEnum.All)
-            {
-                labelType.Visible = true;
-                labelType.Text = "/ " + getOsnastkaTypeName(osnastkaType);
-            }
+            case OsnastkaTypeEnum.Shtampi:
+                return "Штампы";
+            case OsnastkaTypeEnum.PressFormi:
+                return "Пресс-формы";
+            case OsnastkaTypeEnum.ModelOsnastka:
+                return "Модельная оснастка";
+            case OsnastkaTypeEnum.Prisposoblenie:
+                return "Приспособления";
+            default:
+                return "";
+        }
+    }
+
+    private void PopulateOsnastkas()
+    {
+        // TBD
+    }
+
+    private void GetOsnastkas(OsnastkaTypeEnum osnastkaType)
+    {
+        var data = context.Osnastkas.AsNoTracking().Include(x => x.OsnastkaType);
+        if (osnastkaType == OsnastkaTypeEnum.All)
+        {
+            Osnastkas = data.ToList();
+        }
+        else
+        {
+            Osnastkas = data.Where(x => x.OsnastkaTypeId == (int)osnastkaType).ToList();
+        }
+    }
+
+    public void SetPath(OsnastkaTypeEnum osnastkaType)
+    {
+        if (osnastkaType != OsnastkaTypeEnum.All)
+        {
+            labelType.Visible = true;
+            labelType.Text = "/ " + getOsnastkaTypeName(osnastkaType);
         }
     }
 }
