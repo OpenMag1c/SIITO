@@ -23,7 +23,7 @@ public class OsnastkaConfig : IEntityTypeConfiguration<Osnastka>
 
         entity.Property(e => e.Picture)
             .HasColumnName("Picture")
-            .IsRequired();
+            .IsRequired(false);
 
         entity.Property(e => e.CreatedAt)
             .HasColumnName("CreatedAt")

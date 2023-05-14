@@ -4,11 +4,11 @@
     [Name] NVARCHAR(256) NOT NULL, 
     [Code] NVARCHAR(32) NOT NULL, 
     [Dimensions] NVARCHAR(32) NOT NULL, 
-    [Picture] VARBINARY(MAX) NOT NULL, 
+    [Picture] VARBINARY(MAX) NULL, 
     [Measure] NVARCHAR(32) NOT NULL, 
     [Price] MONEY NOT NULL, 
     [InstrumentTypeId] INT NOT NULL, 
-    [GostId] INT NOT NULL,
+    [GostId] INT NULL,
     [CreatedAt] DATETIME2 NULL, 
     [UpdatedAt] DATETIME2 NULL, 
 
