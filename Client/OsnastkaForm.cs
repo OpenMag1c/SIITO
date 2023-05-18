@@ -1,7 +1,9 @@
-﻿using DAL;
+﻿using Client.Cards;
+using DAL;
 using Domain.Entities;
 using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.Metrics;
 
 namespace Client;
 
@@ -47,7 +49,10 @@ public partial class OsnastkaForm : Form
 
     private void PopulateOsnastkas()
     {
-        // TBD
+        Osnastkas.ForEach(osnastka =>
+        {
+            osnastkaContainer.Controls.Add(new OsnastkaCard(osnastka, getOsnastkaTypeName(OsnastkaType)));
+        });
     }
 
     private void GetOsnastkas(OsnastkaTypeEnum osnastkaType)

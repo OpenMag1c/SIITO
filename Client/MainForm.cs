@@ -4,6 +4,7 @@ namespace Client;
 
 public partial class MainForm : Form
 {
+    HomeForm homeForm;
     CatalogForm catalogForm;
     InstrumentForm instrumentForm;
     OsnastkaForm osnastkaForm;
@@ -12,11 +13,11 @@ public partial class MainForm : Form
     public MainForm()
     {
         InitializeComponent();
-        catalogForm = new CatalogForm(this);
-        catalogForm.FormClosed += CatalogForm_FormClosed;
-        catalogForm.MdiParent = this;
-        catalogForm.Dock = DockStyle.Fill;
-        catalogForm.Show();
+        homeForm = new HomeForm();
+        homeForm.FormClosed += HomeForm_FormClosed;
+        homeForm.MdiParent = this;
+        homeForm.Dock = DockStyle.Fill;
+        homeForm.Show();
     }
 
     bool instrumentExpand = false;
@@ -155,6 +156,11 @@ public partial class MainForm : Form
         catalogForm = null;
     }
 
+    private void HomeForm_FormClosed(object sender, FormClosedEventArgs e)
+    {
+        homeForm = null;
+    }
+
     bool addExpanded = false;
 
     private void buttonAdd_Click(object sender, EventArgs e)
@@ -285,5 +291,21 @@ public partial class MainForm : Form
     private void buttonPrisposobleniya_Click(object sender, EventArgs e)
     {
         OpenOsnastkaForm(OsnastkaTypeEnum.Prisposoblenie);
+    }
+
+    private void buttonHome_Click(object sender, EventArgs e)
+    {
+        if (homeForm == null)
+        {
+            homeForm = new HomeForm();
+            homeForm.FormClosed += HomeForm_FormClosed;
+            homeForm.MdiParent = this;
+            homeForm.Dock = DockStyle.Fill;
+            homeForm.Show();
+        }
+        else
+        {
+            homeForm.Activate();
+        }
     }
 }

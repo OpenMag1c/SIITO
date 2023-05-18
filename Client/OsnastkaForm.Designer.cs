@@ -30,6 +30,7 @@
         {
             labelType = new Label();
             label1 = new Label();
+            osnastkaContainer = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // labelType
@@ -53,11 +54,21 @@
             label1.TabIndex = 3;
             label1.Text = "Оснастка";
             // 
+            // osnastkaContainer
+            // 
+            osnastkaContainer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            osnastkaContainer.AutoScroll = true;
+            osnastkaContainer.Location = new Point(12, 42);
+            osnastkaContainer.Name = "osnastkaContainer";
+            osnastkaContainer.Size = new Size(776, 386);
+            osnastkaContainer.TabIndex = 5;
+            // 
             // OsnastkaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(osnastkaContainer);
             Controls.Add(labelType);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
@@ -72,5 +83,6 @@
 
         private Label labelType;
         private Label label1;
+        private FlowLayoutPanel osnastkaContainer;
     }
 }

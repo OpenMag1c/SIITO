@@ -75,6 +75,7 @@
             Name = "InstrumentForm";
             Text = "InstrumentForm";
             Load += InstrumentForm_Load;
+            MouseLeave += InstrumentForm_MouseLeave;
             ResumeLayout(false);
             PerformLayout();
         }

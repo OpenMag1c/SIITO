@@ -1,0 +1,67 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Филиал ОАО «Гомсельмаш» «Гомельский завод специнструмента и технологической оснастки» более тридцати лет занимает прочные позиции в тройке производителей инструмента и оснастки в Республике Беларуcь. Среди постоянных партнеров практически все ведущие машиностроительные заводы и объединения нашей страны, а также многие иностранные предприятия. 
+На данный момент нет ни одной современной гомельской сельскохозяйственной машины или агрегата, технологическую оснастку и инструмент дляпроизводства которых не изготавливало бы наше предприятие. Сегодня для Холдинга «Гомсельмаш» выпускается более 1 000 наименований оснастки, что составляет порядка 30% от всего объема работ.
+Сфера деятельности завода не ограничивается выпуском продукции только инструментальной направленности, завод выпускал и имеет возможности по производству машин для переработки льна, агрегатов для газовой отрасли, нестандартного оборудования. По желанию заказчика может произвести разработку необходимой технической документации на высококачественном уровне, используя CAD/CAM систему PRO/Engineer.
+За последние годы на производственных площадях завода появились электроэрозионные, шлифовальные, фрезерные, токарные станки из Швейцарии, Германии и Италии, которые позволяют обеспечивать высокую точность изготовления оснастки и инструмента. В частности, это такие известные марки мирового уровня, как Arthur Klink, Hermle, Scmetz, Robofil, Kellenberger, Reform, Deckel-Maho (DMG), 
+Наше предприятие тесно сотрудничает с фирмами из России, Казахстана и других стран. На протяжении ряда лет ведется активное сотрудничество с такими флагманами отечественной промышленности, как Минский завод колесных тягачей, Белорусский металлургический завод, Гродненский завод карданных валов, БелАЗ, БЗТДА, и многими другими предприятиями. Приоритетным направлением для завода является наращивание экспорта. Стратегически экспортным направлением являются предприятия Российской Федерации. В числе наших крупных иностранных заказчиков- предприятия железнодорожного и сельхоз машиностроения, холдинги оборонного комплекса РФ.</value>
+  </data>
+</root>

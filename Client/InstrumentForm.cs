@@ -59,7 +59,7 @@ public partial class InstrumentForm : Form
     {
         Instruments.ForEach(instrument =>
         {
-            instrumentsContainer.Controls.Add(new InstrumentCard(instrument));
+            instrumentsContainer.Controls.Add(new InstrumentCard(instrument, this.InstrumentType));
         });
     }
 
@@ -83,5 +83,10 @@ public partial class InstrumentForm : Form
             labelType.Visible = true;
             labelType.Text = "/ " + GetInstrumentTypeName(instrumentType);
         }
+    }
+
+    private void InstrumentForm_MouseLeave(object sender, EventArgs e)
+    {
+
     }
 }
