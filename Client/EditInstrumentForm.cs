@@ -1,6 +1,7 @@
 ﻿using Client.Enums;
 using DAL;
 using Domain.Entities;
+using System.Text.RegularExpressions;
 
 namespace Client;
 public partial class EditInstrumentForm : Form
@@ -9,6 +10,8 @@ public partial class EditInstrumentForm : Form
 
     private readonly ActionType CurrentAction;
     private readonly int InstrumentId;
+
+    private readonly Regex CodeRegex = new Regex(@"^\d\d\d\d-\d\d\d\d\s\S{3,}");
 
     public EditInstrumentForm(ActionType actionType, int instrumentId = -1)
     {
@@ -31,7 +34,6 @@ public partial class EditInstrumentForm : Form
         {
             actionButton.Text = "Создать";
             editInstrumentMainLabel.Text = "Создать новый инструмент";
-            FillInstrumentData();
         }
 
         base.OnLoad(e);
@@ -39,18 +41,23 @@ public partial class EditInstrumentForm : Form
 
     private void actionButton_Click(object sender, EventArgs e)
     {
+        bool isCompleted = false;
+
         switch (CurrentAction)
         {
             case ActionType.Update:
-                UpdateInstrument();
+                isCompleted = UpdateInstrument();
                 break;
 
             case ActionType.Create:
-                CreateNewInstrument();
+                isCompleted = CreateNewInstrument();
                 break;
         }
 
-        this.Close();
+        if (isCompleted)
+        {
+            this.Close();
+        }
     }
 
     private void FillInstrumentData()
@@ -81,14 +88,41 @@ public partial class EditInstrumentForm : Form
         }
     }
 
-    private void UpdateInstrument()
+    private bool UpdateInstrument()
     {
-
+        return true;
     }
 
-    private void CreateNewInstrument()
+    private bool CreateNewInstrument()
     {
-        // todo validation
+        #region validation
+
+        if (!decimal.TryParse(instrumentPriceInput.Text, out decimal priceValue))
+        {
+            MessageBox.Show("Недопустимое значение для цены инструмента", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        if (instrumentNameInput.Text.Length < 5)
+        {
+            MessageBox.Show("Минимальная длина названия инструмента - 5 символов", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        if (instrumentNameInput.Text.Length > 256)
+        {
+            MessageBox.Show("Превышена максимальная длина названия инструмента (256 символов)", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        if (!CodeRegex.IsMatch(instrumentCodeInput.Text))
+        {
+            MessageBox.Show("Некорректный ввод кода инструмента", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        #endregion
+
 
         var img = instrumentPictureBox.Image;
         byte[]? imagebytes = null;
@@ -107,13 +141,15 @@ public partial class EditInstrumentForm : Form
             Code = instrumentCodeInput.Text,
             Measure = "шт",
             Dimensions = $"{numericUpDown1.Value}x{numericUpDown2.Value}x{numericUpDown3.Value}",
-            Price = decimal.Parse(instrumentPriceInput.Text),
+            Price = priceValue,
             Picture = imagebytes,
+            Description = descInput.Text,
             InstrumentTypeId = (int)instrumentTypeSelect.SelectedValue,
             GostId = (int)gostsSelect.SelectedValue
         };
 
         DbContext.Instruments.Add(instrument);
         DbContext.SaveChanges();
+        return true;
     }
 }

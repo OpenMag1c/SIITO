@@ -9,6 +9,7 @@ public partial class MainForm : Form
     InstrumentForm instrumentForm;
     OsnastkaForm osnastkaForm;
     EditInstrumentForm editInstrumentForm;
+    EditOsnastkaForm editOsnastkaForm;
 
     public MainForm()
     {
@@ -220,7 +221,17 @@ public partial class MainForm : Form
 
     private void addOsnastka_Click(object sender, EventArgs e)
     {
+        editOsnastkaForm = new EditOsnastkaForm(Enums.ActionType.Create);
+        editOsnastkaForm.FormClosed += EditOsnastkaFormOnClosed;
+        editOsnastkaForm.MdiParent = this;
+        editOsnastkaForm.Dock = DockStyle.Fill;
+        editOsnastkaForm.Show();
 
+        void EditOsnastkaFormOnClosed(object sender, FormClosedEventArgs e)
+        {
+            editOsnastkaForm = null;
+            OpenOsnastkaForm(OsnastkaTypeEnum.All);
+        }
     }
 
     private void addInstrument_Click(object sender, EventArgs e)

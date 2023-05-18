@@ -1,40 +1,31 @@
 ﻿using Domain.Entities;
-using Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics.Metrics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Client.Cards
 {
     public partial class OsnastkaCard : UserControl
     {
-        Osnastka osnastka { get; set; }
-        string OsnastkaType { get; set; }
+        public event Action<OsnastkaCard> DeleteOsnastka;
+        public Osnastka Osnastka { get; set; }
+        public string OsnastkaType { get; set; }
+
         public OsnastkaCard(Osnastka osnastka, string osnatkaType)
         {
-            this.osnastka = osnastka;
+            this.Osnastka = osnastka;
             this.OsnastkaType = osnatkaType;
             InitializeComponent();
         }
 
         private void OsnastkaCard_Load(object sender, EventArgs e)
         {
-            if (osnastka.Picture != null)
+            if (Osnastka.Picture != null)
             {
-                MemoryStream ms = new MemoryStream(osnastka.Picture);
+                MemoryStream ms = new MemoryStream(Osnastka.Picture);
                 Image imageData = Image.FromStream(ms);
                 image.Image = imageData;
             }
             labelType.Text = OsnastkaType;
-            labelName.Text = osnastka.Name;
-            textDescription.Text = osnastka.Description;
+            labelName.Text = Osnastka.Name;
+            textDescription.Text = Osnastka.Description;
         }
 
         private void buttonDesc_Click(object sender, EventArgs e)
@@ -46,6 +37,14 @@ namespace Client.Cards
             else
             {
                 description.Visible = true;
+            }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Вы действительно хотите удалить оснастку {Osnastka.Name}?", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+            {
+                DeleteOsnastka?.Invoke(this);
             }
         }
     }

@@ -29,6 +29,10 @@ public class InstrumentConfig : IEntityTypeConfiguration<Instrument>
             .HasColumnName("Picture")
             .IsRequired(false);
 
+        entity.Property(e => e.Description)
+            .HasColumnName("Description")
+            .IsRequired(false);
+
         entity.Property(e => e.Measure)
             .HasColumnName("Measure")
             .IsRequired();

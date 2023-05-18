@@ -3,7 +3,6 @@ using DAL;
 using Domain.Entities;
 using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics.Metrics;
 
 namespace Client;
 
@@ -51,8 +50,29 @@ public partial class OsnastkaForm : Form
     {
         Osnastkas.ForEach(osnastka =>
         {
-            osnastkaContainer.Controls.Add(new OsnastkaCard(osnastka, getOsnastkaTypeName(OsnastkaType)));
+            var osnastkaCard = new OsnastkaCard(osnastka, getOsnastkaTypeName(OsnastkaType));
+            osnastkaCard.DeleteOsnastka += OsnastkaCard_DeleteOsnastka;
+            osnastkaContainer.Controls.Add(osnastkaCard);
         });
+    }
+
+    private void OsnastkaCard_DeleteOsnastka(OsnastkaCard osnastkaCard)
+    {
+        var osnastka = context.Osnastkas.FirstOrDefault(x => x.Id == osnastkaCard.Osnastka.Id);
+        if (osnastka != null)
+        {
+            try
+            {
+                context.Osnastkas.Remove(osnastka);
+                context.SaveChanges();
+
+                osnastkaContainer.Controls.Remove(osnastkaCard);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Возникла ошибка при удалении оснастки", "Ошибка выполнения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 
     private void GetOsnastkas(OsnastkaTypeEnum osnastkaType)

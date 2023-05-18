@@ -31,13 +31,15 @@ partial class EditInstrumentForm
         editInstrumentMainLabel = new Label();
         instrumentNameInput = new TextBox();
         groupBox1 = new GroupBox();
-        actionButton = new Button();
+        label10 = new Label();
+        descInput = new TextBox();
         label9 = new Label();
-        label8 = new Label();
-        instrumentTypeSelect = new ComboBox();
+        actionButton = new Button();
         gostsSelect = new ComboBox();
         label7 = new Label();
+        label8 = new Label();
         instrumentPriceInput = new TextBox();
+        instrumentTypeSelect = new ComboBox();
         label6 = new Label();
         instrumentPictureBox = new PictureBox();
         label5 = new Label();
@@ -75,13 +77,15 @@ partial class EditInstrumentForm
         // 
         // groupBox1
         // 
-        groupBox1.Controls.Add(actionButton);
+        groupBox1.Controls.Add(label10);
+        groupBox1.Controls.Add(descInput);
         groupBox1.Controls.Add(label9);
-        groupBox1.Controls.Add(label8);
-        groupBox1.Controls.Add(instrumentTypeSelect);
+        groupBox1.Controls.Add(actionButton);
         groupBox1.Controls.Add(gostsSelect);
         groupBox1.Controls.Add(label7);
+        groupBox1.Controls.Add(label8);
         groupBox1.Controls.Add(instrumentPriceInput);
+        groupBox1.Controls.Add(instrumentTypeSelect);
         groupBox1.Controls.Add(label6);
         groupBox1.Controls.Add(instrumentPictureBox);
         groupBox1.Controls.Add(label5);
@@ -97,14 +101,45 @@ partial class EditInstrumentForm
         groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
         groupBox1.Location = new Point(92, 60);
         groupBox1.Name = "groupBox1";
-        groupBox1.Size = new Size(598, 497);
+        groupBox1.Size = new Size(716, 528);
         groupBox1.TabIndex = 2;
         groupBox1.TabStop = false;
         groupBox1.Text = "Instrument info";
         // 
+        // label10
+        // 
+        label10.AutoSize = true;
+        label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+        label10.Location = new Point(22, 333);
+        label10.Name = "label10";
+        label10.Size = new Size(89, 23);
+        label10.TabIndex = 21;
+        label10.Text = "Описание";
+        // 
+        // descInput
+        // 
+        descInput.BorderStyle = BorderStyle.None;
+        descInput.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+        descInput.Location = new Point(22, 359);
+        descInput.Multiline = true;
+        descInput.Name = "descInput";
+        descInput.ScrollBars = ScrollBars.Both;
+        descInput.Size = new Size(388, 139);
+        descInput.TabIndex = 20;
+        // 
+        // label9
+        // 
+        label9.AutoSize = true;
+        label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+        label9.Location = new Point(451, 270);
+        label9.Name = "label9";
+        label9.Size = new Size(144, 23);
+        label9.TabIndex = 18;
+        label9.Text = "Тип инструмента";
+        // 
         // actionButton
         // 
-        actionButton.Location = new Point(450, 431);
+        actionButton.Location = new Point(568, 459);
         actionButton.Name = "actionButton";
         actionButton.Size = new Size(120, 39);
         actionButton.TabIndex = 19;
@@ -112,40 +147,12 @@ partial class EditInstrumentForm
         actionButton.UseVisualStyleBackColor = true;
         actionButton.Click += actionButton_Click;
         // 
-        // label9
-        // 
-        label9.AutoSize = true;
-        label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-        label9.Location = new Point(22, 332);
-        label9.Name = "label9";
-        label9.Size = new Size(144, 23);
-        label9.TabIndex = 18;
-        label9.Text = "Тип инструмента";
-        // 
-        // label8
-        // 
-        label8.AutoSize = true;
-        label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-        label8.Location = new Point(22, 408);
-        label8.Name = "label8";
-        label8.Size = new Size(51, 23);
-        label8.TabIndex = 17;
-        label8.Text = "ГОСТ";
-        // 
-        // instrumentTypeSelect
-        // 
-        instrumentTypeSelect.FormattingEnabled = true;
-        instrumentTypeSelect.Location = new Point(22, 358);
-        instrumentTypeSelect.Name = "instrumentTypeSelect";
-        instrumentTypeSelect.Size = new Size(237, 36);
-        instrumentTypeSelect.TabIndex = 16;
-        // 
         // gostsSelect
         // 
         gostsSelect.FormattingEnabled = true;
-        gostsSelect.Location = new Point(22, 434);
+        gostsSelect.Location = new Point(446, 361);
         gostsSelect.Name = "gostsSelect";
-        gostsSelect.Size = new Size(237, 36);
+        gostsSelect.Size = new Size(242, 36);
         gostsSelect.TabIndex = 15;
         // 
         // label7
@@ -158,6 +165,16 @@ partial class EditInstrumentForm
         label7.TabIndex = 14;
         label7.Text = "Цена";
         // 
+        // label8
+        // 
+        label8.AutoSize = true;
+        label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+        label8.Location = new Point(451, 335);
+        label8.Name = "label8";
+        label8.Size = new Size(51, 23);
+        label8.TabIndex = 17;
+        label8.Text = "ГОСТ";
+        // 
         // instrumentPriceInput
         // 
         instrumentPriceInput.Location = new Point(22, 208);
@@ -165,11 +182,19 @@ partial class EditInstrumentForm
         instrumentPriceInput.Size = new Size(125, 34);
         instrumentPriceInput.TabIndex = 13;
         // 
+        // instrumentTypeSelect
+        // 
+        instrumentTypeSelect.FormattingEnabled = true;
+        instrumentTypeSelect.Location = new Point(446, 296);
+        instrumentTypeSelect.Name = "instrumentTypeSelect";
+        instrumentTypeSelect.Size = new Size(242, 36);
+        instrumentTypeSelect.TabIndex = 16;
+        // 
         // label6
         // 
         label6.AutoSize = true;
         label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-        label6.Location = new Point(328, 39);
+        label6.Location = new Point(451, 39);
         label6.Name = "label6";
         label6.Size = new Size(106, 23);
         label6.TabIndex = 12;
@@ -178,9 +203,9 @@ partial class EditInstrumentForm
         // instrumentPictureBox
         // 
         instrumentPictureBox.BorderStyle = BorderStyle.FixedSingle;
-        instrumentPictureBox.Location = new Point(333, 65);
+        instrumentPictureBox.Location = new Point(446, 65);
         instrumentPictureBox.Name = "instrumentPictureBox";
-        instrumentPictureBox.Size = new Size(237, 182);
+        instrumentPictureBox.Size = new Size(242, 182);
         instrumentPictureBox.TabIndex = 11;
         instrumentPictureBox.TabStop = false;
         instrumentPictureBox.Click += instrumentPictureBox_Click;
@@ -313,4 +338,6 @@ partial class EditInstrumentForm
     private Label label9;
     private Label label8;
     private Button actionButton;
+    private Label label10;
+    private TextBox descInput;
 }

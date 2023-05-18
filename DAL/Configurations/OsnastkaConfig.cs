@@ -19,7 +19,7 @@ public class OsnastkaConfig : IEntityTypeConfiguration<Osnastka>
 
         entity.Property(e => e.Description)
             .HasColumnName("Description")
-            .IsRequired();
+            .IsRequired(false);
 
         entity.Property(e => e.Picture)
             .HasColumnName("Picture")

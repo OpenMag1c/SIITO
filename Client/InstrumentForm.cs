@@ -59,8 +59,29 @@ public partial class InstrumentForm : Form
     {
         Instruments.ForEach(instrument =>
         {
-            instrumentsContainer.Controls.Add(new InstrumentCard(instrument, this.InstrumentType));
+            var instrumentCard = new InstrumentCard(instrument, this.InstrumentType);
+            instrumentCard.DeleteInstrument += InstrumentCard_DeleteInstrument;
+            instrumentsContainer.Controls.Add(instrumentCard);
         });
+    }
+
+    private void InstrumentCard_DeleteInstrument(InstrumentCard instrumentCard)
+    {
+        var instrument = context.Instruments.FirstOrDefault(x => x.Id == instrumentCard.Instrument.Id);
+        if (instrument != null)
+        {
+            try
+            {
+                context.Instruments.Remove(instrument);
+                context.SaveChanges();
+
+                instrumentsContainer.Controls.Remove(instrumentCard);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Возникла ошибка при удалении инструмента", "Ошибка выполнения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 
     private void GetInstruments(InstrumentTypeEnum instrumentType)
