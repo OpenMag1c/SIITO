@@ -1,6 +1,7 @@
 ﻿using Client.Enums;
 using DAL;
 using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
 
 namespace Client;
@@ -26,12 +27,14 @@ public partial class EditInstrumentForm : Form
 
         if (CurrentAction == ActionType.Update)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             actionButton.Text = "Обновить";
             editInstrumentMainLabel.Text = "Обновить существующий инструмент";
             FillInstrumentData();
         }
         else if (CurrentAction == ActionType.Create)
         {
+            this.FormBorderStyle = FormBorderStyle.None;
             actionButton.Text = "Создать";
             editInstrumentMainLabel.Text = "Создать новый инструмент";
         }
@@ -56,13 +59,44 @@ public partial class EditInstrumentForm : Form
 
         if (isCompleted)
         {
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
     }
 
     private void FillInstrumentData()
     {
+        var instrument = DbContext.Instruments
+            .AsNoTracking()
+            .Include(x => x.Gost)
+            .Include(x => x.InstrumentType)
+            .FirstOrDefault(x => x.Id == InstrumentId);
 
+        instrumentNameInput.Text = instrument.Name;
+        instrumentCodeInput.Text = instrument.Code;
+        instrumentPriceInput.Text = instrument.Price.ToString();
+
+        var dimensions = instrument.Dimensions.Split(new char[] { 'х', 'x' });
+
+        numericUpDown1.Value = decimal.Parse(dimensions[0]);
+        numericUpDown2.Value = decimal.Parse(dimensions[1]);
+        numericUpDown3.Value = decimal.Parse(dimensions[2]);
+
+        if (instrument.Picture != null)
+        {
+            MemoryStream ms = new MemoryStream(instrument.Picture);
+            Image imageData = Image.FromStream(ms);
+            instrumentPictureBox.Image = imageData;
+            instrumentPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        if (instrument.Description != null)
+        {
+            descInput.Text = instrument.Description;
+        }
+
+        instrumentTypeSelect.SelectedValue = instrument.InstrumentType.Id;
+        gostsSelect.SelectedValue = instrument.Gost.Id;
     }
 
     private void FillStaticData()
@@ -90,6 +124,67 @@ public partial class EditInstrumentForm : Form
 
     private bool UpdateInstrument()
     {
+        var instrument = DbContext.Instruments
+            .Include(x => x.Gost)
+            .Include(x => x.InstrumentType)
+            .FirstOrDefault(x => x.Id == InstrumentId);
+
+        #region validation
+
+        if (!decimal.TryParse(instrumentPriceInput.Text, out decimal priceValue))
+        {
+            MessageBox.Show("Недопустимое формат цены инструмента", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        if (priceValue <= 0)
+        {
+            MessageBox.Show("Недопустимое значение для цены инструмента", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        if (instrumentNameInput.Text.Length < 5)
+        {
+            MessageBox.Show("Минимальная длина названия инструмента - 5 символов", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        if (instrumentNameInput.Text.Length > 256)
+        {
+            MessageBox.Show("Превышена максимальная длина названия инструмента (256 символов)", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        if (!CodeRegex.IsMatch(instrumentCodeInput.Text))
+        {
+            MessageBox.Show("Некорректный ввод кода инструмента", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        #endregion
+
+
+        var img = instrumentPictureBox.Image;
+        byte[]? imagebytes = null;
+        if (img != null)
+        {
+            using (var mStream = new MemoryStream())
+            {
+                img.Save(mStream, img.RawFormat);
+                imagebytes = mStream.ToArray();
+            }
+        }
+
+        instrument.Name = instrumentNameInput.Text;
+        instrument.Code = instrumentCodeInput.Text;
+        instrument.Dimensions = $"{numericUpDown1.Value}x{numericUpDown2.Value}x{numericUpDown3.Value}";
+        instrument.Price = priceValue;
+        instrument.Picture = imagebytes;
+        instrument.Description = descInput.Text;
+        instrument.InstrumentTypeId = (int)instrumentTypeSelect.SelectedValue;
+        instrument.GostId = (int)gostsSelect.SelectedValue;
+
+        DbContext.SaveChanges();
         return true;
     }
 

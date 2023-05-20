@@ -3,9 +3,8 @@ using DAL;
 using Domain.Entities;
 using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
-using System.Data;
 using OfficeOpenXml;
-using System.IO;
+using System.Data;
 
 namespace Client;
 
@@ -63,9 +62,19 @@ public partial class InstrumentForm : Form
         Instruments.ForEach(instrument =>
         {
             var instrumentCard = new InstrumentCard(instrument, this.InstrumentType);
-            instrumentCard.DeleteInstrument += InstrumentCard_DeleteInstrument;
+            instrumentCard.InstrumentDeleted += InstrumentCard_DeleteInstrument;
+            instrumentCard.InstumentUpdated += InstrumentCard_InstumentUpdated;
             instrumentsContainer.Controls.Add(instrumentCard);
         });
+    }
+
+    private void InstrumentCard_InstumentUpdated()
+    {
+        Instruments.Clear();
+        instrumentsContainer.Controls.Clear();
+
+        GetInstruments(InstrumentType);
+        PopulateInstruments();
     }
 
     private void InstrumentCard_DeleteInstrument(InstrumentCard instrumentCard)
@@ -151,7 +160,8 @@ public partial class InstrumentForm : Form
                 package.SaveAs(excelFile);
                 MessageBox.Show("Данные были экспортированы в " + currentDirectory, "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        } catch (Exception ex)
+        }
+        catch (Exception ex)
         {
             MessageBox.Show("Возникла ошибка при экспорте", "Ошибка выполнения", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }

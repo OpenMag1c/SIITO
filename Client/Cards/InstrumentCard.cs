@@ -6,7 +6,8 @@ namespace Client.Cards
     public partial class InstrumentCard : UserControl
     {
 
-        public event Action<InstrumentCard> DeleteInstrument;
+        public event Action<InstrumentCard> InstrumentDeleted;
+        public event Action InstumentUpdated;
         public Instrument Instrument { get; set; }
         public InstrumentTypeEnum InstrumentType { get; set; }
 
@@ -46,7 +47,7 @@ namespace Client.Cards
         {
             if (MessageBox.Show($"Вы действительно хотите удалить инструмент {Instrument.Name}?", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
             {
-                DeleteInstrument?.Invoke(this);
+                InstrumentDeleted?.Invoke(this);
             }
         }
 
@@ -69,6 +70,18 @@ namespace Client.Cards
             description.Visible = false;
             buttonEdit.Visible = true;
             buttonDelete.Visible = true;
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            var editInstrumentForm = new EditInstrumentForm(Enums.ActionType.Update, Instrument.Id);
+            editInstrumentForm.Text = "Обновление инструмента";
+            var result = editInstrumentForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                InstumentUpdated?.Invoke();
+            }
         }
     }
 }

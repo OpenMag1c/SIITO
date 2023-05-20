@@ -1,10 +1,13 @@
-﻿using Domain.Entities;
+﻿using Client.Enums;
+using Domain.Entities;
 
 namespace Client.Cards
 {
     public partial class OsnastkaCard : UserControl
     {
-        public event Action<OsnastkaCard> DeleteOsnastka;
+        public event Action<OsnastkaCard> OsnastkaDeleted;
+        public event Action OsnastkaUpdated;
+
         public Osnastka Osnastka { get; set; }
         public string OsnastkaType { get; set; }
 
@@ -38,13 +41,25 @@ namespace Client.Cards
         {
             if (MessageBox.Show($"Вы действительно хотите удалить оснастку {Osnastka.Name}?", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
             {
-                DeleteOsnastka?.Invoke(this);
+                OsnastkaDeleted?.Invoke(this);
             }
         }
 
         private void buttonDesc2_Click(object sender, EventArgs e)
         {
             description.Visible = false;
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            var editOsnastkaForm = new EditOsnastkaForm(ActionType.Update, Osnastka.Id);
+            editOsnastkaForm.Text = "Обновление оснастки";
+            var result = editOsnastkaForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                OsnastkaUpdated?.Invoke();
+            }
         }
     }
 }

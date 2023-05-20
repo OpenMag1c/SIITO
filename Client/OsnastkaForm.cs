@@ -4,7 +4,6 @@ using Domain.Entities;
 using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
-using System.IO;
 
 namespace Client;
 
@@ -54,9 +53,19 @@ public partial class OsnastkaForm : Form
         Osnastkas.ForEach(osnastka =>
         {
             var osnastkaCard = new OsnastkaCard(osnastka, getOsnastkaTypeName(OsnastkaType));
-            osnastkaCard.DeleteOsnastka += OsnastkaCard_DeleteOsnastka;
+            osnastkaCard.OsnastkaUpdated += OsnastkaCard_OsnastkaUpdated;
+            osnastkaCard.OsnastkaDeleted += OsnastkaCard_DeleteOsnastka;
             osnastkaContainer.Controls.Add(osnastkaCard);
         });
+    }
+
+    private void OsnastkaCard_OsnastkaUpdated()
+    {
+        Osnastkas.Clear();
+        osnastkaContainer.Controls.Clear();
+
+        GetOsnastkas(OsnastkaType);
+        PopulateOsnastkas();
     }
 
     private void OsnastkaCard_DeleteOsnastka(OsnastkaCard osnastkaCard)

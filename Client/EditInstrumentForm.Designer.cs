@@ -104,7 +104,7 @@ partial class EditInstrumentForm
         groupBox1.Size = new Size(716, 528);
         groupBox1.TabIndex = 2;
         groupBox1.TabStop = false;
-        groupBox1.Text = "Instrument info";
+        groupBox1.Text = "Информация инструмента";
         // 
         // label10
         // 

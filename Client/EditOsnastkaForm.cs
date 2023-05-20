@@ -1,6 +1,7 @@
 ﻿using Client.Enums;
 using DAL;
 using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Client;
 public partial class EditOsnastkaForm : Form
@@ -23,12 +24,16 @@ public partial class EditOsnastkaForm : Form
 
         if (CurrentAction == ActionType.Update)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            this.Name = "Обновление оснастки";
             actionButton.Text = "Обновить";
             editOsnastkaMainLabel.Text = "Обновить существующую оснастку";
             FillOsnastkaData();
         }
         else if (CurrentAction == ActionType.Create)
         {
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Name = "Создание остастки";
             actionButton.Text = "Создать";
             editOsnastkaMainLabel.Text = "Создать новую оснастку";
         }
@@ -53,13 +58,34 @@ public partial class EditOsnastkaForm : Form
 
         if (isCompleted)
         {
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
     }
 
     private void FillOsnastkaData()
     {
+        var osnastka = DbContext.Osnastkas
+            .AsNoTracking()
+            .Include(x => x.OsnastkaType)
+            .FirstOrDefault(x => x.Id == OsnastkaId);
 
+        osnastkaNameInput.Text = osnastka.Name;
+
+        if (osnastka.Picture != null)
+        {
+            MemoryStream ms = new MemoryStream(osnastka.Picture);
+            Image imageData = Image.FromStream(ms);
+            OsnastkaPictureBox.Image = imageData;
+            OsnastkaPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        if (osnastka.Description != null)
+        {
+            descInput.Text = osnastka.Description;
+        }
+
+        osnastkaTypeSelect.SelectedValue = osnastka.OsnastkaType.Id;
     }
 
     private void FillStaticData()
@@ -72,6 +98,44 @@ public partial class EditOsnastkaForm : Form
 
     private bool UpdateOsnastka()
     {
+        var osnastka = DbContext.Osnastkas
+            .Include(x => x.OsnastkaType)
+            .FirstOrDefault(x => x.Id == OsnastkaId);
+
+        #region validation
+
+        if (osnastkaNameInput.Text.Length < 5)
+        {
+            MessageBox.Show("Минимальная длина названия оснастки - 5 символов", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        if (osnastkaNameInput.Text.Length > 256)
+        {
+            MessageBox.Show("Превышена максимальная длина названия оснастки (256 символов)", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        #endregion
+
+
+        var img = OsnastkaPictureBox.Image;
+        byte[]? imagebytes = null;
+        if (img != null)
+        {
+            using (var mStream = new MemoryStream())
+            {
+                img.Save(mStream, img.RawFormat);
+                imagebytes = mStream.ToArray();
+            }
+        }
+
+        osnastka.Name = osnastkaNameInput.Text;
+        osnastka.Picture = imagebytes;
+        osnastka.Description = descInput.Text;
+        osnastka.OsnastkaTypeId = (int)osnastkaTypeSelect.SelectedValue;
+
+        DbContext.SaveChanges();
         return true;
     }
 

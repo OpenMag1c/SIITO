@@ -60,7 +60,7 @@ partial class EditOsnastkaForm
         groupBox1.Size = new Size(716, 429);
         groupBox1.TabIndex = 4;
         groupBox1.TabStop = false;
-        groupBox1.Text = "Osnastka info";
+        groupBox1.Text = "Информация оснастки";
         // 
         // label10
         // 

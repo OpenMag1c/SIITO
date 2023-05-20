@@ -25,6 +25,7 @@ namespace Client
             ContextOptions = new DbContextOptionsBuilder<AppDbContext>()
                 .UseSqlServer(connectionString).Options;
 
+            Environment.SetEnvironmentVariable("EPPlusLicenseContext", "NonCommercial");
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
