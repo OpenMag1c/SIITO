@@ -3,6 +3,8 @@ using DAL;
 using Domain.Entities;
 using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml;
+using System.IO;
 
 namespace Client;
 
@@ -101,5 +103,36 @@ public partial class OsnastkaForm : Form
     private void pictureButtonAdd_Click(object sender, EventArgs e)
     {
         mainForm.addOsnastka_Click(sender, e);
+    }
+
+    private void pictureButtonExport_Click(object sender, EventArgs e)
+    {
+        using (var package = new ExcelPackage())
+        {
+            try
+            {
+                var worksheet = package.Workbook.Worksheets.Add("Лист 1");
+
+                worksheet.Cells["A1"].Value = "Наименование";
+                worksheet.Cells["B1"].Value = "Тип оснастки";
+                var count = 2;
+                Osnastkas.ForEach(x =>
+                {
+                    worksheet.Cells["A" + count.ToString()].Value = x.Name;
+                    worksheet.Cells["B" + count.ToString()].Value = x.OsnastkaType.Name;
+                    count++;
+                });
+
+                string currentDirectory = Directory.GetCurrentDirectory();
+                var path = "osnastka.xlsx";
+                FileInfo excelFile = new FileInfo(path);
+                package.SaveAs(excelFile);
+                MessageBox.Show("Данные были экспортированы в " + currentDirectory, "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Возникла ошибка при экспорте", "Ошибка выполнения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

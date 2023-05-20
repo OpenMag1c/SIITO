@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstrumentForm));
             label1 = new Label();
             labelType = new Label();
             instrumentsContainer = new FlowLayoutPanel();
             pictureButtonAdd = new PictureBox();
+            pictureButtonExport = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureButtonAdd).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureButtonExport).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -62,7 +65,7 @@
             instrumentsContainer.AutoScroll = true;
             instrumentsContainer.Location = new Point(12, 52);
             instrumentsContainer.Name = "instrumentsContainer";
-            instrumentsContainer.Size = new Size(776, 386);
+            instrumentsContainer.Size = new Size(645, 386);
             instrumentsContainer.TabIndex = 3;
             // 
             // pictureButtonAdd
@@ -79,11 +82,27 @@
             pictureButtonAdd.TabStop = false;
             pictureButtonAdd.Click += pictureButtonAdd_Click;
             // 
+            // pictureButtonExport
+            // 
+            pictureButtonExport.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureButtonExport.BackColor = Color.Transparent;
+            pictureButtonExport.Cursor = Cursors.Hand;
+            pictureButtonExport.Image = (Image)resources.GetObject("pictureButtonExport.Image");
+            pictureButtonExport.Location = new Point(690, 274);
+            pictureButtonExport.Name = "pictureButtonExport";
+            pictureButtonExport.Padding = new Padding(10);
+            pictureButtonExport.Size = new Size(70, 70);
+            pictureButtonExport.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureButtonExport.TabIndex = 8;
+            pictureButtonExport.TabStop = false;
+            pictureButtonExport.Click += pictureButtonExport_Click;
+            // 
             // InstrumentForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureButtonExport);
             Controls.Add(pictureButtonAdd);
             Controls.Add(instrumentsContainer);
             Controls.Add(labelType);
@@ -94,6 +113,7 @@
             Load += InstrumentForm_Load;
             MouseLeave += InstrumentForm_MouseLeave;
             ((System.ComponentModel.ISupportInitialize)pictureButtonAdd).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureButtonExport).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -104,5 +124,6 @@
         private Label labelType;
         private FlowLayoutPanel instrumentsContainer;
         private PictureBox pictureButtonAdd;
+        private PictureBox pictureButtonExport;
     }
 }

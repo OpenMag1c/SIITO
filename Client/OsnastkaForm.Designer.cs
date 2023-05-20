@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OsnastkaForm));
             labelType = new Label();
             label1 = new Label();
             osnastkaContainer = new FlowLayoutPanel();
             pictureButtonAdd = new PictureBox();
+            pictureButtonExport = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureButtonAdd).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureButtonExport).BeginInit();
             SuspendLayout();
             // 
             // labelType
@@ -62,7 +65,7 @@
             osnastkaContainer.AutoScroll = true;
             osnastkaContainer.Location = new Point(12, 42);
             osnastkaContainer.Name = "osnastkaContainer";
-            osnastkaContainer.Size = new Size(776, 386);
+            osnastkaContainer.Size = new Size(653, 386);
             osnastkaContainer.TabIndex = 5;
             // 
             // pictureButtonAdd
@@ -79,11 +82,27 @@
             pictureButtonAdd.TabStop = false;
             pictureButtonAdd.Click += pictureButtonAdd_Click;
             // 
+            // pictureButtonExport
+            // 
+            pictureButtonExport.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureButtonExport.BackColor = Color.Transparent;
+            pictureButtonExport.Cursor = Cursors.Hand;
+            pictureButtonExport.Image = (Image)resources.GetObject("pictureButtonExport.Image");
+            pictureButtonExport.Location = new Point(690, 273);
+            pictureButtonExport.Name = "pictureButtonExport";
+            pictureButtonExport.Padding = new Padding(10);
+            pictureButtonExport.Size = new Size(70, 70);
+            pictureButtonExport.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureButtonExport.TabIndex = 7;
+            pictureButtonExport.TabStop = false;
+            pictureButtonExport.Click += pictureButtonExport_Click;
+            // 
             // OsnastkaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureButtonExport);
             Controls.Add(pictureButtonAdd);
             Controls.Add(osnastkaContainer);
             Controls.Add(labelType);
@@ -93,6 +112,7 @@
             Text = "OsnastkaForm";
             Load += OsnastkaForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureButtonAdd).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureButtonExport).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -103,5 +123,6 @@
         private Label label1;
         private FlowLayoutPanel osnastkaContainer;
         private PictureBox pictureButtonAdd;
+        private PictureBox pictureButtonExport;
     }
 }

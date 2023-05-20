@@ -4,6 +4,8 @@ using Domain.Entities;
 using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
+using OfficeOpenXml;
+using System.IO;
 
 namespace Client;
 
@@ -115,5 +117,43 @@ public partial class InstrumentForm : Form
     private void pictureButtonAdd_Click(object sender, EventArgs e)
     {
         mainForm.addInstrument_Click(sender, e);
+    }
+
+    private void pictureButtonExport_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("Лист 1");
+
+                worksheet.Cells["A1"].Value = "Наименование";
+                worksheet.Cells["B1"].Value = "Тип инструмента";
+                worksheet.Cells["C1"].Value = "Размеры";
+                worksheet.Cells["D1"].Value = "ГОСТ";
+                worksheet.Cells["E1"].Value = "Единицы измерения";
+                worksheet.Cells["F1"].Value = "Цена";
+                var count = 2;
+                Instruments.ForEach(x =>
+                {
+                    worksheet.Cells["A" + count.ToString()].Value = x.Name;
+                    worksheet.Cells["B" + count.ToString()].Value = x.InstrumentType.Name;
+                    worksheet.Cells["C" + count.ToString()].Value = x.Dimensions;
+                    worksheet.Cells["D" + count.ToString()].Value = x.Gost.Name;
+                    worksheet.Cells["E" + count.ToString()].Value = x.Measure;
+                    worksheet.Cells["F" + count.ToString()].Value = x.Price;
+                    count++;
+                });
+
+                string currentDirectory = Directory.GetCurrentDirectory();
+                var path = "instruments.xlsx";
+                FileInfo excelFile = new FileInfo(path);
+                package.SaveAs(excelFile);
+                MessageBox.Show("Данные были экспортированы в " + currentDirectory, "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        } catch (Exception ex)
+        {
+            MessageBox.Show("Возникла ошибка при экспорте", "Ошибка выполнения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }
