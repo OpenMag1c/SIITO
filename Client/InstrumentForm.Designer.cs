@@ -31,6 +31,8 @@
             label1 = new Label();
             labelType = new Label();
             instrumentsContainer = new FlowLayoutPanel();
+            pictureButtonAdd = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureButtonAdd).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -63,11 +65,26 @@
             instrumentsContainer.Size = new Size(776, 386);
             instrumentsContainer.TabIndex = 3;
             // 
+            // pictureButtonAdd
+            // 
+            pictureButtonAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureButtonAdd.BackColor = Color.Transparent;
+            pictureButtonAdd.Cursor = Cursors.Hand;
+            pictureButtonAdd.Image = Properties.Resources.plus_circle;
+            pictureButtonAdd.Location = new Point(690, 350);
+            pictureButtonAdd.Name = "pictureButtonAdd";
+            pictureButtonAdd.Size = new Size(70, 70);
+            pictureButtonAdd.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureButtonAdd.TabIndex = 4;
+            pictureButtonAdd.TabStop = false;
+            pictureButtonAdd.Click += pictureButtonAdd_Click;
+            // 
             // InstrumentForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureButtonAdd);
             Controls.Add(instrumentsContainer);
             Controls.Add(labelType);
             Controls.Add(label1);
@@ -76,6 +93,7 @@
             Text = "InstrumentForm";
             Load += InstrumentForm_Load;
             MouseLeave += InstrumentForm_MouseLeave;
+            ((System.ComponentModel.ISupportInitialize)pictureButtonAdd).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -85,5 +103,6 @@
         private Label label1;
         private Label labelType;
         private FlowLayoutPanel instrumentsContainer;
+        private PictureBox pictureButtonAdd;
     }
 }

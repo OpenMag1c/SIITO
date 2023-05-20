@@ -31,6 +31,8 @@
             labelType = new Label();
             label1 = new Label();
             osnastkaContainer = new FlowLayoutPanel();
+            pictureButtonAdd = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureButtonAdd).BeginInit();
             SuspendLayout();
             // 
             // labelType
@@ -63,11 +65,26 @@
             osnastkaContainer.Size = new Size(776, 386);
             osnastkaContainer.TabIndex = 5;
             // 
+            // pictureButtonAdd
+            // 
+            pictureButtonAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureButtonAdd.BackColor = Color.Transparent;
+            pictureButtonAdd.Cursor = Cursors.Hand;
+            pictureButtonAdd.Image = Properties.Resources.plus_circle;
+            pictureButtonAdd.Location = new Point(689, 350);
+            pictureButtonAdd.Name = "pictureButtonAdd";
+            pictureButtonAdd.Size = new Size(70, 70);
+            pictureButtonAdd.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureButtonAdd.TabIndex = 6;
+            pictureButtonAdd.TabStop = false;
+            pictureButtonAdd.Click += pictureButtonAdd_Click;
+            // 
             // OsnastkaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureButtonAdd);
             Controls.Add(osnastkaContainer);
             Controls.Add(labelType);
             Controls.Add(label1);
@@ -75,6 +92,7 @@
             Name = "OsnastkaForm";
             Text = "OsnastkaForm";
             Load += OsnastkaForm_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureButtonAdd).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -84,5 +102,6 @@
         private Label labelType;
         private Label label1;
         private FlowLayoutPanel osnastkaContainer;
+        private PictureBox pictureButtonAdd;
     }
 }

@@ -28,7 +28,7 @@ public partial class MainForm : Form
         if (instrumentExpand == false)
         {
             instrumentContainer.Height += 10;
-            if (instrumentContainer.Height >= 395)
+            if (instrumentContainer.Height >= 402)
             {
                 instrumentTransition.Stop();
                 instrumentExpand = true;
@@ -37,7 +37,7 @@ public partial class MainForm : Form
         else
         {
             instrumentContainer.Height -= 10;
-            if (instrumentContainer.Height <= 43)
+            if (instrumentContainer.Height <= 50)
             {
                 instrumentTransition.Stop();
                 instrumentExpand = false;
@@ -92,7 +92,7 @@ public partial class MainForm : Form
         if (osnasktaExpand == false)
         {
             osnastkaContainer.Height += 10;
-            if (osnastkaContainer.Height >= 220)
+            if (osnastkaContainer.Height >= 227)
             {
                 osnastkaTransition.Stop();
                 osnasktaExpand = true;
@@ -101,7 +101,7 @@ public partial class MainForm : Form
         else
         {
             osnastkaContainer.Height -= 10;
-            if (osnastkaContainer.Height <= 43)
+            if (osnastkaContainer.Height <= 50)
             {
                 osnastkaTransition.Stop();
                 osnasktaExpand = false;
@@ -111,7 +111,7 @@ public partial class MainForm : Form
 
     public void OpenOsnastkaForm(OsnastkaTypeEnum osnastkaType)
     {
-        osnastkaForm = new OsnastkaForm(osnastkaType);
+        osnastkaForm = new OsnastkaForm(osnastkaType, this);
         osnastkaForm.FormClosed += OsnastkaFormOnClosed;
         osnastkaForm.MdiParent = this;
         osnastkaForm.Dock = DockStyle.Fill;
@@ -179,7 +179,7 @@ public partial class MainForm : Form
 
     public void OpenInstrumentForm(InstrumentTypeEnum instrumentType)
     {
-        instrumentForm = new InstrumentForm(instrumentType);
+        instrumentForm = new InstrumentForm(instrumentType, this);
         instrumentForm.FormClosed += InstrumentFormOnClosed;
         instrumentForm.MdiParent = this;
         instrumentForm.Dock = DockStyle.Fill;
@@ -219,7 +219,7 @@ public partial class MainForm : Form
         }
     }
 
-    private void addOsnastka_Click(object sender, EventArgs e)
+    public void addOsnastka_Click(object sender, EventArgs e)
     {
         editOsnastkaForm = new EditOsnastkaForm(Enums.ActionType.Create);
         editOsnastkaForm.FormClosed += EditOsnastkaFormOnClosed;
@@ -234,7 +234,7 @@ public partial class MainForm : Form
         }
     }
 
-    private void addInstrument_Click(object sender, EventArgs e)
+    public void addInstrument_Click(object sender, EventArgs e)
     {
         editInstrumentForm = new EditInstrumentForm(Enums.ActionType.Create);
         editInstrumentForm.FormClosed += EditInstrumentFormOnClosed;

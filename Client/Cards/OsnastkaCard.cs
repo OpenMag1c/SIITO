@@ -25,19 +25,13 @@ namespace Client.Cards
             }
             labelType.Text = OsnastkaType;
             labelName.Text = Osnastka.Name;
+            labelName2.Text = Osnastka.Name;
             textDescription.Text = Osnastka.Description;
         }
 
         private void buttonDesc_Click(object sender, EventArgs e)
         {
-            if (description.Visible == true)
-            {
-                description.Visible = false;
-            }
-            else
-            {
-                description.Visible = true;
-            }
+            description.Visible = true;
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -46,6 +40,11 @@ namespace Client.Cards
             {
                 DeleteOsnastka?.Invoke(this);
             }
+        }
+
+        private void buttonDesc2_Click(object sender, EventArgs e)
+        {
+            description.Visible = false;
         }
     }
 }

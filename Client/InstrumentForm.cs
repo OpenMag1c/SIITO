@@ -10,14 +10,15 @@ namespace Client;
 public partial class InstrumentForm : Form
 {
     private readonly AppDbContext context = new AppDbContext(Program.ContextOptions);
-
+    MainForm mainForm;
     private List<Instrument> Instruments;
     private readonly InstrumentTypeEnum InstrumentType;
 
-    public InstrumentForm(InstrumentTypeEnum instrumentType = InstrumentTypeEnum.All)
+    public InstrumentForm(InstrumentTypeEnum instrumentType = InstrumentTypeEnum.All, MainForm mainForm = null)
     {
         InstrumentType = instrumentType;
         InitializeComponent();
+        this.mainForm = mainForm;
     }
 
     public static string GetInstrumentTypeName(InstrumentTypeEnum instrumentType)
@@ -109,5 +110,10 @@ public partial class InstrumentForm : Form
     private void InstrumentForm_MouseLeave(object sender, EventArgs e)
     {
 
+    }
+
+    private void pictureButtonAdd_Click(object sender, EventArgs e)
+    {
+        mainForm.addInstrument_Click(sender, e);
     }
 }

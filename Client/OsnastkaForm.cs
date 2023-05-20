@@ -9,14 +9,15 @@ namespace Client;
 public partial class OsnastkaForm : Form
 {
     private readonly AppDbContext context = new AppDbContext(Program.ContextOptions);
-
+    MainForm mainForm;
     private List<Osnastka> Osnastkas;
     private readonly OsnastkaTypeEnum OsnastkaType;
 
-    public OsnastkaForm(OsnastkaTypeEnum osnastkaType)
+    public OsnastkaForm(OsnastkaTypeEnum osnastkaType, MainForm mainForm)
     {
         OsnastkaType = osnastkaType;
         InitializeComponent();
+        this.mainForm = mainForm;
     }
 
     private void OsnastkaForm_Load(object sender, EventArgs e)
@@ -95,5 +96,10 @@ public partial class OsnastkaForm : Form
             labelType.Visible = true;
             labelType.Text = "/ " + getOsnastkaTypeName(osnastkaType);
         }
+    }
+
+    private void pictureButtonAdd_Click(object sender, EventArgs e)
+    {
+        mainForm.addOsnastka_Click(sender, e);
     }
 }

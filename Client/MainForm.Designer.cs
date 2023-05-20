@@ -184,15 +184,17 @@
             // 
             panel17.BorderStyle = BorderStyle.FixedSingle;
             panel17.Controls.Add(buttonHome);
+            panel17.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             panel17.Location = new Point(3, 5);
             panel17.Margin = new Padding(3, 0, 0, 5);
             panel17.Name = "panel17";
-            panel17.Size = new Size(200, 43);
+            panel17.Size = new Size(200, 50);
             panel17.TabIndex = 9;
             // 
             // buttonHome
             // 
             buttonHome.BackColor = Color.FromArgb(229, 9, 40);
+            buttonHome.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonHome.ForeColor = Color.White;
             buttonHome.Location = new Point(-36, -27);
             buttonHome.Name = "buttonHome";
@@ -208,15 +210,17 @@
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(buttonСatalog);
-            panel2.Location = new Point(3, 53);
+            panel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            panel2.Location = new Point(3, 60);
             panel2.Margin = new Padding(3, 0, 0, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(200, 43);
+            panel2.Size = new Size(200, 50);
             panel2.TabIndex = 8;
             // 
             // buttonСatalog
             // 
             buttonСatalog.BackColor = Color.FromArgb(229, 9, 40);
+            buttonСatalog.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonСatalog.ForeColor = Color.White;
             buttonСatalog.Location = new Point(-36, -27);
             buttonСatalog.Name = "buttonСatalog";
@@ -241,9 +245,9 @@
             instrumentContainer.Controls.Add(panel9);
             instrumentContainer.Controls.Add(panel10);
             instrumentContainer.Controls.Add(panel11);
-            instrumentContainer.Location = new Point(3, 101);
+            instrumentContainer.Location = new Point(3, 115);
             instrumentContainer.Name = "instrumentContainer";
-            instrumentContainer.Size = new Size(198, 43);
+            instrumentContainer.Size = new Size(198, 50);
             instrumentContainer.TabIndex = 7;
             // 
             // panel6
@@ -258,6 +262,7 @@
             // buttonInstrument
             // 
             buttonInstrument.BackColor = Color.FromArgb(229, 9, 40);
+            buttonInstrument.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonInstrument.ForeColor = Color.White;
             buttonInstrument.Location = new Point(-36, -27);
             buttonInstrument.Name = "buttonInstrument";
@@ -281,6 +286,7 @@
             // buttonRezec
             // 
             buttonRezec.BackColor = Color.FromArgb(229, 9, 40);
+            buttonRezec.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonRezec.ForeColor = Color.White;
             buttonRezec.Image = (Image)resources.GetObject("buttonRezec.Image");
             buttonRezec.ImageAlign = ContentAlignment.MiddleLeft;
@@ -307,6 +313,7 @@
             // buttonProtyajki
             // 
             buttonProtyajki.BackColor = Color.FromArgb(229, 9, 40);
+            buttonProtyajki.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonProtyajki.ForeColor = Color.White;
             buttonProtyajki.Image = (Image)resources.GetObject("buttonProtyajki.Image");
             buttonProtyajki.ImageAlign = ContentAlignment.MiddleLeft;
@@ -333,6 +340,7 @@
             // buttonFreza
             // 
             buttonFreza.BackColor = Color.FromArgb(229, 9, 40);
+            buttonFreza.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonFreza.ForeColor = Color.White;
             buttonFreza.Image = (Image)resources.GetObject("buttonFreza.Image");
             buttonFreza.ImageAlign = ContentAlignment.MiddleLeft;
@@ -359,6 +367,7 @@
             // buttonRoliki
             // 
             buttonRoliki.BackColor = Color.FromArgb(229, 9, 40);
+            buttonRoliki.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonRoliki.ForeColor = Color.White;
             buttonRoliki.Image = (Image)resources.GetObject("buttonRoliki.Image");
             buttonRoliki.ImageAlign = ContentAlignment.MiddleLeft;
@@ -385,6 +394,7 @@
             // buttonZenkeri
             // 
             buttonZenkeri.BackColor = Color.FromArgb(229, 9, 40);
+            buttonZenkeri.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonZenkeri.ForeColor = Color.White;
             buttonZenkeri.Image = (Image)resources.GetObject("buttonZenkeri.Image");
             buttonZenkeri.ImageAlign = ContentAlignment.MiddleLeft;
@@ -411,6 +421,7 @@
             // buttonMetchiki
             // 
             buttonMetchiki.BackColor = Color.FromArgb(229, 9, 40);
+            buttonMetchiki.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonMetchiki.ForeColor = Color.White;
             buttonMetchiki.Image = (Image)resources.GetObject("buttonMetchiki.Image");
             buttonMetchiki.ImageAlign = ContentAlignment.MiddleLeft;
@@ -437,6 +448,7 @@
             // buttonRazvertki
             // 
             buttonRazvertki.BackColor = Color.FromArgb(229, 9, 40);
+            buttonRazvertki.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonRazvertki.ForeColor = Color.White;
             buttonRazvertki.Image = (Image)resources.GetObject("buttonRazvertki.Image");
             buttonRazvertki.ImageAlign = ContentAlignment.MiddleLeft;
@@ -463,6 +475,7 @@
             // buttonMechanical
             // 
             buttonMechanical.BackColor = Color.FromArgb(229, 9, 40);
+            buttonMechanical.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonMechanical.ForeColor = Color.White;
             buttonMechanical.Image = (Image)resources.GetObject("buttonMechanical.Image");
             buttonMechanical.ImageAlign = ContentAlignment.MiddleLeft;
@@ -486,9 +499,9 @@
             osnastkaContainer.Controls.Add(panel14);
             osnastkaContainer.Controls.Add(panel15);
             osnastkaContainer.Controls.Add(panel16);
-            osnastkaContainer.Location = new Point(3, 150);
+            osnastkaContainer.Location = new Point(3, 171);
             osnastkaContainer.Name = "osnastkaContainer";
-            osnastkaContainer.Size = new Size(198, 43);
+            osnastkaContainer.Size = new Size(198, 50);
             osnastkaContainer.TabIndex = 9;
             // 
             // panel12
@@ -503,6 +516,7 @@
             // buttonOsnastka
             // 
             buttonOsnastka.BackColor = Color.FromArgb(229, 9, 40);
+            buttonOsnastka.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonOsnastka.ForeColor = Color.White;
             buttonOsnastka.Location = new Point(-36, -27);
             buttonOsnastka.Name = "buttonOsnastka";
@@ -526,6 +540,7 @@
             // buttonStampi
             // 
             buttonStampi.BackColor = Color.FromArgb(229, 9, 40);
+            buttonStampi.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonStampi.ForeColor = Color.White;
             buttonStampi.Image = (Image)resources.GetObject("buttonStampi.Image");
             buttonStampi.ImageAlign = ContentAlignment.MiddleLeft;
@@ -552,6 +567,7 @@
             // buttonPressFormi
             // 
             buttonPressFormi.BackColor = Color.FromArgb(229, 9, 40);
+            buttonPressFormi.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonPressFormi.ForeColor = Color.White;
             buttonPressFormi.Image = (Image)resources.GetObject("buttonPressFormi.Image");
             buttonPressFormi.ImageAlign = ContentAlignment.MiddleLeft;
@@ -578,6 +594,7 @@
             // buttonModel
             // 
             buttonModel.BackColor = Color.FromArgb(229, 9, 40);
+            buttonModel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonModel.ForeColor = Color.White;
             buttonModel.Image = (Image)resources.GetObject("buttonModel.Image");
             buttonModel.ImageAlign = ContentAlignment.MiddleLeft;
@@ -604,6 +621,7 @@
             // buttonPrisposobleniya
             // 
             buttonPrisposobleniya.BackColor = Color.FromArgb(229, 9, 40);
+            buttonPrisposobleniya.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonPrisposobleniya.ForeColor = Color.White;
             buttonPrisposobleniya.Image = (Image)resources.GetObject("buttonPrisposobleniya.Image");
             buttonPrisposobleniya.ImageAlign = ContentAlignment.MiddleLeft;
@@ -625,9 +643,9 @@
             addContainer.Controls.Add(panel18);
             addContainer.Controls.Add(panel19);
             addContainer.Controls.Add(panel20);
-            addContainer.Location = new Point(3, 199);
+            addContainer.Location = new Point(3, 227);
             addContainer.Name = "addContainer";
-            addContainer.Size = new Size(198, 43);
+            addContainer.Size = new Size(198, 50);
             addContainer.TabIndex = 10;
             // 
             // panel18
@@ -642,6 +660,7 @@
             // buttonAdd
             // 
             buttonAdd.BackColor = Color.FromArgb(229, 9, 40);
+            buttonAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonAdd.ForeColor = Color.White;
             buttonAdd.Location = new Point(-36, -27);
             buttonAdd.Name = "buttonAdd";

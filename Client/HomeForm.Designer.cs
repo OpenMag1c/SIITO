@@ -43,13 +43,15 @@
             // mainContainer
             // 
             mainContainer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            mainContainer.AutoScroll = true;
+            mainContainer.AutoSize = true;
             mainContainer.BackColor = Color.Transparent;
             mainContainer.Controls.Add(label1);
             mainContainer.FlowDirection = FlowDirection.RightToLeft;
-            mainContainer.Location = new Point(3, 3);
+            mainContainer.Location = new Point(3, 380);
             mainContainer.Margin = new Padding(3, 3, 0, 3);
             mainContainer.Name = "mainContainer";
-            mainContainer.Size = new Size(680, 927);
+            mainContainer.Size = new Size(847, 865);
             mainContainer.TabIndex = 0;
             // 
             // label1
@@ -57,40 +59,40 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(4, 0);
+            label1.Location = new Point(2, 0);
             label1.Margin = new Padding(0);
             label1.Name = "label1";
-            label1.Size = new Size(676, 588);
+            label1.Size = new Size(845, 483);
             label1.TabIndex = 0;
             label1.Text = resources.GetString("label1.Text");
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Anchor = AnchorStyles.Top;
             panel1.AutoScroll = true;
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(mainContainer);
-            panel1.Location = new Point(11, 15);
+            panel1.Location = new Point(30, 30);
             panel1.MaximumSize = new Size(900, 1000);
             panel1.Name = "panel1";
-            panel1.Size = new Size(900, 800);
+            panel1.Size = new Size(850, 904);
             panel1.TabIndex = 1;
             // 
             // panel2
             // 
             panel2.Controls.Add(pictureBox1);
-            panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(686, 0);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(214, 800);
+            panel2.Size = new Size(850, 350);
             panel2.TabIndex = 1;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.backImage;
-            pictureBox1.Location = new Point(0, 55);
+            pictureBox1.Location = new Point(158, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(211, 150);
+            pictureBox1.Size = new Size(543, 377);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -111,6 +113,7 @@
             mainContainer.ResumeLayout(false);
             mainContainer.PerformLayout();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

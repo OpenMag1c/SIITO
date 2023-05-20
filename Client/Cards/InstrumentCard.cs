@@ -27,8 +27,9 @@ namespace Client.Cards
             }
             labelType.Text = InstrumentForm.GetInstrumentTypeName(InstrumentType);
             labelName.Text = Instrument.Name;
+            labelName2.Text = Instrument.Name;
             labelCode.Text = Instrument.Code;
-            labelGost.Text = Instrument.Gost.Name;
+            linkTextGost.Text = Instrument.Gost.Name;
             labelPrice.Text = Instrument.Price.ToString();
             labelDimensions.Text = Instrument.Dimensions;
             textDescription.Text = Instrument.Description;
@@ -36,18 +37,9 @@ namespace Client.Cards
 
         private void buttonDesc_Click(object sender, EventArgs e)
         {
-            if (description.Visible == true)
-            {
-                description.Visible = false;
-                buttonEdit.Visible = true;
-                buttonDelete.Visible = true;
-            }
-            else
-            {
-                description.Visible = true;
-                buttonEdit.Visible = false;
-                buttonDelete.Visible = false;
-            }
+            description.Visible = true;
+            buttonEdit.Visible = false;
+            buttonDelete.Visible = false;
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -56,6 +48,27 @@ namespace Client.Cards
             {
                 DeleteInstrument?.Invoke(this);
             }
+        }
+
+        private void linkTextGost_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string url = Instrument.Gost.Link;
+            try
+            {
+                System.Diagnostics.Process.Start("cmd", "/c start " + url);
+                //System.Diagnostics.Process.Start(url);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при открытии ссылки: " + ex.Message);
+            }
+        }
+
+        private void buttonDesc2_Click(object sender, EventArgs e)
+        {
+            description.Visible = false;
+            buttonEdit.Visible = true;
+            buttonDelete.Visible = true;
         }
     }
 }
