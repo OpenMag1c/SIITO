@@ -2,6 +2,14 @@ using Domain.Enums;
 
 namespace Client;
 
+public enum Pages
+{
+    Home,
+    Catalog,
+    Instrument,
+    Osnastka
+}
+
 public partial class MainForm : Form
 {
     HomeForm homeForm;
@@ -15,6 +23,7 @@ public partial class MainForm : Form
     {
         InitializeComponent();
         homeForm = new HomeForm();
+        setActivePage(Pages.Home);
         homeForm.FormClosed += HomeForm_FormClosed;
         homeForm.MdiParent = this;
         homeForm.Dock = DockStyle.Fill;
@@ -112,6 +121,7 @@ public partial class MainForm : Form
     public void OpenOsnastkaForm(OsnastkaTypeEnum osnastkaType)
     {
         osnastkaForm = new OsnastkaForm(osnastkaType, this);
+        setActivePage(Pages.Osnastka);
         osnastkaForm.FormClosed += OsnastkaFormOnClosed;
         osnastkaForm.MdiParent = this;
         osnastkaForm.Dock = DockStyle.Fill;
@@ -138,6 +148,7 @@ public partial class MainForm : Form
 
     private void buttonCatalog_Click(object sender, EventArgs e)
     {
+        setActivePage(Pages.Catalog);
         if (catalogForm == null)
         {
             catalogForm = new CatalogForm(this);
@@ -181,6 +192,7 @@ public partial class MainForm : Form
     {
         instrumentForm = new InstrumentForm(instrumentType, this);
         instrumentForm.FormClosed += InstrumentFormOnClosed;
+        setActivePage(Pages.Instrument);
         instrumentForm.MdiParent = this;
         instrumentForm.Dock = DockStyle.Fill;
         instrumentForm.Show();
@@ -195,28 +207,6 @@ public partial class MainForm : Form
     private void buttonRezec_Click(object sender, EventArgs e)
     {
         OpenInstrumentForm(InstrumentTypeEnum.Rezci);
-    }
-
-    private void addTransition_Tick(object sender, EventArgs e)
-    {
-        if (addExpanded == false)
-        {
-            addContainer.Height += 10;
-            if (addContainer.Height >= 135)
-            {
-                addTransition.Stop();
-                addExpanded = true;
-            }
-        }
-        else
-        {
-            addContainer.Height -= 10;
-            if (addContainer.Height <= 43)
-            {
-                addTransition.Stop();
-                addExpanded = false;
-            }
-        }
     }
 
     public void addOsnastka_Click(object sender, EventArgs e)
@@ -306,6 +296,7 @@ public partial class MainForm : Form
 
     private void buttonHome_Click(object sender, EventArgs e)
     {
+        setActivePage(Pages.Home);
         if (homeForm == null)
         {
             homeForm = new HomeForm();
@@ -317,6 +308,38 @@ public partial class MainForm : Form
         else
         {
             homeForm.Activate();
+        }
+    }
+
+    public void setActivePage(Pages page)
+    {
+        var redActive = 173;
+        var greenActive = 11;
+        var blueActive = 34;
+        var red = 229;
+        var green = 9;
+        var blue = 40;
+        buttonHome.BackColor = Color.FromArgb(red, green, blue);
+        buttonInstrument.BackColor = Color.FromArgb(red, green, blue);
+        buttonOsnastka.BackColor = Color.FromArgb(red, green, blue);
+        buttonÑatalog.BackColor = Color.FromArgb(red, green, blue);
+
+        switch (page)
+        {
+            case Pages.Home:
+                buttonHome.BackColor = Color.FromArgb(redActive, greenActive, blueActive);
+                break;
+            case Pages.Catalog:
+                buttonÑatalog.BackColor = Color.FromArgb(redActive, greenActive, blueActive);
+                break;
+            case Pages.Instrument:
+                buttonInstrument.BackColor = Color.FromArgb(redActive, greenActive, blueActive);
+                break;
+            case Pages.Osnastka:
+                buttonOsnastka.BackColor = Color.FromArgb(redActive, greenActive, blueActive);
+                break;
+            default:
+                break;
         }
     }
 }

@@ -35,7 +35,7 @@
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             buttonMenu = new PictureBox();
             sidebar = new FlowLayoutPanel();
-            panel17 = new Panel();
+            panelHome = new Panel();
             buttonHome = new Button();
             panel2 = new Panel();
             buttonСatalog = new Button();
@@ -69,13 +69,6 @@
             buttonModel = new Button();
             panel16 = new Panel();
             buttonPrisposobleniya = new Button();
-            addContainer = new FlowLayoutPanel();
-            panel18 = new Panel();
-            buttonAdd = new Button();
-            panel19 = new Panel();
-            addOsnastka = new Button();
-            panel20 = new Panel();
-            addInstrument = new Button();
             instrumentTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
             osnastkaTransition = new System.Windows.Forms.Timer(components);
@@ -84,7 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)buttonMenu).BeginInit();
             sidebar.SuspendLayout();
-            panel17.SuspendLayout();
+            panelHome.SuspendLayout();
             panel2.SuspendLayout();
             instrumentContainer.SuspendLayout();
             panel6.SuspendLayout();
@@ -102,10 +95,6 @@
             panel14.SuspendLayout();
             panel15.SuspendLayout();
             panel16.SuspendLayout();
-            addContainer.SuspendLayout();
-            panel18.SuspendLayout();
-            panel19.SuspendLayout();
-            panel20.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -168,11 +157,10 @@
             // sidebar
             // 
             sidebar.BackColor = Color.FromArgb(229, 9, 40);
-            sidebar.Controls.Add(panel17);
+            sidebar.Controls.Add(panelHome);
             sidebar.Controls.Add(panel2);
             sidebar.Controls.Add(instrumentContainer);
             sidebar.Controls.Add(osnastkaContainer);
-            sidebar.Controls.Add(addContainer);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 34);
             sidebar.Name = "sidebar";
@@ -180,16 +168,16 @@
             sidebar.Size = new Size(200, 569);
             sidebar.TabIndex = 1;
             // 
-            // panel17
+            // panelHome
             // 
-            panel17.BorderStyle = BorderStyle.FixedSingle;
-            panel17.Controls.Add(buttonHome);
-            panel17.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            panel17.Location = new Point(3, 5);
-            panel17.Margin = new Padding(3, 0, 0, 5);
-            panel17.Name = "panel17";
-            panel17.Size = new Size(200, 50);
-            panel17.TabIndex = 9;
+            panelHome.BorderStyle = BorderStyle.FixedSingle;
+            panelHome.Controls.Add(buttonHome);
+            panelHome.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            panelHome.Location = new Point(3, 5);
+            panelHome.Margin = new Padding(3, 0, 0, 5);
+            panelHome.Name = "panelHome";
+            panelHome.Size = new Size(200, 50);
+            panelHome.TabIndex = 9;
             // 
             // buttonHome
             // 
@@ -636,94 +624,6 @@
             buttonPrisposobleniya.UseVisualStyleBackColor = false;
             buttonPrisposobleniya.Click += buttonPrisposobleniya_Click;
             // 
-            // addContainer
-            // 
-            addContainer.BackColor = Color.FromArgb(229, 9, 40);
-            addContainer.BorderStyle = BorderStyle.FixedSingle;
-            addContainer.Controls.Add(panel18);
-            addContainer.Controls.Add(panel19);
-            addContainer.Controls.Add(panel20);
-            addContainer.Location = new Point(3, 227);
-            addContainer.Name = "addContainer";
-            addContainer.Size = new Size(198, 50);
-            addContainer.TabIndex = 10;
-            // 
-            // panel18
-            // 
-            panel18.Controls.Add(buttonAdd);
-            panel18.Location = new Point(0, 0);
-            panel18.Margin = new Padding(0);
-            panel18.Name = "panel18";
-            panel18.Size = new Size(190, 43);
-            panel18.TabIndex = 5;
-            // 
-            // buttonAdd
-            // 
-            buttonAdd.BackColor = Color.FromArgb(229, 9, 40);
-            buttonAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonAdd.ForeColor = Color.White;
-            buttonAdd.Location = new Point(-36, -27);
-            buttonAdd.Name = "buttonAdd";
-            buttonAdd.Padding = new Padding(50, 0, 0, 0);
-            buttonAdd.Size = new Size(248, 95);
-            buttonAdd.TabIndex = 2;
-            buttonAdd.Text = "Добавить";
-            buttonAdd.TextAlign = ContentAlignment.MiddleLeft;
-            buttonAdd.UseVisualStyleBackColor = false;
-            buttonAdd.Click += buttonAdd_Click;
-            // 
-            // panel19
-            // 
-            panel19.Controls.Add(addOsnastka);
-            panel19.Location = new Point(0, 43);
-            panel19.Margin = new Padding(0);
-            panel19.Name = "panel19";
-            panel19.Size = new Size(190, 43);
-            panel19.TabIndex = 6;
-            // 
-            // addOsnastka
-            // 
-            addOsnastka.BackColor = Color.FromArgb(229, 9, 40);
-            addOsnastka.ForeColor = Color.White;
-            addOsnastka.Image = (Image)resources.GetObject("addOsnastka.Image");
-            addOsnastka.ImageAlign = ContentAlignment.MiddleLeft;
-            addOsnastka.Location = new Point(-32, -26);
-            addOsnastka.Name = "addOsnastka";
-            addOsnastka.Padding = new Padding(50, 0, 0, 0);
-            addOsnastka.Size = new Size(248, 95);
-            addOsnastka.TabIndex = 2;
-            addOsnastka.Text = "Оснастка";
-            addOsnastka.TextAlign = ContentAlignment.MiddleLeft;
-            addOsnastka.TextImageRelation = TextImageRelation.ImageBeforeText;
-            addOsnastka.UseVisualStyleBackColor = false;
-            addOsnastka.Click += addOsnastka_Click;
-            // 
-            // panel20
-            // 
-            panel20.Controls.Add(addInstrument);
-            panel20.Location = new Point(0, 86);
-            panel20.Margin = new Padding(0);
-            panel20.Name = "panel20";
-            panel20.Size = new Size(190, 43);
-            panel20.TabIndex = 7;
-            // 
-            // addInstrument
-            // 
-            addInstrument.BackColor = Color.FromArgb(229, 9, 40);
-            addInstrument.ForeColor = Color.White;
-            addInstrument.Image = (Image)resources.GetObject("addInstrument.Image");
-            addInstrument.ImageAlign = ContentAlignment.MiddleLeft;
-            addInstrument.Location = new Point(-32, -26);
-            addInstrument.Name = "addInstrument";
-            addInstrument.Padding = new Padding(50, 0, 0, 0);
-            addInstrument.Size = new Size(248, 95);
-            addInstrument.TabIndex = 2;
-            addInstrument.Text = "Инструмент";
-            addInstrument.TextAlign = ContentAlignment.MiddleLeft;
-            addInstrument.TextImageRelation = TextImageRelation.ImageBeforeText;
-            addInstrument.UseVisualStyleBackColor = false;
-            addInstrument.Click += addInstrument_Click;
-            // 
             // instrumentTransition
             // 
             instrumentTransition.Interval = 3;
@@ -741,8 +641,6 @@
             // 
             // addTransition
             // 
-            addTransition.Interval = 3;
-            addTransition.Tick += addTransition_Tick;
             // 
             // MainForm
             // 
@@ -760,7 +658,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)buttonMenu).EndInit();
             sidebar.ResumeLayout(false);
-            panel17.ResumeLayout(false);
+            panelHome.ResumeLayout(false);
             panel2.ResumeLayout(false);
             instrumentContainer.ResumeLayout(false);
             panel6.ResumeLayout(false);
@@ -778,10 +676,6 @@
             panel14.ResumeLayout(false);
             panel15.ResumeLayout(false);
             panel16.ResumeLayout(false);
-            addContainer.ResumeLayout(false);
-            panel18.ResumeLayout(false);
-            panel19.ResumeLayout(false);
-            panel20.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -827,15 +721,8 @@
         private Button buttonPrisposobleniya;
         private System.Windows.Forms.Timer osnastkaTransition;
         private PictureBox pictureBox1;
-        private FlowLayoutPanel addContainer;
-        private Panel panel18;
-        private Button buttonAdd;
-        private Panel panel19;
-        private Button addOsnastka;
-        private Panel panel20;
-        private Button addInstrument;
         private System.Windows.Forms.Timer addTransition;
-        private Panel panel17;
+        private Panel panelHome;
         private Button buttonHome;
     }
 }
