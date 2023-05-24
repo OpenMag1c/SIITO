@@ -139,4 +139,40 @@
   <data name="plus-circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus-circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="frezi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frezi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mechkrepl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mechkrepl.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="metchiki" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\metchiki.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="protyajka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\protyajka.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="razvertki" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\razvertki.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rezec" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rezec.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="roliki" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\roliki.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zenkeri" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zenkeri.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="model" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\model.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pressform" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pressform.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="prisposoblenya" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\prisposoblenya.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shtamp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shtamp.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

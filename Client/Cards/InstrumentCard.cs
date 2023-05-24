@@ -25,6 +25,9 @@ namespace Client.Cards
                 MemoryStream ms = new MemoryStream(Instrument.Picture);
                 Image imageData = Image.FromStream(ms);
                 image.Image = imageData;
+            } else
+            {
+                setInstrumentImageDefault();
             }
             labelType.Text = InstrumentForm.GetInstrumentTypeName(InstrumentType);
             labelName.Text = Instrument.Name;
@@ -81,6 +84,34 @@ namespace Client.Cards
             if (result == DialogResult.OK)
             {
                 InstumentUpdated?.Invoke();
+            }
+        }
+
+        public void setInstrumentImageDefault()
+        {
+            switch (InstrumentType)
+            {
+                case InstrumentTypeEnum.Rezci:
+                    image.Image = Properties.Resources.rezec;
+                    break;
+                case InstrumentTypeEnum.Razvertki:
+                    image.Image = Properties.Resources.razvertki;
+                    break;
+                case InstrumentTypeEnum.RolikiRezb:
+                    image.Image = Properties.Resources.roliki;
+                    break;
+                case InstrumentTypeEnum.Metchiki:
+                    image.Image = Properties.Resources.metchiki;
+                    break;
+                case InstrumentTypeEnum.Frezi:
+                    image.Image = Properties.Resources.frezi;
+                    break;
+                case InstrumentTypeEnum.InstrumentMechKreplenie:
+                    image.Image = Properties.Resources.mechkrepl;
+                    break;
+                case InstrumentTypeEnum.Zenkeri:
+                    image.Image = Properties.Resources.zenkeri;
+                    break;
             }
         }
     }

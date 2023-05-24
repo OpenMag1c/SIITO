@@ -1,5 +1,6 @@
 ﻿using Client.Enums;
 using Domain.Entities;
+using Domain.Enums;
 
 namespace Client.Cards
 {
@@ -25,6 +26,9 @@ namespace Client.Cards
                 MemoryStream ms = new MemoryStream(Osnastka.Picture);
                 Image imageData = Image.FromStream(ms);
                 image.Image = imageData;
+            } else
+            {
+                setOsnastkaImageDefault();
             }
             labelType.Text = OsnastkaType;
             labelName.Text = Osnastka.Name;
@@ -59,6 +63,25 @@ namespace Client.Cards
             if (result == DialogResult.OK)
             {
                 OsnastkaUpdated?.Invoke();
+            }
+        }
+
+        public void setOsnastkaImageDefault()
+        {
+            switch (Osnastka.OsnastkaType.Id)
+            {
+                case (int)OsnastkaTypeEnum.ModelOsnastka:
+                    image.Image = Properties.Resources.model;
+                    break;
+                case (int)OsnastkaTypeEnum.PressFormi:
+                    image.Image = Properties.Resources.pressform;
+                    break;
+                case (int)OsnastkaTypeEnum.Shtampi:
+                    image.Image = Properties.Resources.shtamp;
+                    break;
+                case (int)OsnastkaTypeEnum.Prisposoblenie:
+                    image.Image = Properties.Resources.prisposoblenya;
+                    break;
             }
         }
     }
