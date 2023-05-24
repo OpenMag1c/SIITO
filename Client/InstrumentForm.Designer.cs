@@ -88,7 +88,7 @@
             pictureButtonExport.BackColor = Color.Transparent;
             pictureButtonExport.Cursor = Cursors.Hand;
             pictureButtonExport.Image = (Image)resources.GetObject("pictureButtonExport.Image");
-            pictureButtonExport.Location = new Point(690, 274);
+            pictureButtonExport.Location = new Point(678, 274);
             pictureButtonExport.Name = "pictureButtonExport";
             pictureButtonExport.Padding = new Padding(10);
             pictureButtonExport.Size = new Size(70, 70);
@@ -101,6 +101,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightGray;
             ClientSize = new Size(800, 450);
             Controls.Add(pictureButtonExport);
             Controls.Add(pictureButtonAdd);

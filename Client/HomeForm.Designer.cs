@@ -68,7 +68,7 @@
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top;
+            panel1.Anchor = AnchorStyles.None;
             panel1.AutoScroll = true;
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(mainContainer);

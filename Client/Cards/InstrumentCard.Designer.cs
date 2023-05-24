@@ -60,10 +60,10 @@
             image.Dock = DockStyle.Left;
             image.ErrorImage = Properties.Resources.empty_image;
             image.Image = Properties.Resources.empty_image1;
-            image.Location = new Point(11, 13);
-            image.Margin = new Padding(11, 13, 11, 13);
+            image.Location = new Point(10, 10);
+            image.Margin = new Padding(10);
             image.Name = "image";
-            image.Size = new Size(184, 301);
+            image.Size = new Size(161, 227);
             image.SizeMode = PictureBoxSizeMode.Zoom;
             image.TabIndex = 0;
             image.TabStop = false;
@@ -74,7 +74,7 @@
             labelName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelName.Location = new Point(3, 0);
             labelName.Name = "labelName";
-            labelName.Size = new Size(181, 32);
+            labelName.Size = new Size(143, 25);
             labelName.TabIndex = 1;
             labelName.Text = "Наименование";
             // 
@@ -82,9 +82,9 @@
             // 
             labelType.AutoSize = true;
             labelType.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labelType.Location = new Point(209, 17);
+            labelType.Location = new Point(183, 13);
             labelType.Name = "labelType";
-            labelType.Size = new Size(51, 20);
+            labelType.Size = new Size(42, 15);
             labelType.TabIndex = 2;
             labelType.Text = "Резец";
             // 
@@ -92,9 +92,9 @@
             // 
             labelCode.AutoSize = true;
             labelCode.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelCode.Location = new Point(206, 167);
+            labelCode.Location = new Point(180, 125);
             labelCode.Name = "labelCode";
-            labelCode.Size = new Size(128, 28);
+            labelCode.Size = new Size(104, 21);
             labelCode.TabIndex = 4;
             labelCode.Text = "23412342 BK";
             // 
@@ -102,9 +102,9 @@
             // 
             labelDimensions.AutoSize = true;
             labelDimensions.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelDimensions.Location = new Point(206, 195);
+            labelDimensions.Location = new Point(180, 146);
             labelDimensions.Name = "labelDimensions";
-            labelDimensions.Size = new Size(96, 28);
+            labelDimensions.Size = new Size(78, 21);
             labelDimensions.TabIndex = 5;
             labelDimensions.Text = "20x30x20";
             // 
@@ -112,9 +112,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(206, 232);
+            label1.Location = new Point(180, 174);
             label1.Name = "label1";
-            label1.Size = new Size(63, 28);
+            label1.Size = new Size(50, 21);
             label1.TabIndex = 6;
             label1.Text = "Цена:";
             // 
@@ -123,9 +123,9 @@
             labelPrice.AutoSize = true;
             labelPrice.BackColor = Color.White;
             labelPrice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelPrice.Location = new Point(270, 232);
+            labelPrice.Location = new Point(236, 174);
             labelPrice.Name = "labelPrice";
-            labelPrice.Size = new Size(49, 28);
+            labelPrice.Size = new Size(40, 21);
             labelPrice.TabIndex = 7;
             labelPrice.Text = "4.59";
             // 
@@ -133,26 +133,26 @@
             // 
             labelMeasure.AutoSize = true;
             labelMeasure.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelMeasure.Location = new Point(310, 195);
+            labelMeasure.Location = new Point(271, 146);
             labelMeasure.Name = "labelMeasure";
-            labelMeasure.Size = new Size(36, 28);
+            labelMeasure.Size = new Size(30, 21);
             labelMeasure.TabIndex = 8;
             labelMeasure.Text = "шт";
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Controls.Add(labelName);
-            flowLayoutPanel1.Location = new Point(206, 59);
-            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanel1.Location = new Point(180, 44);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(311, 77);
+            flowLayoutPanel1.Size = new Size(272, 58);
             flowLayoutPanel1.TabIndex = 9;
             // 
             // buttonDelete
             // 
-            buttonDelete.Location = new Point(321, 275);
+            buttonDelete.Location = new Point(281, 206);
+            buttonDelete.Margin = new Padding(3, 2, 3, 2);
             buttonDelete.Name = "buttonDelete";
-            buttonDelete.Size = new Size(99, 39);
+            buttonDelete.Size = new Size(87, 29);
             buttonDelete.TabIndex = 25;
             buttonDelete.Text = "Удалить";
             buttonDelete.UseVisualStyleBackColor = true;
@@ -160,9 +160,10 @@
             // 
             // buttonEdit
             // 
-            buttonEdit.Location = new Point(206, 275);
+            buttonEdit.Location = new Point(180, 206);
+            buttonEdit.Margin = new Padding(3, 2, 3, 2);
             buttonEdit.Name = "buttonEdit";
-            buttonEdit.Size = new Size(99, 39);
+            buttonEdit.Size = new Size(87, 29);
             buttonEdit.TabIndex = 24;
             buttonEdit.Text = "Изменить";
             buttonEdit.UseVisualStyleBackColor = true;
@@ -170,9 +171,10 @@
             // 
             // buttonDesc
             // 
-            buttonDesc.Location = new Point(399, 16);
+            buttonDesc.Location = new Point(349, 12);
+            buttonDesc.Margin = new Padding(3, 2, 3, 2);
             buttonDesc.Name = "buttonDesc";
-            buttonDesc.Size = new Size(102, 39);
+            buttonDesc.Size = new Size(89, 29);
             buttonDesc.TabIndex = 26;
             buttonDesc.Text = "Описание";
             buttonDesc.UseVisualStyleBackColor = true;
@@ -182,9 +184,9 @@
             // 
             linkTextGost.AutoSize = true;
             linkTextGost.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            linkTextGost.Location = new Point(206, 140);
+            linkTextGost.Location = new Point(180, 105);
             linkTextGost.Name = "linkTextGost";
-            linkTextGost.Size = new Size(127, 28);
+            linkTextGost.Size = new Size(98, 21);
             linkTextGost.TabIndex = 27;
             linkTextGost.TabStop = true;
             linkTextGost.Text = "ГОСТ 23359";
@@ -196,10 +198,9 @@
             description.AutoScroll = true;
             description.Controls.Add(panel1);
             description.Controls.Add(textDescription);
-            description.Location = new Point(1, -1);
-            description.Margin = new Padding(3, 4, 3, 4);
+            description.Location = new Point(0, 0);
             description.Name = "description";
-            description.Size = new Size(531, 329);
+            description.Size = new Size(467, 247);
             description.TabIndex = 28;
             description.Visible = false;
             // 
@@ -207,19 +208,17 @@
             // 
             panel1.Controls.Add(flowLayoutPanel2);
             panel1.Controls.Add(buttonDesc2);
-            panel1.Location = new Point(3, 4);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(496, 81);
+            panel1.Size = new Size(434, 61);
             panel1.TabIndex = 29;
             // 
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.Controls.Add(labelName2);
-            flowLayoutPanel2.Location = new Point(3, 7);
-            flowLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanel2.Location = new Point(3, 5);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(381, 75);
+            flowLayoutPanel2.Size = new Size(333, 53);
             flowLayoutPanel2.TabIndex = 28;
             // 
             // labelName2
@@ -228,15 +227,16 @@
             labelName2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelName2.Location = new Point(3, 0);
             labelName2.Name = "labelName2";
-            labelName2.Size = new Size(181, 32);
+            labelName2.Size = new Size(143, 25);
             labelName2.TabIndex = 1;
             labelName2.Text = "Наименование";
             // 
             // buttonDesc2
             // 
-            buttonDesc2.Location = new Point(390, 13);
+            buttonDesc2.Location = new Point(341, 10);
+            buttonDesc2.Margin = new Padding(3, 2, 3, 2);
             buttonDesc2.Name = "buttonDesc2";
-            buttonDesc2.Size = new Size(102, 39);
+            buttonDesc2.Size = new Size(89, 29);
             buttonDesc2.TabIndex = 27;
             buttonDesc2.Text = "Описание";
             buttonDesc2.UseVisualStyleBackColor = true;
@@ -246,19 +246,19 @@
             // 
             textDescription.AutoSize = true;
             textDescription.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textDescription.Location = new Point(11, 102);
-            textDescription.Margin = new Padding(11, 13, 11, 13);
-            textDescription.MaximumSize = new Size(480, 0);
+            textDescription.Location = new Point(10, 77);
+            textDescription.Margin = new Padding(10);
+            textDescription.MaximumSize = new Size(420, 0);
             textDescription.Name = "textDescription";
-            textDescription.Size = new Size(475, 1204);
+            textDescription.Size = new Size(418, 861);
             textDescription.TabIndex = 0;
             textDescription.Text = resources.GetString("textDescription.Text");
             // 
             // InstrumentCard
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BorderStyle = BorderStyle.FixedSingle;
+            BackColor = Color.White;
             Controls.Add(description);
             Controls.Add(linkTextGost);
             Controls.Add(buttonDesc);
@@ -272,10 +272,10 @@
             Controls.Add(labelCode);
             Controls.Add(labelType);
             Controls.Add(image);
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(30);
             Name = "InstrumentCard";
-            Padding = new Padding(11, 13, 11, 13);
-            Size = new Size(531, 327);
+            Padding = new Padding(10);
+            Size = new Size(467, 247);
             Load += InstrumentCard_Load;
             ((System.ComponentModel.ISupportInitialize)image).EndInit();
             flowLayoutPanel1.ResumeLayout(false);

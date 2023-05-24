@@ -23,7 +23,16 @@ values
 (N'ГОСТ 18883', N'https://www.gzsito.by/upload/iblock/7ae/tq9semzta0nq604j1a9uz9av4wap8tk2.pdf'),
 (N'ГОСТ 18882', N'https://www.gzsito.by/upload/iblock/22b/f311r5s15ryd2xmp39ocft2d51zd7251.pdf'),
 (N'ГОСТ 18885', N'https://www.gzsito.by/upload/iblock/463/kokwvvwyeu19cha7j34w94fgh8ihfl6f.pdf'),
-(N'ГОСТ 18881', N'https://www.gzsito.by/upload/iblock/c5a/azq5resd5escqnr2hzyayqrnp0enw6zk.pdf')
+(N'ГОСТ 18881', N'https://www.gzsito.by/upload/iblock/c5a/azq5resd5escqnr2hzyayqrnp0enw6zk.pdf'),
+
+(N'РАЗВЕРТКИ РУЧНЫЕ ЦИЛИНДРИЧЕСКИЕ(ГОСТ 7722-77)', N'https://www.gzsito.by/upload/iblock/de7/b3xihmh2uyd8l3gsbz3w1qemw7gfxfmg.pdf'),
+(N'ПРОТЯЖКИ(ГОСТ 50038-92)', N'https://www.gzsito.by/upload/iblock/567/w8v6b4jpf1f7nw84gmf58p5d1wxgaumn.pdf'),
+(N'НОЖИ С ТВЁРДЫМ СПЛАВОМ(ГОСТ 14700-69)', N'https://www.gzsito.by/upload/iblock/617/ixgbn1ygqt3tm3b1flbpeczmxdugiojj.pdf'),
+(N'МЕТЧИКИ(ГОСТ 29221-91)', N'https://www.gzsito.by/upload/iblock/ce5/03z6z042dlhxeqygnsz03qfy2s8sy5fb.pdf'),
+(N'ЗЕНКЕРЫ НАСАДНЫЕ(ГОСТ 2255-71)', N'https://www.gzsito.by/upload/iblock/494/sdxpyd262pzkb2zi6qdkd75vxjrq1gnh.pdf'),
+(N'РЕЗЦЫ(ГОСТ 28980-91)', N'https://www.gzsito.by/upload/iblock/9a3/2vmg1yltam8l5k2v06s0p8dr4dzfpyp4.pdf'),
+(N'ЗЕНКЕРЫ(ГОСT 1677-75)', N'https://www.gzsito.by/upload/iblock/084/piveo6e7egxdmcoghxyaledp33ej1bnw.pdf')
+
 go
 
 -- Инструменты
