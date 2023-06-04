@@ -26,7 +26,8 @@ namespace Client.Cards
                 MemoryStream ms = new MemoryStream(Osnastka.Picture);
                 Image imageData = Image.FromStream(ms);
                 image.Image = imageData;
-            } else
+            }
+            else
             {
                 setOsnastkaImageDefault();
             }

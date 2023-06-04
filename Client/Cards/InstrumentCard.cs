@@ -25,7 +25,8 @@ namespace Client.Cards
                 MemoryStream ms = new MemoryStream(Instrument.Picture);
                 Image imageData = Image.FromStream(ms);
                 image.Image = imageData;
-            } else
+            }
+            else
             {
                 setInstrumentImageDefault();
             }

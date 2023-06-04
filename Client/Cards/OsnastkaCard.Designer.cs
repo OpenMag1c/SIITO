@@ -64,6 +64,7 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Controls.Add(labelName);
+            flowLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point);
             flowLayoutPanel1.Location = new Point(20, 208);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(292, 92);
@@ -72,10 +73,10 @@
             // labelName
             // 
             labelName.AutoSize = true;
-            labelName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelName.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point);
             labelName.Location = new Point(3, 0);
             labelName.Name = "labelName";
-            labelName.Size = new Size(143, 25);
+            labelName.Size = new Size(119, 21);
             labelName.TabIndex = 1;
             labelName.Text = "Наименование";
             // 
@@ -167,10 +168,10 @@
             // labelName2
             // 
             labelName2.AutoSize = true;
-            labelName2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelName2.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point);
             labelName2.Location = new Point(3, 0);
             labelName2.Name = "labelName2";
-            labelName2.Size = new Size(143, 25);
+            labelName2.Size = new Size(119, 21);
             labelName2.TabIndex = 1;
             labelName2.Text = "Наименование";
             // 
