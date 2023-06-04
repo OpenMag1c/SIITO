@@ -29,7 +29,10 @@ partial class EditOsnastkaForm
     private void InitializeComponent()
     {
         groupBox1 = new GroupBox();
+        currencySelect = new ComboBox();
         label10 = new Label();
+        label7 = new Label();
+        ostastkaPriceInput = new TextBox();
         descInput = new TextBox();
         label9 = new Label();
         actionButton = new Button();
@@ -45,7 +48,10 @@ partial class EditOsnastkaForm
         // 
         // groupBox1
         // 
+        groupBox1.Controls.Add(currencySelect);
         groupBox1.Controls.Add(label10);
+        groupBox1.Controls.Add(label7);
+        groupBox1.Controls.Add(ostastkaPriceInput);
         groupBox1.Controls.Add(descInput);
         groupBox1.Controls.Add(label9);
         groupBox1.Controls.Add(actionButton);
@@ -57,30 +63,56 @@ partial class EditOsnastkaForm
         groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
         groupBox1.Location = new Point(94, 60);
         groupBox1.Name = "groupBox1";
-        groupBox1.Size = new Size(716, 429);
+        groupBox1.Size = new Size(716, 504);
         groupBox1.TabIndex = 4;
         groupBox1.TabStop = false;
         groupBox1.Text = "Информация оснастки";
+        // 
+        // currencySelect
+        // 
+        currencySelect.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+        currencySelect.FormattingEnabled = true;
+        currencySelect.Location = new Point(154, 171);
+        currencySelect.Name = "currencySelect";
+        currencySelect.Size = new Size(62, 31);
+        currencySelect.TabIndex = 25;
         // 
         // label10
         // 
         label10.AutoSize = true;
         label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-        label10.Location = new Point(22, 168);
+        label10.Location = new Point(22, 233);
         label10.Name = "label10";
         label10.Size = new Size(89, 23);
         label10.TabIndex = 21;
         label10.Text = "Описание";
         // 
+        // label7
+        // 
+        label7.AutoSize = true;
+        label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+        label7.Location = new Point(22, 143);
+        label7.Name = "label7";
+        label7.Size = new Size(51, 23);
+        label7.TabIndex = 24;
+        label7.Text = "Цена";
+        // 
+        // ostastkaPriceInput
+        // 
+        ostastkaPriceInput.Location = new Point(22, 169);
+        ostastkaPriceInput.Name = "ostastkaPriceInput";
+        ostastkaPriceInput.Size = new Size(125, 34);
+        ostastkaPriceInput.TabIndex = 23;
+        // 
         // descInput
         // 
         descInput.BorderStyle = BorderStyle.None;
         descInput.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-        descInput.Location = new Point(22, 194);
+        descInput.Location = new Point(22, 259);
         descInput.Multiline = true;
         descInput.Name = "descInput";
         descInput.ScrollBars = ScrollBars.Both;
-        descInput.Size = new Size(388, 139);
+        descInput.Size = new Size(388, 223);
         descInput.TabIndex = 20;
         // 
         // label9
@@ -95,7 +127,7 @@ partial class EditOsnastkaForm
         // 
         // actionButton
         // 
-        actionButton.Location = new Point(568, 362);
+        actionButton.Location = new Point(568, 443);
         actionButton.Name = "actionButton";
         actionButton.Size = new Size(120, 39);
         actionButton.TabIndex = 19;
@@ -185,7 +217,7 @@ partial class EditOsnastkaForm
     private ComboBox gostsSelect;
     private Label label7;
     private Label label8;
-    private TextBox instrumentPriceInput;
+    private TextBox ostastkaPriceInput;
     private ComboBox osnastkaTypeSelect;
     private Label label6;
     private PictureBox OsnastkaPictureBox;
@@ -198,4 +230,5 @@ partial class EditOsnastkaForm
     private Label label1;
     private TextBox osnastkaNameInput;
     private Label editOsnastkaMainLabel;
+    private ComboBox currencySelect;
 }

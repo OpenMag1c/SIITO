@@ -1,8 +1,8 @@
 ﻿using Client.Enums;
 using DAL;
 using Domain.Entities;
+using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
-using System.Text.RegularExpressions;
 
 namespace Client;
 public partial class EditInstrumentForm : Form
@@ -11,8 +11,6 @@ public partial class EditInstrumentForm : Form
 
     private readonly ActionType CurrentAction;
     private readonly int InstrumentId;
-
-    private readonly Regex CodeRegex = new Regex(@"^\d\d\d\d-\d\d\d\d\s\S{3,}");
 
     public EditInstrumentForm(ActionType actionType, int instrumentId = -1)
     {
@@ -73,14 +71,7 @@ public partial class EditInstrumentForm : Form
             .FirstOrDefault(x => x.Id == InstrumentId);
 
         instrumentNameInput.Text = instrument.Name;
-        instrumentCodeInput.Text = instrument.Code;
         instrumentPriceInput.Text = instrument.Price.ToString();
-
-        var dimensions = instrument.Dimensions.Split(new char[] { 'х', 'x' });
-
-        numericUpDown1.Value = decimal.Parse(dimensions[0]);
-        numericUpDown2.Value = decimal.Parse(dimensions[1]);
-        numericUpDown3.Value = decimal.Parse(dimensions[2]);
 
         if (instrument.Picture != null)
         {
@@ -95,20 +86,25 @@ public partial class EditInstrumentForm : Form
             descInput.Text = instrument.Description;
         }
 
+        currencySelect.SelectedValue = instrument.Currency;
         instrumentTypeSelect.SelectedValue = instrument.InstrumentType.Id;
         gostsSelect.SelectedValue = instrument.Gost.Id;
     }
 
     private void FillStaticData()
     {
+        currencySelect.DisplayMember = "Text";
+        currencySelect.ValueMember = "Value";
+
         gostsSelect.DisplayMember = "Text";
         gostsSelect.ValueMember = "Value";
 
         instrumentTypeSelect.DisplayMember = "Text";
         instrumentTypeSelect.ValueMember = "Value";
 
-        gostsSelect.DataSource = DbContext.Gosts.Select(x => new { Text = x.Name, Value = x.Id }).ToArray(); ;
+        gostsSelect.DataSource = DbContext.Gosts.Select(x => new { Text = x.Name, Value = x.Id }).ToArray();
         instrumentTypeSelect.DataSource = DbContext.InstrumentTypes.Select(x => new { Text = x.Name, Value = x.Id }).ToArray();
+        currencySelect.DataSource = Enum.GetValues<CurrencyEnum>().Select(x => new { Text = x.ToString(), Value = x.ToString() }).ToArray();
     }
 
     private void instrumentPictureBox_Click(object sender, EventArgs e)
@@ -155,12 +151,6 @@ public partial class EditInstrumentForm : Form
             return false;
         }
 
-        if (!CodeRegex.IsMatch(instrumentCodeInput.Text))
-        {
-            MessageBox.Show("Некорректный ввод кода инструмента", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return false;
-        }
-
         #endregion
 
 
@@ -176,9 +166,8 @@ public partial class EditInstrumentForm : Form
         }
 
         instrument.Name = instrumentNameInput.Text;
-        instrument.Code = instrumentCodeInput.Text;
-        instrument.Dimensions = $"{numericUpDown1.Value}x{numericUpDown2.Value}x{numericUpDown3.Value}";
         instrument.Price = priceValue;
+        instrument.Currency = currencySelect.SelectedValue.ToString();
         instrument.Picture = imagebytes;
         instrument.Description = descInput.Text;
         instrument.InstrumentTypeId = (int)instrumentTypeSelect.SelectedValue;
@@ -198,6 +187,12 @@ public partial class EditInstrumentForm : Form
             return false;
         }
 
+        if (priceValue <= 0)
+        {
+            MessageBox.Show("Недопустимое значение для цены инструмента", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
         if (instrumentNameInput.Text.Length < 5)
         {
             MessageBox.Show("Минимальная длина названия инструмента - 5 символов", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -207,12 +202,6 @@ public partial class EditInstrumentForm : Form
         if (instrumentNameInput.Text.Length > 256)
         {
             MessageBox.Show("Превышена максимальная длина названия инструмента (256 символов)", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return false;
-        }
-
-        if (!CodeRegex.IsMatch(instrumentCodeInput.Text))
-        {
-            MessageBox.Show("Некорректный ввод кода инструмента", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
 
@@ -233,10 +222,9 @@ public partial class EditInstrumentForm : Form
         var instrument = new Instrument()
         {
             Name = instrumentNameInput.Text,
-            Code = instrumentCodeInput.Text,
             Measure = "шт",
-            Dimensions = $"{numericUpDown1.Value}x{numericUpDown2.Value}x{numericUpDown3.Value}",
             Price = priceValue,
+            Currency = currencySelect.SelectedValue.ToString(),
             Picture = imagebytes,
             Description = descInput.Text,
             InstrumentTypeId = (int)instrumentTypeSelect.SelectedValue,

@@ -1,7 +1,9 @@
 ﻿CREATE TABLE [dbo].[Osnastka]
 (
 	[OsnastkaId] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
-    [Name] NVARCHAR(256) NOT NULL, 
+    [Name] NVARCHAR(256) NOT NULL,
+    [Price] MONEY NOT NULL,
+    [Currency] CHAR(3) NOT NULL,
     [Description] NVARCHAR(MAX) NULL, 
     [Picture] VARBINARY(MAX) NULL, 
     [OsnastkaTypeId] INT NOT NULL,

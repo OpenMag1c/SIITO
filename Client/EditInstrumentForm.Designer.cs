@@ -42,20 +42,10 @@ partial class EditInstrumentForm
         instrumentTypeSelect = new ComboBox();
         label6 = new Label();
         instrumentPictureBox = new PictureBox();
-        label5 = new Label();
-        instrumentCodeInput = new TextBox();
-        label4 = new Label();
-        label3 = new Label();
-        label2 = new Label();
-        numericUpDown3 = new NumericUpDown();
-        numericUpDown2 = new NumericUpDown();
-        numericUpDown1 = new NumericUpDown();
         label1 = new Label();
+        currencySelect = new ComboBox();
         groupBox1.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)instrumentPictureBox).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
         SuspendLayout();
         // 
         // editInstrumentMainLabel
@@ -77,6 +67,7 @@ partial class EditInstrumentForm
         // 
         // groupBox1
         // 
+        groupBox1.Controls.Add(currencySelect);
         groupBox1.Controls.Add(label10);
         groupBox1.Controls.Add(descInput);
         groupBox1.Controls.Add(label9);
@@ -88,20 +79,12 @@ partial class EditInstrumentForm
         groupBox1.Controls.Add(instrumentTypeSelect);
         groupBox1.Controls.Add(label6);
         groupBox1.Controls.Add(instrumentPictureBox);
-        groupBox1.Controls.Add(label5);
-        groupBox1.Controls.Add(instrumentCodeInput);
-        groupBox1.Controls.Add(label4);
-        groupBox1.Controls.Add(label3);
-        groupBox1.Controls.Add(label2);
-        groupBox1.Controls.Add(numericUpDown3);
-        groupBox1.Controls.Add(numericUpDown2);
-        groupBox1.Controls.Add(numericUpDown1);
         groupBox1.Controls.Add(label1);
         groupBox1.Controls.Add(instrumentNameInput);
         groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
         groupBox1.Location = new Point(92, 60);
         groupBox1.Name = "groupBox1";
-        groupBox1.Size = new Size(716, 528);
+        groupBox1.Size = new Size(705, 500);
         groupBox1.TabIndex = 2;
         groupBox1.TabStop = false;
         groupBox1.Text = "Информация инструмента";
@@ -110,7 +93,7 @@ partial class EditInstrumentForm
         // 
         label10.AutoSize = true;
         label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-        label10.Location = new Point(22, 333);
+        label10.Location = new Point(22, 222);
         label10.Name = "label10";
         label10.Size = new Size(89, 23);
         label10.TabIndex = 21;
@@ -120,11 +103,11 @@ partial class EditInstrumentForm
         // 
         descInput.BorderStyle = BorderStyle.None;
         descInput.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-        descInput.Location = new Point(22, 359);
+        descInput.Location = new Point(22, 248);
         descInput.Multiline = true;
         descInput.Name = "descInput";
         descInput.ScrollBars = ScrollBars.Both;
-        descInput.Size = new Size(388, 139);
+        descInput.Size = new Size(388, 235);
         descInput.TabIndex = 20;
         // 
         // label9
@@ -139,7 +122,7 @@ partial class EditInstrumentForm
         // 
         // actionButton
         // 
-        actionButton.Location = new Point(568, 459);
+        actionButton.Location = new Point(568, 444);
         actionButton.Name = "actionButton";
         actionButton.Size = new Size(120, 39);
         actionButton.TabIndex = 19;
@@ -159,7 +142,7 @@ partial class EditInstrumentForm
         // 
         label7.AutoSize = true;
         label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-        label7.Location = new Point(22, 182);
+        label7.Location = new Point(22, 128);
         label7.Name = "label7";
         label7.Size = new Size(51, 23);
         label7.TabIndex = 14;
@@ -177,7 +160,7 @@ partial class EditInstrumentForm
         // 
         // instrumentPriceInput
         // 
-        instrumentPriceInput.Location = new Point(22, 208);
+        instrumentPriceInput.Location = new Point(22, 154);
         instrumentPriceInput.Name = "instrumentPriceInput";
         instrumentPriceInput.Size = new Size(125, 34);
         instrumentPriceInput.TabIndex = 13;
@@ -210,81 +193,6 @@ partial class EditInstrumentForm
         instrumentPictureBox.TabStop = false;
         instrumentPictureBox.Click += instrumentPictureBox_Click;
         // 
-        // label5
-        // 
-        label5.AutoSize = true;
-        label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-        label5.Location = new Point(22, 109);
-        label5.Name = "label5";
-        label5.Size = new Size(144, 23);
-        label5.TabIndex = 10;
-        label5.Text = "Код инструмента";
-        // 
-        // instrumentCodeInput
-        // 
-        instrumentCodeInput.Location = new Point(22, 135);
-        instrumentCodeInput.Name = "instrumentCodeInput";
-        instrumentCodeInput.Size = new Size(255, 34);
-        instrumentCodeInput.TabIndex = 9;
-        // 
-        // label4
-        // 
-        label4.AutoSize = true;
-        label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-        label4.Location = new Point(22, 256);
-        label4.Name = "label4";
-        label4.Size = new Size(100, 23);
-        label4.TabIndex = 8;
-        label4.Text = "Параметры";
-        // 
-        // label3
-        // 
-        label3.AutoSize = true;
-        label3.Location = new Point(186, 282);
-        label3.Name = "label3";
-        label3.Size = new Size(21, 28);
-        label3.TabIndex = 7;
-        label3.Text = "x";
-        // 
-        // label2
-        // 
-        label2.AutoSize = true;
-        label2.Location = new Point(92, 282);
-        label2.Name = "label2";
-        label2.Size = new Size(21, 28);
-        label2.TabIndex = 6;
-        label2.Text = "x";
-        // 
-        // numericUpDown3
-        // 
-        numericUpDown3.Location = new Point(211, 282);
-        numericUpDown3.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
-        numericUpDown3.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-        numericUpDown3.Name = "numericUpDown3";
-        numericUpDown3.Size = new Size(66, 34);
-        numericUpDown3.TabIndex = 5;
-        numericUpDown3.Value = new decimal(new int[] { 1, 0, 0, 0 });
-        // 
-        // numericUpDown2
-        // 
-        numericUpDown2.Location = new Point(116, 282);
-        numericUpDown2.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
-        numericUpDown2.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-        numericUpDown2.Name = "numericUpDown2";
-        numericUpDown2.Size = new Size(66, 34);
-        numericUpDown2.TabIndex = 4;
-        numericUpDown2.Value = new decimal(new int[] { 1, 0, 0, 0 });
-        // 
-        // numericUpDown1
-        // 
-        numericUpDown1.Location = new Point(22, 282);
-        numericUpDown1.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
-        numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-        numericUpDown1.Name = "numericUpDown1";
-        numericUpDown1.Size = new Size(66, 34);
-        numericUpDown1.TabIndex = 3;
-        numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
-        // 
         // label1
         // 
         label1.AutoSize = true;
@@ -294,6 +202,15 @@ partial class EditInstrumentForm
         label1.Size = new Size(86, 23);
         label1.TabIndex = 2;
         label1.Text = "Название";
+        // 
+        // currencySelect
+        // 
+        currencySelect.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+        currencySelect.FormattingEnabled = true;
+        currencySelect.Location = new Point(154, 156);
+        currencySelect.Name = "currencySelect";
+        currencySelect.Size = new Size(62, 31);
+        currencySelect.TabIndex = 22;
         // 
         // EditInstrumentForm
         // 
@@ -308,9 +225,6 @@ partial class EditInstrumentForm
         groupBox1.ResumeLayout(false);
         groupBox1.PerformLayout();
         ((System.ComponentModel.ISupportInitialize)instrumentPictureBox).EndInit();
-        ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
-        ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-        ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -321,14 +235,6 @@ partial class EditInstrumentForm
     private TextBox instrumentNameInput;
     private GroupBox groupBox1;
     private Label label1;
-    private NumericUpDown numericUpDown1;
-    private NumericUpDown numericUpDown3;
-    private NumericUpDown numericUpDown2;
-    private Label label2;
-    private Label label3;
-    private Label label4;
-    private Label label5;
-    private TextBox instrumentCodeInput;
     private PictureBox instrumentPictureBox;
     private Label label7;
     private TextBox instrumentPriceInput;
@@ -340,4 +246,5 @@ partial class EditInstrumentForm
     private Button actionButton;
     private Label label10;
     private TextBox descInput;
+    private ComboBox currencySelect;
 }

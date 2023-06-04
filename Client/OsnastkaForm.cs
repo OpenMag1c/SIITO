@@ -124,11 +124,15 @@ public partial class OsnastkaForm : Form
 
                 worksheet.Cells["A1"].Value = "Наименование";
                 worksheet.Cells["B1"].Value = "Тип оснастки";
+                worksheet.Cells["C1"].Value = "Цена";
+                worksheet.Cells["D1"].Value = "Валюта";
                 var count = 2;
                 Osnastkas.ForEach(x =>
                 {
                     worksheet.Cells["A" + count.ToString()].Value = x.Name;
                     worksheet.Cells["B" + count.ToString()].Value = x.OsnastkaType.Name;
+                    worksheet.Cells["C" + count.ToString()].Value = x.Price.ToString();
+                    worksheet.Cells["D" + count.ToString()].Value = x.Currency;
                     count++;
                 });
 

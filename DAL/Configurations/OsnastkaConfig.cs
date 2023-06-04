@@ -17,6 +17,14 @@ public class OsnastkaConfig : IEntityTypeConfiguration<Osnastka>
             .HasColumnName("Name")
             .IsRequired();
 
+        entity.Property(e => e.Price)
+            .HasColumnName("Price")
+            .IsRequired();
+
+        entity.Property(e => e.Currency)
+            .HasColumnName("Currency")
+            .IsRequired();
+
         entity.Property(e => e.Description)
             .HasColumnName("Description")
             .IsRequired(false);

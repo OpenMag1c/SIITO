@@ -17,14 +17,6 @@ public class InstrumentConfig : IEntityTypeConfiguration<Instrument>
             .HasColumnName("Name")
             .IsRequired();
 
-        entity.Property(e => e.Code)
-            .HasColumnName("Code")
-            .IsRequired();
-
-        entity.Property(e => e.Dimensions)
-            .HasColumnName("Dimensions")
-            .IsRequired();
-
         entity.Property(e => e.Picture)
             .HasColumnName("Picture")
             .IsRequired(false);
@@ -39,6 +31,10 @@ public class InstrumentConfig : IEntityTypeConfiguration<Instrument>
 
         entity.Property(e => e.Price)
             .HasColumnName("Price")
+            .IsRequired();
+
+        entity.Property(e => e.Currency)
+            .HasColumnName("Currency")
             .IsRequired();
 
         entity.Property(e => e.CreatedAt)

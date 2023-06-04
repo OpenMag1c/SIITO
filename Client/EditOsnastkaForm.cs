@@ -1,6 +1,7 @@
 ﻿using Client.Enums;
 using DAL;
 using Domain.Entities;
+using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Client;
@@ -71,6 +72,7 @@ public partial class EditOsnastkaForm : Form
             .FirstOrDefault(x => x.Id == OsnastkaId);
 
         osnastkaNameInput.Text = osnastka.Name;
+        ostastkaPriceInput.Text = osnastka.Price.ToString();
 
         if (osnastka.Picture != null)
         {
@@ -85,14 +87,19 @@ public partial class EditOsnastkaForm : Form
             descInput.Text = osnastka.Description;
         }
 
+        currencySelect.SelectedValue = osnastka.Currency;
         osnastkaTypeSelect.SelectedValue = osnastka.OsnastkaType.Id;
     }
 
     private void FillStaticData()
     {
+        currencySelect.DisplayMember = "Text";
+        currencySelect.ValueMember = "Value";
+
         osnastkaTypeSelect.DisplayMember = "Text";
         osnastkaTypeSelect.ValueMember = "Value";
 
+        currencySelect.DataSource = Enum.GetValues<CurrencyEnum>().Select(x => new { Text = x.ToString(), Value = x.ToString() }).ToArray();
         osnastkaTypeSelect.DataSource = DbContext.OsnastkaTypes.Select(x => new { Text = x.Name, Value = x.Id }).ToArray();
     }
 
@@ -116,6 +123,18 @@ public partial class EditOsnastkaForm : Form
             return false;
         }
 
+        if (!decimal.TryParse(ostastkaPriceInput.Text, out decimal priceValue))
+        {
+            MessageBox.Show("Недопустимое значение для цены оснастки", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        if (priceValue <= 0)
+        {
+            MessageBox.Show("Недопустимое значение для цены оснастки", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
         #endregion
 
 
@@ -132,6 +151,8 @@ public partial class EditOsnastkaForm : Form
 
         osnastka.Name = osnastkaNameInput.Text;
         osnastka.Picture = imagebytes;
+        osnastka.Price = priceValue;
+        osnastka.Currency = currencySelect.SelectedValue.ToString();
         osnastka.Description = descInput.Text;
         osnastka.OsnastkaTypeId = (int)osnastkaTypeSelect.SelectedValue;
 
@@ -155,6 +176,18 @@ public partial class EditOsnastkaForm : Form
             return false;
         }
 
+        if (!decimal.TryParse(ostastkaPriceInput.Text, out decimal priceValue))
+        {
+            MessageBox.Show("Недопустимое значение для цены оснастки", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        if (priceValue <= 0)
+        {
+            MessageBox.Show("Недопустимое значение для цены оснастки", "Ошибка создания", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
         #endregion
 
 
@@ -172,6 +205,8 @@ public partial class EditOsnastkaForm : Form
         var osnastka = new Osnastka()
         {
             Name = osnastkaNameInput.Text,
+            Price = priceValue,
+            Currency = currencySelect.SelectedValue.ToString(),
             Picture = imagebytes,
             Description = descInput.Text,
             OsnastkaTypeId = (int)osnastkaTypeSelect.SelectedValue

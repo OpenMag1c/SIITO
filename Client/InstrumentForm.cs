@@ -138,19 +138,19 @@ public partial class InstrumentForm : Form
 
                 worksheet.Cells["A1"].Value = "Наименование";
                 worksheet.Cells["B1"].Value = "Тип инструмента";
-                worksheet.Cells["C1"].Value = "Размеры";
-                worksheet.Cells["D1"].Value = "ГОСТ";
-                worksheet.Cells["E1"].Value = "Единицы измерения";
-                worksheet.Cells["F1"].Value = "Цена";
+                worksheet.Cells["C1"].Value = "ГОСТ";
+                worksheet.Cells["D1"].Value = "Единицы измерения";
+                worksheet.Cells["E1"].Value = "Цена";
+                worksheet.Cells["F1"].Value = "Валюта";
                 var count = 2;
                 Instruments.ForEach(x =>
                 {
                     worksheet.Cells["A" + count.ToString()].Value = x.Name;
                     worksheet.Cells["B" + count.ToString()].Value = x.InstrumentType.Name;
-                    worksheet.Cells["C" + count.ToString()].Value = x.Dimensions;
-                    worksheet.Cells["D" + count.ToString()].Value = x.Gost.Name;
-                    worksheet.Cells["E" + count.ToString()].Value = x.Measure;
-                    worksheet.Cells["F" + count.ToString()].Value = x.Price;
+                    worksheet.Cells["C" + count.ToString()].Value = x.Gost.Name;
+                    worksheet.Cells["D" + count.ToString()].Value = x.Measure;
+                    worksheet.Cells["E" + count.ToString()].Value = x.Price;
+                    worksheet.Cells["F" + count.ToString()].Value = x.Currency;
                     count++;
                 });
 
