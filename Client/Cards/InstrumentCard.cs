@@ -33,11 +33,8 @@ namespace Client.Cards
             labelType.Text = InstrumentForm.GetInstrumentTypeName(InstrumentType);
             labelName.Text = Instrument.Name;
             labelName2.Text = Instrument.Name;
-            //labelCode.Text = Instrument.Code;
             linkTextGost.Text = Instrument.Gost.Name;
-            labelPrice.Text = Instrument.Price.ToString();
-            /*labelDimensions.Text = Instrument.Dimensions*/
-            ;
+            labelPrice.Text = Instrument.Price.ToString() + "  " + Instrument.Currency;
             textDescription.Text = Instrument.Description;
         }
 

@@ -42,6 +42,8 @@
             flowLayoutPanel2 = new FlowLayoutPanel();
             labelName2 = new Label();
             textDescription = new Label();
+            labelPrice = new Label();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)image).BeginInit();
             flowLayoutPanel1.SuspendLayout();
             description.SuspendLayout();
@@ -67,7 +69,7 @@
             flowLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point);
             flowLayoutPanel1.Location = new Point(20, 208);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(292, 92);
+            flowLayoutPanel1.Size = new Size(292, 55);
             flowLayoutPanel1.TabIndex = 17;
             // 
             // labelName
@@ -187,11 +189,34 @@
             textDescription.TabIndex = 0;
             textDescription.Text = resources.GetString("textDescription.Text");
             // 
+            // labelPrice
+            // 
+            labelPrice.AutoSize = true;
+            labelPrice.BackColor = Color.White;
+            labelPrice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            labelPrice.Location = new Point(76, 277);
+            labelPrice.Name = "labelPrice";
+            labelPrice.Size = new Size(40, 21);
+            labelPrice.TabIndex = 27;
+            labelPrice.Text = "4.59";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(20, 277);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 21);
+            label1.TabIndex = 26;
+            label1.Text = "Цена:";
+            // 
             // OsnastkaCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(labelPrice);
+            Controls.Add(label1);
             Controls.Add(description);
             Controls.Add(buttonDesc);
             Controls.Add(buttonDelete);
@@ -231,5 +256,7 @@
         private FlowLayoutPanel flowLayoutPanel2;
         private Label labelName2;
         private Label textDescription;
+        private Label labelPrice;
+        private Label label1;
     }
 }

@@ -32,11 +32,8 @@
             image = new PictureBox();
             labelName = new Label();
             labelType = new Label();
-            labelCode = new Label();
-            labelDimensions = new Label();
             label1 = new Label();
             labelPrice = new Label();
-            labelMeasure = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             buttonDelete = new Button();
             buttonEdit = new Button();
@@ -63,7 +60,7 @@
             image.Location = new Point(10, 10);
             image.Margin = new Padding(10);
             image.Name = "image";
-            image.Size = new Size(161, 227);
+            image.Size = new Size(161, 198);
             image.SizeMode = PictureBoxSizeMode.Zoom;
             image.TabIndex = 0;
             image.TabStop = false;
@@ -88,31 +85,11 @@
             labelType.TabIndex = 2;
             labelType.Text = "Резец";
             // 
-            // labelCode
-            // 
-            labelCode.AutoSize = true;
-            labelCode.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelCode.Location = new Point(180, 125);
-            labelCode.Name = "labelCode";
-            labelCode.Size = new Size(104, 21);
-            labelCode.TabIndex = 4;
-            labelCode.Text = "23412342 BK";
-            // 
-            // labelDimensions
-            // 
-            labelDimensions.AutoSize = true;
-            labelDimensions.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelDimensions.Location = new Point(180, 146);
-            labelDimensions.Name = "labelDimensions";
-            labelDimensions.Size = new Size(78, 21);
-            labelDimensions.TabIndex = 5;
-            labelDimensions.Text = "20x30x20";
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(180, 174);
+            label1.Location = new Point(182, 152);
             label1.Name = "label1";
             label1.Size = new Size(50, 21);
             label1.TabIndex = 6;
@@ -123,33 +100,23 @@
             labelPrice.AutoSize = true;
             labelPrice.BackColor = Color.White;
             labelPrice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelPrice.Location = new Point(236, 174);
+            labelPrice.Location = new Point(238, 152);
             labelPrice.Name = "labelPrice";
             labelPrice.Size = new Size(40, 21);
             labelPrice.TabIndex = 7;
             labelPrice.Text = "4.59";
             // 
-            // labelMeasure
-            // 
-            labelMeasure.AutoSize = true;
-            labelMeasure.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelMeasure.Location = new Point(271, 146);
-            labelMeasure.Name = "labelMeasure";
-            labelMeasure.Size = new Size(30, 21);
-            labelMeasure.TabIndex = 8;
-            labelMeasure.Text = "шт";
-            // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Controls.Add(labelName);
-            flowLayoutPanel1.Location = new Point(180, 44);
+            flowLayoutPanel1.Location = new Point(180, 51);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(272, 58);
+            flowLayoutPanel1.Size = new Size(208, 69);
             flowLayoutPanel1.TabIndex = 9;
             // 
             // buttonDelete
             // 
-            buttonDelete.Location = new Point(281, 206);
+            buttonDelete.Location = new Point(301, 179);
             buttonDelete.Margin = new Padding(3, 2, 3, 2);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(87, 29);
@@ -160,7 +127,7 @@
             // 
             // buttonEdit
             // 
-            buttonEdit.Location = new Point(180, 206);
+            buttonEdit.Location = new Point(180, 179);
             buttonEdit.Margin = new Padding(3, 2, 3, 2);
             buttonEdit.Name = "buttonEdit";
             buttonEdit.Size = new Size(87, 29);
@@ -171,7 +138,7 @@
             // 
             // buttonDesc
             // 
-            buttonDesc.Location = new Point(349, 12);
+            buttonDesc.Location = new Point(299, 10);
             buttonDesc.Margin = new Padding(3, 2, 3, 2);
             buttonDesc.Name = "buttonDesc";
             buttonDesc.Size = new Size(89, 29);
@@ -184,7 +151,7 @@
             // 
             linkTextGost.AutoSize = true;
             linkTextGost.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            linkTextGost.Location = new Point(180, 105);
+            linkTextGost.Location = new Point(180, 126);
             linkTextGost.Name = "linkTextGost";
             linkTextGost.Size = new Size(98, 21);
             linkTextGost.TabIndex = 27;
@@ -200,7 +167,7 @@
             description.Controls.Add(textDescription);
             description.Location = new Point(0, 0);
             description.Name = "description";
-            description.Size = new Size(467, 247);
+            description.Size = new Size(401, 218);
             description.TabIndex = 28;
             description.Visible = false;
             // 
@@ -210,7 +177,7 @@
             panel1.Controls.Add(buttonDesc2);
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(434, 61);
+            panel1.Size = new Size(385, 61);
             panel1.TabIndex = 29;
             // 
             // flowLayoutPanel2
@@ -218,7 +185,7 @@
             flowLayoutPanel2.Controls.Add(labelName2);
             flowLayoutPanel2.Location = new Point(3, 5);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(333, 53);
+            flowLayoutPanel2.Size = new Size(272, 53);
             flowLayoutPanel2.TabIndex = 28;
             // 
             // labelName2
@@ -233,7 +200,7 @@
             // 
             // buttonDesc2
             // 
-            buttonDesc2.Location = new Point(341, 10);
+            buttonDesc2.Location = new Point(287, 10);
             buttonDesc2.Margin = new Padding(3, 2, 3, 2);
             buttonDesc2.Name = "buttonDesc2";
             buttonDesc2.Size = new Size(89, 29);
@@ -248,9 +215,9 @@
             textDescription.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textDescription.Location = new Point(10, 77);
             textDescription.Margin = new Padding(10);
-            textDescription.MaximumSize = new Size(420, 0);
+            textDescription.MaximumSize = new Size(370, 0);
             textDescription.Name = "textDescription";
-            textDescription.Size = new Size(418, 861);
+            textDescription.Size = new Size(369, 903);
             textDescription.TabIndex = 0;
             textDescription.Text = resources.GetString("textDescription.Text");
             // 
@@ -265,17 +232,14 @@
             Controls.Add(buttonDelete);
             Controls.Add(buttonEdit);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(labelMeasure);
             Controls.Add(labelPrice);
             Controls.Add(label1);
-            Controls.Add(labelDimensions);
-            Controls.Add(labelCode);
             Controls.Add(labelType);
             Controls.Add(image);
             Margin = new Padding(30);
             Name = "InstrumentCard";
             Padding = new Padding(10);
-            Size = new Size(467, 247);
+            Size = new Size(401, 218);
             Load += InstrumentCard_Load;
             ((System.ComponentModel.ISupportInitialize)image).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
@@ -294,11 +258,8 @@
         private PictureBox image;
         private Label labelName;
         private Label labelType;
-        private Label labelCode;
-        private Label labelDimensions;
         private Label label1;
         private Label labelPrice;
-        private Label labelMeasure;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button buttonDelete;
         private Button buttonEdit;

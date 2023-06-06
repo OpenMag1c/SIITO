@@ -34,6 +34,7 @@ namespace Client.Cards
             labelType.Text = OsnastkaType;
             labelName.Text = Osnastka.Name;
             labelName2.Text = Osnastka.Name;
+            labelPrice.Text = Osnastka.Price.ToString() + "  " + Osnastka.Currency;
             textDescription.Text = Osnastka.Description;
         }
 
